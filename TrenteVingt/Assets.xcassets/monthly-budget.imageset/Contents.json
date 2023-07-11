@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "monthly-budget.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
