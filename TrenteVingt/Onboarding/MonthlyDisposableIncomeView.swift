@@ -1,10 +1,3 @@
-//
-//  MonthlyBudgetView.swift
-//  TrenteVingt
-//
-//  Created by Louis Carbo Estaque on 09/07/2023.
-//
-
 import SwiftUI
 
 struct MonthlyDisposableIncomeView: View {
@@ -14,51 +7,60 @@ struct MonthlyDisposableIncomeView: View {
     
     @Bindable var monthBudget : MonthBudget = MonthBudget()
     @FocusState var isFocused: Bool
+    @State var myMonthlyIncomeVaries: Bool = false
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Image(colorScheme == .light ? "monthly-budget" : "monthly-budget-dark")
-                .resizable()
-                .frame(width: 320, height: 280)
-                .offset(x: 120, y: 40)
-            Spacer()
-            Text("Let's get started")
-                .font(.system(.largeTitle, design: .serif, weight: .bold))
-            Text("What is your monthly budget?")
-                .font(.system(.headline, design: .serif, weight: .semibold))
-            HStack {
-                TextField("Enter your monthly budget", value: $monthBudget.monthlyBudget, format: .number)
-                    .focused($isFocused)
-                    .font(.system(.callout, design: .serif, weight: .bold))
-                    .textFieldStyle(.roundedBorder)
-                    .keyboardType(.numberPad)
-                    .toolbar {
-                        ToolbarItemGroup(placement: .keyboard) {
-                            Spacer()
-                            Button {
-                                isFocused = false
-                            } label: {
-                                Text("Done")
-                                    .font(.system(.title3, design: .serif))
+        VStack {
+            ScrollView(.vertical) {
+                VStack(alignment: .leading) {
+                    Image(colorScheme == .light ? "monthly-budget" : "monthly-budget-dark")
+                        .resizable()
+                        .frame(maxWidth: 320, maxHeight: 280)
+                        .offset(x: 120)
+                    Spacer()
+                        .frame(height: 20)
+                    Text("Let's get started")
+                        .font(.system(.largeTitle, design: .serif, weight: .bold))
+                    Text("What is your monthly disposable income?")
+                        .font(.system(.headline, design: .serif, weight: .semibold))
+                    Divider()
+                    Text("Think of your monthly disposable income as the money you're free to spend each month, once all the taxes are taken care of.")
+                        .font(.system(.callout, design: .serif))
+                        .italic()
+                    HStack {
+                        TextField("Enter your monthly disposable income", value: $monthBudget.monthlyBudget, format: .number)
+                            .focused($isFocused)
+                            .font(.system(.callout, design: .serif, weight: .bold))
+                            .textFieldStyle(.roundedBorder)
+                            .keyboardType(.numberPad)
+                        Picker("Currency", selection: $monthBudget.currencySymbolSFName) {
+                            ForEach(Currency.allCases, id: \.self) { currency in
+                                Image(systemName: currency.rawValue).tag(currency.rawValue)
                             }
                         }
+                        .pickerStyle(.palette)
+                        .onChange(of: monthBudget.currencySymbolSFName) {
+                            isFocused = false
+                        }
                     }
-                Picker("Currency", selection: $monthBudget.currencySymbolSFName) {
-                    ForEach(Currency.allCases, id: \.self) { currency in
-                        Image(systemName: currency.rawValue).tag(currency.rawValue)
+                    Button {
+                        myMonthlyIncomeVaries.toggle()
+                    } label: {
+                        Text("My monthly income varies")
+                            .font(.system(.callout, design: .serif))
+                            .italic()
+                    }
+                    if myMonthlyIncomeVaries {
+                        Divider()
+                        Text("Estimate your likely spending for this month. Remember, you can adjust this at any time during or between months.")
+                            .font(.system(.callout, design: .serif))
+                            .italic()
+                        Divider()
                     }
                 }
-                .pickerStyle(.palette)
-                .onChange(of: monthBudget.currencySymbolSFName) {
-                    isFocused = false
-                }
+                .padding()
             }
-            Button {
-                
-            } label: {
-                Text("I don't have a fixed monthly budget")
-            }
-            Spacer()
+            .scrollDismissesKeyboard(.interactively)
             HStack {
                 Button {
                     selectedTab -= 1
@@ -81,13 +83,12 @@ struct MonthlyDisposableIncomeView: View {
                         .font(.system(.title3, design: .serif))
                         .foregroundStyle(.white)
                 }
-                .disabled(monthBudget.monthlyBudget == 0)
+                .disabled(monthBudget.monthlyBudget == 0 || monthBudget.currencySymbolSFName == "")
                 .tint(.black)
                 .buttonStyle(.borderedProminent)
                 .buttonBorderShape(.capsule)
             }
+            .padding([.leading, .trailing])
         }
-        .ignoresSafeArea()
-        .padding()
     }
 }

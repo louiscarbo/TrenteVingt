@@ -7,23 +7,89 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B2F8DB62A5B264E0090E88E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B2F8DB52A5B264E0090E88E /* WidgetKit.framework */; };
+		7B2F8DB82A5B264E0090E88E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B2F8DB72A5B264E0090E88E /* SwiftUI.framework */; };
+		7B2F8DBB2A5B264E0090E88E /* TrenteVingtWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F8DBA2A5B264E0090E88E /* TrenteVingtWidgetsBundle.swift */; };
+		7B2F8DBD2A5B264E0090E88E /* TrenteVingtWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F8DBC2A5B264E0090E88E /* TrenteVingtWidgets.swift */; };
+		7B2F8DBF2A5B26510090E88E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B2F8DBE2A5B26510090E88E /* Assets.xcassets */; };
+		7B2F8DC32A5B26510090E88E /* TrenteVingtWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7B2F8DB32A5B264E0090E88E /* TrenteVingtWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7B2F8DC92A5D981A0090E88E /* NewTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F8DC82A5D981A0090E88E /* NewTransactionView.swift */; };
+		7B2F8DCB2A5D9C5A0090E88E /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F8DCA2A5D9C5A0090E88E /* MonthView.swift */; };
 		7B3F90342A59BA6B00CE0BD4 /* TrenteVingtApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F90332A59BA6B00CE0BD4 /* TrenteVingtApp.swift */; };
-		7B3F90362A59BA6B00CE0BD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F90352A59BA6B00CE0BD4 /* ContentView.swift */; };
 		7B3F90382A59BA6E00CE0BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B3F90372A59BA6E00CE0BD4 /* Assets.xcassets */; };
 		7B3F903B2A59BA6E00CE0BD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B3F903A2A59BA6E00CE0BD4 /* Preview Assets.xcassets */; };
-		7B3F903D2A59BA6E00CE0BD4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F903C2A59BA6E00CE0BD4 /* Item.swift */; };
+		7B3F90442A59BA8200CE0BD4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F90432A59BA8200CE0BD4 /* HomeView.swift */; };
+		7B3F90472A59BAA000CE0BD4 /* MonthBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F90462A59BAA000CE0BD4 /* MonthBudget.swift */; };
+		7B3F90492A59BC4B00CE0BD4 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F90482A59BC4B00CE0BD4 /* Transaction.swift */; };
+		7BF8172B2A5AB155007027BF /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8172A2A5AB155007027BF /* OnboardingScreen.swift */; };
+		7BF8172E2A5AB2B0007027BF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8172D2A5AB2B0007027BF /* WelcomeView.swift */; };
+		7BF817302A5AB57B007027BF /* MonthlyDisposableIncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8172F2A5AB57B007027BF /* MonthlyDisposableIncomeView.swift */; };
+		7BF817362A5AEC36007027BF /* VerticalSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF817352A5AEC36007027BF /* VerticalSlider.swift */; };
+		7BF817382A5AEC57007027BF /* BudgetRepartitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF817372A5AEC57007027BF /* BudgetRepartitionView.swift */; };
+		7BF8173A2A5B0622007027BF /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7BF817392A5B0622007027BF /* Localizable.xcstrings */; };
+		7BF8173C2A5B0B13007027BF /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8173B2A5B0B13007027BF /* ConfirmationView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7B2F8DC12A5B26510090E88E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B3F90282A59BA6B00CE0BD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B2F8DB22A5B264E0090E88E;
+			remoteInfo = TrenteVingtWidgetsExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7B2F8DC42A5B26510090E88E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7B2F8DC32A5B26510090E88E /* TrenteVingtWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		7B2F8DB32A5B264E0090E88E /* TrenteVingtWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TrenteVingtWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B2F8DB52A5B264E0090E88E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		7B2F8DB72A5B264E0090E88E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		7B2F8DBA2A5B264E0090E88E /* TrenteVingtWidgetsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenteVingtWidgetsBundle.swift; sourceTree = "<group>"; };
+		7B2F8DBC2A5B264E0090E88E /* TrenteVingtWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenteVingtWidgets.swift; sourceTree = "<group>"; };
+		7B2F8DBE2A5B26510090E88E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7B2F8DC02A5B26510090E88E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B2F8DC82A5D981A0090E88E /* NewTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionView.swift; sourceTree = "<group>"; };
+		7B2F8DCA2A5D9C5A0090E88E /* MonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
 		7B3F90302A59BA6B00CE0BD4 /* TrenteVingt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrenteVingt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3F90332A59BA6B00CE0BD4 /* TrenteVingtApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenteVingtApp.swift; sourceTree = "<group>"; };
-		7B3F90352A59BA6B00CE0BD4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7B3F90372A59BA6E00CE0BD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B3F903A2A59BA6E00CE0BD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7B3F903C2A59BA6E00CE0BD4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		7B3F90432A59BA8200CE0BD4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7B3F90462A59BAA000CE0BD4 /* MonthBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthBudget.swift; sourceTree = "<group>"; };
+		7B3F90482A59BC4B00CE0BD4 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		7BF8172A2A5AB155007027BF /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
+		7BF8172D2A5AB2B0007027BF /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		7BF8172F2A5AB57B007027BF /* MonthlyDisposableIncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyDisposableIncomeView.swift; sourceTree = "<group>"; };
+		7BF817352A5AEC36007027BF /* VerticalSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSlider.swift; sourceTree = "<group>"; };
+		7BF817372A5AEC57007027BF /* BudgetRepartitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRepartitionView.swift; sourceTree = "<group>"; };
+		7BF817392A5B0622007027BF /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		7BF8173B2A5B0B13007027BF /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7B2F8DB02A5B264E0090E88E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B2F8DB82A5B264E0090E88E /* SwiftUI.framework in Frameworks */,
+				7B2F8DB62A5B264E0090E88E /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7B3F902D2A59BA6B00CE0BD4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -34,10 +100,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B2F8DB42A5B264E0090E88E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B2F8DB52A5B264E0090E88E /* WidgetKit.framework */,
+				7B2F8DB72A5B264E0090E88E /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B2F8DB92A5B264E0090E88E /* TrenteVingtWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				7B2F8DBA2A5B264E0090E88E /* TrenteVingtWidgetsBundle.swift */,
+				7B2F8DBC2A5B264E0090E88E /* TrenteVingtWidgets.swift */,
+				7B2F8DBE2A5B26510090E88E /* Assets.xcassets */,
+				7B2F8DC02A5B26510090E88E /* Info.plist */,
+			);
+			path = TrenteVingtWidgets;
+			sourceTree = "<group>";
+		};
 		7B3F90272A59BA6B00CE0BD4 = {
 			isa = PBXGroup;
 			children = (
 				7B3F90322A59BA6B00CE0BD4 /* TrenteVingt */,
+				7B2F8DB92A5B264E0090E88E /* TrenteVingtWidgets */,
+				7B2F8DB42A5B264E0090E88E /* Frameworks */,
 				7B3F90312A59BA6B00CE0BD4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				7B3F90302A59BA6B00CE0BD4 /* TrenteVingt.app */,
+				7B2F8DB32A5B264E0090E88E /* TrenteVingtWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,10 +142,14 @@
 		7B3F90322A59BA6B00CE0BD4 /* TrenteVingt */ = {
 			isa = PBXGroup;
 			children = (
+				7BF817392A5B0622007027BF /* Localizable.xcstrings */,
 				7B3F90332A59BA6B00CE0BD4 /* TrenteVingtApp.swift */,
-				7B3F90352A59BA6B00CE0BD4 /* ContentView.swift */,
+				7B3F90452A59BA9700CE0BD4 /* Models */,
+				7B3F90432A59BA8200CE0BD4 /* HomeView.swift */,
+				7B2F8DCA2A5D9C5A0090E88E /* MonthView.swift */,
+				7B2F8DC82A5D981A0090E88E /* NewTransactionView.swift */,
+				7BF8172C2A5AB292007027BF /* Onboarding */,
 				7B3F90372A59BA6E00CE0BD4 /* Assets.xcassets */,
-				7B3F903C2A59BA6E00CE0BD4 /* Item.swift */,
 				7B3F90392A59BA6E00CE0BD4 /* Preview Content */,
 			);
 			path = TrenteVingt;
@@ -70,9 +163,48 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		7B3F90452A59BA9700CE0BD4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7B3F90462A59BAA000CE0BD4 /* MonthBudget.swift */,
+				7B3F90482A59BC4B00CE0BD4 /* Transaction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7BF8172C2A5AB292007027BF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				7BF8172A2A5AB155007027BF /* OnboardingScreen.swift */,
+				7BF8172D2A5AB2B0007027BF /* WelcomeView.swift */,
+				7BF8172F2A5AB57B007027BF /* MonthlyDisposableIncomeView.swift */,
+				7BF817372A5AEC57007027BF /* BudgetRepartitionView.swift */,
+				7BF817352A5AEC36007027BF /* VerticalSlider.swift */,
+				7BF8173B2A5B0B13007027BF /* ConfirmationView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7B2F8DB22A5B264E0090E88E /* TrenteVingtWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B2F8DC72A5B26510090E88E /* Build configuration list for PBXNativeTarget "TrenteVingtWidgetsExtension" */;
+			buildPhases = (
+				7B2F8DAF2A5B264E0090E88E /* Sources */,
+				7B2F8DB02A5B264E0090E88E /* Frameworks */,
+				7B2F8DB12A5B264E0090E88E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TrenteVingtWidgetsExtension;
+			productName = TrenteVingtWidgetsExtension;
+			productReference = 7B2F8DB32A5B264E0090E88E /* TrenteVingtWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		7B3F902F2A59BA6B00CE0BD4 /* TrenteVingt */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B3F90402A59BA6E00CE0BD4 /* Build configuration list for PBXNativeTarget "TrenteVingt" */;
@@ -80,10 +212,12 @@
 				7B3F902C2A59BA6B00CE0BD4 /* Sources */,
 				7B3F902D2A59BA6B00CE0BD4 /* Frameworks */,
 				7B3F902E2A59BA6B00CE0BD4 /* Resources */,
+				7B2F8DC42A5B26510090E88E /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7B2F8DC22A5B26510090E88E /* PBXTargetDependency */,
 			);
 			name = TrenteVingt;
 			productName = TrenteVingt;
@@ -100,6 +234,9 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					7B2F8DB22A5B264E0090E88E = {
+						CreatedOnToolsVersion = 15.0;
+					};
 					7B3F902F2A59BA6B00CE0BD4 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -112,6 +249,11 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
+				es,
+				de,
+				"pt-PT",
+				it,
 			);
 			mainGroup = 7B3F90272A59BA6B00CE0BD4;
 			productRefGroup = 7B3F90312A59BA6B00CE0BD4 /* Products */;
@@ -119,36 +261,126 @@
 			projectRoot = "";
 			targets = (
 				7B3F902F2A59BA6B00CE0BD4 /* TrenteVingt */,
+				7B2F8DB22A5B264E0090E88E /* TrenteVingtWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7B2F8DB12A5B264E0090E88E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B2F8DBF2A5B26510090E88E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7B3F902E2A59BA6B00CE0BD4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7B3F903B2A59BA6E00CE0BD4 /* Preview Assets.xcassets in Resources */,
 				7B3F90382A59BA6E00CE0BD4 /* Assets.xcassets in Resources */,
+				7BF8173A2A5B0622007027BF /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7B2F8DAF2A5B264E0090E88E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B2F8DBD2A5B264E0090E88E /* TrenteVingtWidgets.swift in Sources */,
+				7B2F8DBB2A5B264E0090E88E /* TrenteVingtWidgetsBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7B3F902C2A59BA6B00CE0BD4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B3F90362A59BA6B00CE0BD4 /* ContentView.swift in Sources */,
-				7B3F903D2A59BA6E00CE0BD4 /* Item.swift in Sources */,
+				7BF8172E2A5AB2B0007027BF /* WelcomeView.swift in Sources */,
+				7BF8172B2A5AB155007027BF /* OnboardingScreen.swift in Sources */,
 				7B3F90342A59BA6B00CE0BD4 /* TrenteVingtApp.swift in Sources */,
+				7B3F90492A59BC4B00CE0BD4 /* Transaction.swift in Sources */,
+				7BF817362A5AEC36007027BF /* VerticalSlider.swift in Sources */,
+				7B2F8DC92A5D981A0090E88E /* NewTransactionView.swift in Sources */,
+				7BF8173C2A5B0B13007027BF /* ConfirmationView.swift in Sources */,
+				7B2F8DCB2A5D9C5A0090E88E /* MonthView.swift in Sources */,
+				7BF817302A5AB57B007027BF /* MonthlyDisposableIncomeView.swift in Sources */,
+				7B3F90442A59BA8200CE0BD4 /* HomeView.swift in Sources */,
+				7BF817382A5AEC57007027BF /* BudgetRepartitionView.swift in Sources */,
+				7B3F90472A59BAA000CE0BD4 /* MonthBudget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7B2F8DC22A5B26510090E88E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B2F8DB22A5B264E0090E88E /* TrenteVingtWidgetsExtension */;
+			targetProxy = 7B2F8DC12A5B26510090E88E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		7B2F8DC52A5B26510090E88E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7T9Q86X738;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrenteVingtWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TrenteVingtWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = louiscarboestaque.TrenteVingt.TrenteVingtWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7B2F8DC62A5B26510090E88E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7T9Q86X738;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrenteVingtWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TrenteVingtWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = louiscarboestaque.TrenteVingt.TrenteVingtWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		7B3F903E2A59BA6E00CE0BD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -271,6 +503,7 @@
 		7B3F90412A59BA6E00CE0BD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +533,7 @@
 		7B3F90422A59BA6E00CE0BD4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -329,6 +563,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7B2F8DC72A5B26510090E88E /* Build configuration list for PBXNativeTarget "TrenteVingtWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B2F8DC52A5B26510090E88E /* Debug */,
+				7B2F8DC62A5B26510090E88E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7B3F902B2A59BA6B00CE0BD4 /* Build configuration list for PBXProject "TrenteVingt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

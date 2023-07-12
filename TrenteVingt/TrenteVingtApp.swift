@@ -1,10 +1,3 @@
-//
-//  TrenteVingtApp.swift
-//  TrenteVingt
-//
-//  Created by Louis Carbo Estaque on 08/07/2023.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -13,8 +6,8 @@ struct TrenteVingtApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .modelContainer(for: MonthBudget.self)
         }
-        .modelContainer(for: Item.self)
     }
 }

@@ -1,5 +1,258 @@
 {
   "sourceLanguage" : "en",
-  "strings" : {},
+  "strings" : {
+    "-" : {
+
+    },
+    "%lld%% - %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld%% - %2$@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld%% - %2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld%% - %2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld%% - %2$@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld%% - %2$@"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld%% - %2$@"
+          }
+        }
+      }
+    },
+    "+" : {
+
+    },
+    "Add" : {
+
+    },
+    "Add transaction" : {
+
+    },
+    "Adjust the handles to set the allocation of your monthly disposable income." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stellen Sie die Griffe ein, um die Verteilung Ihres monatlich verfügbaren Einkommens festzulegen."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajusta las asas para establecer la asignación de tu ingreso disponible mensual."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustez les poignées pour définir la répartition de votre revenu disponible mensuel."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajuste as alças para definir a alocação de sua renda disponível mensal."
+          }
+        }
+      }
+    },
+    "Adjust the handles to set the allocation of your monthly disposable income. You can change this at any time." : {
+
+    },
+    "Amount" : {
+
+    },
+    "And now, your budget" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Und jetzt, Ihr Budget"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y ahora, tu presupuesto"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Et maintenant, votre budget"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E agora, seu orçamento"
+          }
+        }
+      }
+    },
+    "Category" : {
+
+    },
+    "Currency" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Währung"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moneda"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monnaie"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moeda"
+          }
+        }
+      }
+    },
+    "Dining out, entertainment, vacations..." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Essen gehen, Unterhaltung, Urlaub..."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salir a comer, entretenimiento, vacaciones..."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sorties, divertissements, vacances..."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jantar fora, entretenimento, férias..."
+          }
+        }
+      }
+    },
+    "Dismiss" : {
+
+    },
+    "Emergency funds, retirement savings, loans..." : {
+
+    },
+    "Enter your monthly disposable income" : {
+
+    },
+    "Estimate your likely spending for this month. Remember, you can adjust this at any time during or between months." : {
+
+    },
+    "Give a title to the transaction" : {
+
+    },
+    "Housing, groceries, healthcare, transportation..." : {
+
+    },
+    "Let's get started" : {
+
+    },
+    "My monthly income varies" : {
+
+    },
+    "Needs" : {
+
+    },
+    "New Transaction" : {
+
+    },
+    "Next" : {
+
+    },
+    "on needs" : {
+
+    },
+    "on savings and debt repayment" : {
+
+    },
+    "on wants" : {
+
+    },
+    "Previous" : {
+
+    },
+    "Savings/Debts" : {
+
+    },
+    "Sign" : {
+
+    },
+    "Start Tracking" : {
+
+    },
+    "The simplest budget tracker" : {
+
+    },
+    "Think of your monthly disposable income as the money you're free to spend each month, once all the taxes are taken care of." : {
+
+    },
+    "Wants" : {
+
+    },
+    "We're all set!" : {
+
+    },
+    "Welcome to TrenteVingt" : {
+
+    },
+    "What is your monthly disposable income?" : {
+
+    },
+    "You can now start easily tracking your budget with TrenteVingt." : {
+
+    },
+    "You reached the end!" : {
+
+    }
+  },
   "version" : "1.0"
 }

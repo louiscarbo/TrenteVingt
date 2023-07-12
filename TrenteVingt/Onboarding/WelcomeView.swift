@@ -2,13 +2,17 @@ import SwiftUI
 
 struct WelcomeView: View {
     @Binding var selectedTab: Int
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(alignment: .leading) {
-            Spacer()
+            Image(colorScheme == .light ? "piggy-bank" : "piggy-bank-dark")
+                .resizable()
+                .frame(width: 317, height: 380)
+                .offset(x: 120, y: 20)
             Text("Welcome to TrenteVingt")
                 .font(.system(.largeTitle, design: .serif, weight: .bold))
-            Text("The easiest budget tracker")
+            Text("The simplest budget tracker")
                 .font(.system(.headline, design: .serif, weight: .semibold))
             Spacer()
             HStack {
