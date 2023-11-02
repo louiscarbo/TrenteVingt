@@ -3,27 +3,22 @@ import SwiftUI
 struct OnboardingScreen: View {
     @Binding var showOnboarding: Bool
     @State var selectedTab: Int = 1
+    
+    @State var newMonthBudget = MonthBudget()
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            WelcomeView(selectedTab: $selectedTab)
-                .tag(1)
-                .toolbar(.hidden, for: .tabBar)
-            MonthlyDisposableIncomeView(selectedTab: $selectedTab)
-                .tag(2)
-                .toolbar(.hidden, for: .tabBar)
-            BudgetRepartitionView(selectedTab: $selectedTab)
-                .tag(3)
-                .toolbar(.hidden, for: .tabBar)
-            ConfirmationView(showOnboarding: $showOnboarding, selectedTab: $selectedTab)
-                .tag(4)
-                .toolbar(.hidden, for: .tabBar)
+            WelcomeView(selectedTab: $selectedTab).tag(1)
+            MonthlyDisposableIncomeView(selectedTab: $selectedTab, monthBudget: newMonthBudget).tag(2)
+            BudgetRepartitionView(newMonthBudget: newMonthBudget, selectedTab: $selectedTab).tag(3)
+            ConfirmationView(showOnboarding: $showOnboarding, selectedTab: $selectedTab).tag(4)
         }
-        .toolbar(.hidden, for: .tabBar)
-        .interactiveDismissDisabled()
+        .tabViewStyle(.page(indexDisplayMode: .never))
+        .animation(.easeInOut, value: 1)
     }
 }
 
 #Preview {
     OnboardingScreen(showOnboarding: .constant(true))
+        .modelContainer(for: MonthBudget.self)
 }

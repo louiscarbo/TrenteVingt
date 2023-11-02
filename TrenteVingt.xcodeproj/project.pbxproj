@@ -10,23 +10,48 @@
 		7B2F8DB62A5B264E0090E88E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B2F8DB52A5B264E0090E88E /* WidgetKit.framework */; };
 		7B2F8DB82A5B264E0090E88E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B2F8DB72A5B264E0090E88E /* SwiftUI.framework */; };
 		7B2F8DBB2A5B264E0090E88E /* TrenteVingtWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F8DBA2A5B264E0090E88E /* TrenteVingtWidgetsBundle.swift */; };
-		7B2F8DBD2A5B264E0090E88E /* TrenteVingtWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F8DBC2A5B264E0090E88E /* TrenteVingtWidgets.swift */; };
+		7B2F8DBD2A5B264E0090E88E /* PieChartWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F8DBC2A5B264E0090E88E /* PieChartWidget.swift */; };
 		7B2F8DBF2A5B26510090E88E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B2F8DBE2A5B26510090E88E /* Assets.xcassets */; };
 		7B2F8DC32A5B26510090E88E /* TrenteVingtWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7B2F8DB32A5B264E0090E88E /* TrenteVingtWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		7B2F8DC92A5D981A0090E88E /* NewTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F8DC82A5D981A0090E88E /* NewTransactionView.swift */; };
 		7B2F8DCB2A5D9C5A0090E88E /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F8DCA2A5D9C5A0090E88E /* MonthView.swift */; };
+		7B2F8DD02A5EA2F90090E88E /* TransactionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F8DCF2A5EA2F90090E88E /* TransactionRowView.swift */; };
+		7B2F8DD22A5EA37A0090E88E /* AllTransactionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F8DD12A5EA3790090E88E /* AllTransactionsListView.swift */; };
 		7B3F90342A59BA6B00CE0BD4 /* TrenteVingtApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F90332A59BA6B00CE0BD4 /* TrenteVingtApp.swift */; };
 		7B3F90382A59BA6E00CE0BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B3F90372A59BA6E00CE0BD4 /* Assets.xcassets */; };
 		7B3F903B2A59BA6E00CE0BD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B3F903A2A59BA6E00CE0BD4 /* Preview Assets.xcassets */; };
-		7B3F90442A59BA8200CE0BD4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F90432A59BA8200CE0BD4 /* HomeView.swift */; };
 		7B3F90472A59BAA000CE0BD4 /* MonthBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F90462A59BAA000CE0BD4 /* MonthBudget.swift */; };
 		7B3F90492A59BC4B00CE0BD4 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F90482A59BC4B00CE0BD4 /* Transaction.swift */; };
+		7B7027302A7D38430012FA5B /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70272F2A7D38430012FA5B /* ChartView.swift */; };
+		7B7323832A81409000C6D6FD /* BudgetRepartitionSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7323822A81409000C6D6FD /* BudgetRepartitionSlider.swift */; };
+		7B7323852A81470200C6D6FD /* NewMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7323842A81470200C6D6FD /* NewMonthView.swift */; };
+		7B7323892A867AD000C6D6FD /* MonthDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7323882A867AD000C6D6FD /* MonthDetailsView.swift */; };
+		7B78C6482AB9C5B200A9E839 /* ChartLegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B78C6472AB9C5B200A9E839 /* ChartLegendView.swift */; };
+		7B868ED72AEEBB97008BA1C5 /* MonthStartingDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B868ED62AEEBB97008BA1C5 /* MonthStartingDayView.swift */; };
+		7B868ED92AF011C2008BA1C5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7B868ED82AF011C2008BA1C5 /* Localizable.xcstrings */; };
+		7B868EDA2AF011C2008BA1C5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7B868ED82AF011C2008BA1C5 /* Localizable.xcstrings */; };
+		7B9996352AE6BA9200F3C243 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9996342AE6BA9200F3C243 /* CreditsView.swift */; };
+		7B9996392AE6C87C00F3C243 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9996382AE6C87C00F3C243 /* BarChartView.swift */; };
+		7B99963B2AE6C8DC00F3C243 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99963A2AE6C8DC00F3C243 /* PieChartView.swift */; };
+		7B99963C2AE6CA8500F3C243 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9996382AE6C87C00F3C243 /* BarChartView.swift */; };
+		7B99963D2AE6CA8500F3C243 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99963A2AE6C8DC00F3C243 /* PieChartView.swift */; };
+		7B9996402AE7DB8E00F3C243 /* AllMonthsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99963F2AE7DB8E00F3C243 /* AllMonthsView.swift */; };
+		7B9996422AE7DBE600F3C243 /* MonthRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9996412AE7DBE600F3C243 /* MonthRowView.swift */; };
+		7BAABC4E2A9B5314001D07F7 /* NewTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAABC4D2A9B5314001D07F7 /* NewTransactionView.swift */; };
+		7BAB4E622AEC355D002AC0AD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB4E612AEC355D002AC0AD /* SettingsView.swift */; };
+		7BAB4E652AED52A8002AC0AD /* NotificationsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB4E642AED52A8002AC0AD /* NotificationsSettingsView.swift */; };
+		7BAB4E692AED5431002AC0AD /* NotificationsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB4E682AED5431002AC0AD /* NotificationsHandler.swift */; };
+		7BAB4E6C2AEE5B2A002AC0AD /* BackgroundTaskHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB4E6B2AEE5B2A002AC0AD /* BackgroundTaskHandler.swift */; };
+		7BC5EF022A868AB200B02275 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC5EF012A868AB200B02275 /* TransactionDetailView.swift */; };
+		7BDAE06C2AE0746800CD20C4 /* MonthBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F90462A59BAA000CE0BD4 /* MonthBudget.swift */; };
+		7BDAE06D2AE078AA00CD20C4 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F90482A59BC4B00CE0BD4 /* Transaction.swift */; };
+		7BDAE06F2AE10DF600CD20C4 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70272F2A7D38430012FA5B /* ChartView.swift */; };
+		7BDAE0712AE112B000CD20C4 /* RemainingSpentWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDAE0702AE112B000CD20C4 /* RemainingSpentWidget.swift */; };
+		7BDAE0722AE112B000CD20C4 /* RemainingSpentWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDAE0702AE112B000CD20C4 /* RemainingSpentWidget.swift */; };
 		7BF8172B2A5AB155007027BF /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8172A2A5AB155007027BF /* OnboardingScreen.swift */; };
 		7BF8172E2A5AB2B0007027BF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8172D2A5AB2B0007027BF /* WelcomeView.swift */; };
 		7BF817302A5AB57B007027BF /* MonthlyDisposableIncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8172F2A5AB57B007027BF /* MonthlyDisposableIncomeView.swift */; };
 		7BF817362A5AEC36007027BF /* VerticalSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF817352A5AEC36007027BF /* VerticalSlider.swift */; };
 		7BF817382A5AEC57007027BF /* BudgetRepartitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF817372A5AEC57007027BF /* BudgetRepartitionView.swift */; };
-		7BF8173A2A5B0622007027BF /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7BF817392A5B0622007027BF /* Localizable.xcstrings */; };
 		7BF8173C2A5B0B13007027BF /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8173B2A5B0B13007027BF /* ConfirmationView.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,28 +80,50 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7B0780322A8BE5E20076979D /* TrenteVingt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrenteVingt.entitlements; sourceTree = "<group>"; };
+		7B0780332A8BEAF70076979D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7B2F8DB32A5B264E0090E88E /* TrenteVingtWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TrenteVingtWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B2F8DB52A5B264E0090E88E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		7B2F8DB72A5B264E0090E88E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		7B2F8DBA2A5B264E0090E88E /* TrenteVingtWidgetsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenteVingtWidgetsBundle.swift; sourceTree = "<group>"; };
-		7B2F8DBC2A5B264E0090E88E /* TrenteVingtWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenteVingtWidgets.swift; sourceTree = "<group>"; };
+		7B2F8DBC2A5B264E0090E88E /* PieChartWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartWidget.swift; sourceTree = "<group>"; };
 		7B2F8DBE2A5B26510090E88E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B2F8DC02A5B26510090E88E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7B2F8DC82A5D981A0090E88E /* NewTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionView.swift; sourceTree = "<group>"; };
 		7B2F8DCA2A5D9C5A0090E88E /* MonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
+		7B2F8DCF2A5EA2F90090E88E /* TransactionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRowView.swift; sourceTree = "<group>"; };
+		7B2F8DD12A5EA3790090E88E /* AllTransactionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTransactionsListView.swift; sourceTree = "<group>"; };
 		7B3F90302A59BA6B00CE0BD4 /* TrenteVingt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrenteVingt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3F90332A59BA6B00CE0BD4 /* TrenteVingtApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenteVingtApp.swift; sourceTree = "<group>"; };
 		7B3F90372A59BA6E00CE0BD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B3F903A2A59BA6E00CE0BD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7B3F90432A59BA8200CE0BD4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7B3F90462A59BAA000CE0BD4 /* MonthBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthBudget.swift; sourceTree = "<group>"; };
 		7B3F90482A59BC4B00CE0BD4 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		7B70272F2A7D38430012FA5B /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		7B7323822A81409000C6D6FD /* BudgetRepartitionSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRepartitionSlider.swift; sourceTree = "<group>"; };
+		7B7323842A81470200C6D6FD /* NewMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMonthView.swift; sourceTree = "<group>"; };
+		7B7323882A867AD000C6D6FD /* MonthDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDetailsView.swift; sourceTree = "<group>"; };
+		7B78C6472AB9C5B200A9E839 /* ChartLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartLegendView.swift; sourceTree = "<group>"; };
+		7B868ED62AEEBB97008BA1C5 /* MonthStartingDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthStartingDayView.swift; sourceTree = "<group>"; };
+		7B868ED82AF011C2008BA1C5 /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		7B9996342AE6BA9200F3C243 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		7B9996382AE6C87C00F3C243 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
+		7B99963A2AE6C8DC00F3C243 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		7B99963E2AE6CBC600F3C243 /* TrenteVingtDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrenteVingtDebug.entitlements; sourceTree = "<group>"; };
+		7B99963F2AE7DB8E00F3C243 /* AllMonthsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMonthsView.swift; sourceTree = "<group>"; };
+		7B9996412AE7DBE600F3C243 /* MonthRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthRowView.swift; sourceTree = "<group>"; };
+		7BAABC4D2A9B5314001D07F7 /* NewTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionView.swift; sourceTree = "<group>"; };
+		7BAB4E612AEC355D002AC0AD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7BAB4E642AED52A8002AC0AD /* NotificationsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsView.swift; sourceTree = "<group>"; };
+		7BAB4E682AED5431002AC0AD /* NotificationsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHandler.swift; sourceTree = "<group>"; };
+		7BAB4E6B2AEE5B2A002AC0AD /* BackgroundTaskHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTaskHandler.swift; sourceTree = "<group>"; };
+		7BC5EF012A868AB200B02275 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
+		7BDAE06E2AE0F82200CD20C4 /* TrenteVingtWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrenteVingtWidgetsExtension.entitlements; sourceTree = "<group>"; };
+		7BDAE0702AE112B000CD20C4 /* RemainingSpentWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainingSpentWidget.swift; sourceTree = "<group>"; };
 		7BF8172A2A5AB155007027BF /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 		7BF8172D2A5AB2B0007027BF /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		7BF8172F2A5AB57B007027BF /* MonthlyDisposableIncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyDisposableIncomeView.swift; sourceTree = "<group>"; };
 		7BF817352A5AEC36007027BF /* VerticalSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSlider.swift; sourceTree = "<group>"; };
 		7BF817372A5AEC57007027BF /* BudgetRepartitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRepartitionView.swift; sourceTree = "<group>"; };
-		7BF817392A5B0622007027BF /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		7BF8173B2A5B0B13007027BF /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,16 +160,30 @@
 			isa = PBXGroup;
 			children = (
 				7B2F8DBA2A5B264E0090E88E /* TrenteVingtWidgetsBundle.swift */,
-				7B2F8DBC2A5B264E0090E88E /* TrenteVingtWidgets.swift */,
+				7B2F8DBC2A5B264E0090E88E /* PieChartWidget.swift */,
+				7BDAE0702AE112B000CD20C4 /* RemainingSpentWidget.swift */,
 				7B2F8DBE2A5B26510090E88E /* Assets.xcassets */,
 				7B2F8DC02A5B26510090E88E /* Info.plist */,
 			);
 			path = TrenteVingtWidgets;
 			sourceTree = "<group>";
 		};
+		7B2F8DCC2A5E99360090E88E /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				7BAABC4D2A9B5314001D07F7 /* NewTransactionView.swift */,
+				7B2F8DD12A5EA3790090E88E /* AllTransactionsListView.swift */,
+				7B2F8DCF2A5EA2F90090E88E /* TransactionRowView.swift */,
+				7BC5EF012A868AB200B02275 /* TransactionDetailView.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
 		7B3F90272A59BA6B00CE0BD4 = {
 			isa = PBXGroup;
 			children = (
+				7B868ED82AF011C2008BA1C5 /* Localizable.xcstrings */,
+				7BDAE06E2AE0F82200CD20C4 /* TrenteVingtWidgetsExtension.entitlements */,
 				7B3F90322A59BA6B00CE0BD4 /* TrenteVingt */,
 				7B2F8DB92A5B264E0090E88E /* TrenteVingtWidgets */,
 				7B2F8DB42A5B264E0090E88E /* Frameworks */,
@@ -142,12 +203,15 @@
 		7B3F90322A59BA6B00CE0BD4 /* TrenteVingt */ = {
 			isa = PBXGroup;
 			children = (
-				7BF817392A5B0622007027BF /* Localizable.xcstrings */,
+				7B99963E2AE6CBC600F3C243 /* TrenteVingtDebug.entitlements */,
+				7B0780332A8BEAF70076979D /* Info.plist */,
+				7B0780322A8BE5E20076979D /* TrenteVingt.entitlements */,
 				7B3F90332A59BA6B00CE0BD4 /* TrenteVingtApp.swift */,
 				7B3F90452A59BA9700CE0BD4 /* Models */,
-				7B3F90432A59BA8200CE0BD4 /* HomeView.swift */,
-				7B2F8DCA2A5D9C5A0090E88E /* MonthView.swift */,
-				7B2F8DC82A5D981A0090E88E /* NewTransactionView.swift */,
+				7BAB4E632AED5197002AC0AD /* Settings */,
+				7B9996372AE6BB0700F3C243 /* Month */,
+				7B9996362AE6BABF00F3C243 /* Main Charts */,
+				7B2F8DCC2A5E99360090E88E /* Transaction */,
 				7BF8172C2A5AB292007027BF /* Onboarding */,
 				7B3F90372A59BA6E00CE0BD4 /* Assets.xcassets */,
 				7B3F90392A59BA6E00CE0BD4 /* Preview Content */,
@@ -168,8 +232,45 @@
 			children = (
 				7B3F90462A59BAA000CE0BD4 /* MonthBudget.swift */,
 				7B3F90482A59BC4B00CE0BD4 /* Transaction.swift */,
+				7BAB4E682AED5431002AC0AD /* NotificationsHandler.swift */,
+				7BAB4E6B2AEE5B2A002AC0AD /* BackgroundTaskHandler.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7B9996362AE6BABF00F3C243 /* Main Charts */ = {
+			isa = PBXGroup;
+			children = (
+				7B70272F2A7D38430012FA5B /* ChartView.swift */,
+				7B9996382AE6C87C00F3C243 /* BarChartView.swift */,
+				7B99963A2AE6C8DC00F3C243 /* PieChartView.swift */,
+				7B78C6472AB9C5B200A9E839 /* ChartLegendView.swift */,
+			);
+			path = "Main Charts";
+			sourceTree = "<group>";
+		};
+		7B9996372AE6BB0700F3C243 /* Month */ = {
+			isa = PBXGroup;
+			children = (
+				7B99963F2AE7DB8E00F3C243 /* AllMonthsView.swift */,
+				7B9996412AE7DBE600F3C243 /* MonthRowView.swift */,
+				7B2F8DCA2A5D9C5A0090E88E /* MonthView.swift */,
+				7B7323882A867AD000C6D6FD /* MonthDetailsView.swift */,
+				7B7323822A81409000C6D6FD /* BudgetRepartitionSlider.swift */,
+				7B7323842A81470200C6D6FD /* NewMonthView.swift */,
+			);
+			path = Month;
+			sourceTree = "<group>";
+		};
+		7BAB4E632AED5197002AC0AD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7B9996342AE6BA9200F3C243 /* CreditsView.swift */,
+				7BAB4E612AEC355D002AC0AD /* SettingsView.swift */,
+				7BAB4E642AED52A8002AC0AD /* NotificationsSettingsView.swift */,
+				7B868ED62AEEBB97008BA1C5 /* MonthStartingDayView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		7BF8172C2A5AB292007027BF /* Onboarding */ = {
@@ -271,6 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B868EDA2AF011C2008BA1C5 /* Localizable.xcstrings in Resources */,
 				7B2F8DBF2A5B26510090E88E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,7 +383,7 @@
 			files = (
 				7B3F903B2A59BA6E00CE0BD4 /* Preview Assets.xcassets in Resources */,
 				7B3F90382A59BA6E00CE0BD4 /* Assets.xcassets in Resources */,
-				7BF8173A2A5B0622007027BF /* Localizable.xcstrings in Resources */,
+				7B868ED92AF011C2008BA1C5 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,8 +394,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B2F8DBD2A5B264E0090E88E /* TrenteVingtWidgets.swift in Sources */,
+				7B99963D2AE6CA8500F3C243 /* PieChartView.swift in Sources */,
+				7B2F8DBD2A5B264E0090E88E /* PieChartWidget.swift in Sources */,
 				7B2F8DBB2A5B264E0090E88E /* TrenteVingtWidgetsBundle.swift in Sources */,
+				7BDAE06D2AE078AA00CD20C4 /* Transaction.swift in Sources */,
+				7BDAE06F2AE10DF600CD20C4 /* ChartView.swift in Sources */,
+				7B99963C2AE6CA8500F3C243 /* BarChartView.swift in Sources */,
+				7BDAE06C2AE0746800CD20C4 /* MonthBudget.swift in Sources */,
+				7BDAE0722AE112B000CD20C4 /* RemainingSpentWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,18 +409,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B99963B2AE6C8DC00F3C243 /* PieChartView.swift in Sources */,
+				7BAB4E692AED5431002AC0AD /* NotificationsHandler.swift in Sources */,
+				7B9996402AE7DB8E00F3C243 /* AllMonthsView.swift in Sources */,
 				7BF8172E2A5AB2B0007027BF /* WelcomeView.swift in Sources */,
+				7B9996392AE6C87C00F3C243 /* BarChartView.swift in Sources */,
 				7BF8172B2A5AB155007027BF /* OnboardingScreen.swift in Sources */,
+				7B2F8DD22A5EA37A0090E88E /* AllTransactionsListView.swift in Sources */,
 				7B3F90342A59BA6B00CE0BD4 /* TrenteVingtApp.swift in Sources */,
+				7B78C6482AB9C5B200A9E839 /* ChartLegendView.swift in Sources */,
+				7B7323852A81470200C6D6FD /* NewMonthView.swift in Sources */,
+				7BAB4E652AED52A8002AC0AD /* NotificationsSettingsView.swift in Sources */,
+				7BC5EF022A868AB200B02275 /* TransactionDetailView.swift in Sources */,
+				7B9996422AE7DBE600F3C243 /* MonthRowView.swift in Sources */,
+				7B7323832A81409000C6D6FD /* BudgetRepartitionSlider.swift in Sources */,
 				7B3F90492A59BC4B00CE0BD4 /* Transaction.swift in Sources */,
 				7BF817362A5AEC36007027BF /* VerticalSlider.swift in Sources */,
-				7B2F8DC92A5D981A0090E88E /* NewTransactionView.swift in Sources */,
 				7BF8173C2A5B0B13007027BF /* ConfirmationView.swift in Sources */,
+				7B7027302A7D38430012FA5B /* ChartView.swift in Sources */,
+				7B868ED72AEEBB97008BA1C5 /* MonthStartingDayView.swift in Sources */,
+				7B9996352AE6BA9200F3C243 /* CreditsView.swift in Sources */,
 				7B2F8DCB2A5D9C5A0090E88E /* MonthView.swift in Sources */,
 				7BF817302A5AB57B007027BF /* MonthlyDisposableIncomeView.swift in Sources */,
-				7B3F90442A59BA8200CE0BD4 /* HomeView.swift in Sources */,
 				7BF817382A5AEC57007027BF /* BudgetRepartitionView.swift in Sources */,
+				7BAB4E6C2AEE5B2A002AC0AD /* BackgroundTaskHandler.swift in Sources */,
 				7B3F90472A59BAA000CE0BD4 /* MonthBudget.swift in Sources */,
+				7BDAE0712AE112B000CD20C4 /* RemainingSpentWidget.swift in Sources */,
+				7B7323892A867AD000C6D6FD /* MonthDetailsView.swift in Sources */,
+				7BAABC4E2A9B5314001D07F7 /* NewTransactionView.swift in Sources */,
+				7B2F8DD02A5EA2F90090E88E /* TransactionRowView.swift in Sources */,
+				7BAB4E622AEC355D002AC0AD /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TrenteVingtWidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7T9Q86X738;
@@ -348,9 +475,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = louiscarboestaque.TrenteVingt.TrenteVingtWidgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -359,6 +489,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TrenteVingtWidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7T9Q86X738;
@@ -375,9 +506,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = louiscarboestaque.TrenteVingt.TrenteVingtWidgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -506,17 +640,23 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TrenteVingt/TrenteVingtDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TrenteVingt/Preview Content\"";
 				DEVELOPMENT_TEAM = 7T9Q86X738;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrenteVingt/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TrenteVingt;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -524,9 +664,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = louiscarboestaque.TrenteVingt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -536,17 +680,23 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TrenteVingt/TrenteVingt.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TrenteVingt/Preview Content\"";
 				DEVELOPMENT_TEAM = 7T9Q86X738;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrenteVingt/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TrenteVingt;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -554,9 +704,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = louiscarboestaque.TrenteVingt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

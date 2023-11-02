@@ -5,9 +5,11 @@ struct MonthlyDisposableIncomeView: View {
     @Environment(\.colorScheme) var colorScheme
     @Binding var selectedTab: Int
     
-    @Bindable var monthBudget : MonthBudget = MonthBudget()
+    var monthBudget : MonthBudget
     @FocusState var isFocused: Bool
     @State var myMonthlyIncomeVaries: Bool = false
+    @State var monthlyBudget: Double = 0
+    @State var currencySymbolSFName: String = ""
 
     var body: some View {
         VStack {
@@ -28,23 +30,29 @@ struct MonthlyDisposableIncomeView: View {
                         .font(.system(.callout, design: .serif))
                         .italic()
                     HStack {
-                        TextField("Enter your monthly disposable income", value: $monthBudget.monthlyBudget, format: .number)
+                        TextField("Enter your monthly disposable income", value: $monthlyBudget, format: .number)
                             .focused($isFocused)
                             .font(.system(.callout, design: .serif, weight: .bold))
                             .textFieldStyle(.roundedBorder)
                             .keyboardType(.numberPad)
-                        Picker("Currency", selection: $monthBudget.currencySymbolSFName) {
+                            .onChange(of: monthlyBudget) {
+                                monthBudget.monthlyBudget = monthlyBudget
+                            }
+                        Picker("Currency", selection: $currencySymbolSFName) {
                             ForEach(Currency.allCases, id: \.self) { currency in
                                 Image(systemName: currency.rawValue).tag(currency.rawValue)
                             }
                         }
                         .pickerStyle(.palette)
-                        .onChange(of: monthBudget.currencySymbolSFName) {
+                        .onChange(of: currencySymbolSFName) {
                             isFocused = false
+                            monthBudget.currencySymbolSFName = currencySymbolSFName
                         }
                     }
                     Button {
-                        myMonthlyIncomeVaries.toggle()
+                        withAnimation {
+                            myMonthlyIncomeVaries.toggle()
+                        }
                     } label: {
                         Text("My monthly income varies")
                             .font(.system(.callout, design: .serif))
@@ -52,7 +60,7 @@ struct MonthlyDisposableIncomeView: View {
                     }
                     if myMonthlyIncomeVaries {
                         Divider()
-                        Text("Estimate your likely spending for this month. Remember, you can adjust this at any time during or between months.")
+                        Text("You can try to estimate your likely income for this month, or you can set it to 0 and log new income as your receive it.")
                             .font(.system(.callout, design: .serif))
                             .italic()
                         Divider()
@@ -63,7 +71,9 @@ struct MonthlyDisposableIncomeView: View {
             .scrollDismissesKeyboard(.interactively)
             HStack {
                 Button {
-                    selectedTab -= 1
+                    withAnimation {
+                        selectedTab -= 1
+                    }
                 } label: {
                     Text("Previous")
                         .font(.system(.title3, design: .serif))
@@ -77,18 +87,20 @@ struct MonthlyDisposableIncomeView: View {
                 
                 Button {
                     modelContext.insert(monthBudget)
-                    selectedTab += 1
+                    withAnimation {
+                        selectedTab += 1
+                    }
                 } label: {
                     Text("Next")
                         .font(.system(.title3, design: .serif))
                         .foregroundStyle(.white)
                 }
-                .disabled(monthBudget.monthlyBudget == 0 || monthBudget.currencySymbolSFName == "")
+                .disabled(monthBudget.currencySymbolSFName == "")
                 .tint(.black)
                 .buttonStyle(.borderedProminent)
                 .buttonBorderShape(.capsule)
             }
-            .padding([.leading, .trailing])
+            .padding([.leading, .trailing, .bottom])
         }
     }
 }

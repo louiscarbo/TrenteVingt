@@ -18,7 +18,9 @@ struct WelcomeView: View {
             HStack {
                 Spacer()
                 Button {
-                    selectedTab += 1
+                    withAnimation {
+                        selectedTab += 1
+                    }
                 } label: {
                     Text("Next")
                         .font(.system(.title3, design: .serif))

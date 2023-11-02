@@ -1,33 +1,38 @@
 import SwiftData
+import SwiftUI
+import Foundation
 
 @Model
 final class Transaction {
-    var monthBudget: MonthBudget
-    var title: String
-    var amount: Double
-    var categoryDesignation: String
+    var monthBudget: MonthBudget?
+    var title: String = ""
+    var amount: Double = 0.0
+    var addedDate: Date = Date()
+    var category: transactionCategory = transactionCategory.needs
 
-    init(monthBudget: MonthBudget, title: String = "", amount: Double = 0.0, categoryDesignation: String = "Needs") {
-        self.monthBudget = monthBudget
+    init(title: String, amount: Double, category: transactionCategory) {
         self.title = title
         self.amount = amount
-        self.categoryDesignation = categoryDesignation
+        self.category = category
     }
 }
 
 // Workaround for working with SwiftData in iOS 17 Beta 3 (maybe later?)
 extension Transaction {
-    var category: transactionCategory {
-        switch categoryDesignation{
-        case "Wants": .wants
-        case "Savings and debts": .savingsDebts
-        default: .needs
+    @Transient
+    var categoryColor: Color {
+        switch category {
+        case .wants: .yellow
+        case .savingsDebts: .green
+        case .positiveTransaction: .pink
+        default: .blue
         }
     }
 }
 
-enum transactionCategory: String {
-    case needs
-    case wants
-    case savingsDebts
+enum transactionCategory: String, Codable {
+    case needs = "Needs"
+    case wants = "Wants"
+    case savingsDebts = "Savings & Debts"
+    case positiveTransaction = "Positive Transaction"
 }

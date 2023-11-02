@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C21696E0-9EE5-4E1F-A6FD-79D2EC8888D6"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "155BE3AE-5A77-4779-A2F5-853A87B9B26B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrenteVingt/Models/BackgroundTaskHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "scheduleAppRefresh()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "155BE3AE-5A77-4779-A2F5-853A87B9B26B - 48ec8d4f9b814946"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrenteVingt.scheduleAppRefresh() -&gt; ()"
+                  moduleName = "TrenteVingt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/louiscarboestaque/Desktop/XCode/TrenteVingt/TrenteVingt/Models/BackgroundTaskHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "1224">
+               </Location>
+               <Location
+                  uuid = "155BE3AE-5A77-4779-A2F5-853A87B9B26B - 48ec8d4f9b8149e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrenteVingt.scheduleAppRefresh() -&gt; ()"
+                  moduleName = "TrenteVingt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/louiscarboestaque/Desktop/XCode/TrenteVingt/TrenteVingt/Models/BackgroundTaskHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "1188">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

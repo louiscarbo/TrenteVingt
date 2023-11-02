@@ -4,15 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>English.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>TrenteVingt.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>TrenteVingtWidgetsExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>7B2F8DB22A5B264E0090E88E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7B3F902F2A59BA6B00CE0BD4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

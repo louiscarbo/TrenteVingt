@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct VerticalSlider: View {
-    @State var heightSlider1: Int = 200
-    @State var heightSlider2: Int = 320
-    @State var maxHeight: CGFloat = 400
+    @State var heightSlider1: Double = 200
+    @State var heightSlider2: Double = 320
+    @State var maxHeight: CGFloat
     @State var cornerRadius: CGFloat = 20
     
     var monthBudget: MonthBudget
@@ -12,12 +12,12 @@ struct VerticalSlider: View {
         GeometryReader { geometry in
             ZStack(alignment: .top) {
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .foregroundStyle(.blue)
+                    .foregroundStyle(.green)
                     .frame(maxWidth: 90, maxHeight: geometry.size.height)
                 
                 VStack(spacing: 0) {
                     Rectangle()
-                        .foregroundStyle(.green)
+                        .foregroundStyle(.yellow)
                         .frame(height: CGFloat(heightSlider2))
                     Spacer()
                 }
@@ -30,10 +30,10 @@ struct VerticalSlider: View {
                         DragGesture()
                             .onChanged { value in
                                 if value.location.y <= geometry.size.height && value.location.y >= 0 && value.location.y >= CGFloat(heightSlider1){
-                                    heightSlider2 = Int(value.location.y)
+                                    heightSlider2 = Double(value.location.y)
                                     
-                                    monthBudget.needsBudgetRepartition = Int(heightSlider1*100/Int(geometry.size.height))
-                                    monthBudget.wantsBudgetRepartition = Int((heightSlider2 - heightSlider1)*100/Int(geometry.size.height))
+                                    monthBudget.needsBudgetRepartition = Double(heightSlider1*100/Double(geometry.size.height))
+                                    monthBudget.wantsBudgetRepartition = Double((heightSlider2 - heightSlider1)*100/Double(geometry.size.height))
                                     monthBudget.savingsDebtsBudgetRepartition = 100 - monthBudget.needsBudgetRepartition - monthBudget.wantsBudgetRepartition
                                 }
                             }
@@ -41,7 +41,7 @@ struct VerticalSlider: View {
                 
                 VStack(spacing: 0) {
                     Rectangle()
-                        .foregroundStyle(.gray)
+                        .foregroundStyle(.blue)
                         .frame(height: CGFloat(heightSlider1))
                     Spacer()
                 }
@@ -54,16 +54,35 @@ struct VerticalSlider: View {
                         DragGesture()
                             .onChanged { value in
                                 if value.location.y <= maxHeight && value.location.y >= 0 && value.location.y <= CGFloat(heightSlider2) {
-                                    heightSlider1 = Int(value.location.y)
+                                    heightSlider1 = Double(value.location.y)
                                     
-                                    monthBudget.needsBudgetRepartition = Int(heightSlider1*100/Int(geometry.size.height))
-                                    monthBudget.wantsBudgetRepartition = Int((heightSlider2 - heightSlider1)*100/Int(geometry.size.height))
+                                    monthBudget.needsBudgetRepartition = Double(heightSlider1*100/Double(geometry.size.height))
+                                    monthBudget.wantsBudgetRepartition = Double((heightSlider2 - heightSlider1)*100/Double(geometry.size.height))
                                     monthBudget.savingsDebtsBudgetRepartition = 100 - monthBudget.needsBudgetRepartition - monthBudget.wantsBudgetRepartition
                                 }
                             }
                     )
             }
+            .frame(height: maxHeight)
+            .onAppear {
+                updateHeights()
+            }
+            .onChange(of: monthBudget.needsBudgetRepartition) {
+                updateHeights()
+            }
+            .onChange(of: monthBudget.wantsBudgetRepartition) {
+                updateHeights()
+            }
+            .onChange(of: monthBudget.savingsDebtsBudgetRepartition) {
+                updateHeights()
+            }
         }
         .frame(width: 100)
     }
+    
+    func updateHeights() {
+        heightSlider1 = monthBudget.needsPercentage * 400
+        heightSlider2 = (monthBudget.wantsPercentage + monthBudget.needsPercentage) * 400
+    }
 }
+

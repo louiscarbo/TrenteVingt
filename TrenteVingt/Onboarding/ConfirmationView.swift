@@ -17,6 +17,7 @@ struct ConfirmationView: View {
             Text("You can now start easily tracking your budget with TrenteVingt.")
                 .font(.system(.headline, design: .serif, weight: .semibold))
                 .multilineTextAlignment(.center)
+                .padding()
             Spacer()
             Button {
                 showOnboarding = false
@@ -29,7 +30,9 @@ struct ConfirmationView: View {
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.capsule)
             Button {
-                selectedTab -= 1
+                withAnimation {
+                    selectedTab -= 1
+                }
             } label: {
                 Text("Previous")
                     .font(.system(.headline, design: .serif))
