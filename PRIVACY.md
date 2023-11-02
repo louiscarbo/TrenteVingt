@@ -1,6 +1,6 @@
 # Privacy Policy for TrenteVingt
 
-Last updated: [Insert Date]
+Last updated: November 2nd 2023
 
 ## Introduction
 
@@ -29,6 +29,8 @@ If you have any questions about this privacy policy, please contact us at trente
 ## Policy Updates
 
 We may update our privacy policy from time to time. These changes will be posted here with an updated revision date. We encourage users to frequently check this policy for any changes to stay informed about how we are helping to protect the personal information we process.
+
+Should TrenteVingt ever begin to collect user data, we will provide clear in-app notifications to obtain your consent prior to any data collection activities.
 
 ## Compliance
 
