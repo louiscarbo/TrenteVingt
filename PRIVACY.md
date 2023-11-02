@@ -30,7 +30,9 @@ If you have any questions about this privacy policy, please contact us at trente
 
 We may update our privacy policy from time to time. These changes will be posted here with an updated revision date. We encourage users to frequently check this policy for any changes to stay informed about how we are helping to protect the personal information we process.
 
-Should TrenteVingt ever begin to collect user data, we will provide clear in-app notifications to obtain your consent prior to any data collection activities.
+## Future Data Collection
+
+If in the future TrenteVingt starts collecting data for app functionality, users will be informed with clear in-app notifications to obtain their consent prior to any data collection activities. Such data would be declared on our App Store Connect privacy label and used strictly for the stated purpose of enhancing app functionality.
 
 ## Compliance
 
