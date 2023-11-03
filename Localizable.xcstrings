@@ -519,6 +519,33 @@
         }
       }
     },
+    "Add your first interaction now and see how your budget evolves!" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez votre première transactions dès maintenant et voyez comment votre budget évolue !"
+          }
+        }
+      }
+    },
+    "Add your first transaction now and see how your budget evolves!" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agrega tu primera transacción ahora y ¡mira cómo evoluciona tu presupuesto!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez votre première transactions dès maintenant et voyez comment votre budget évolue !"
+          }
+        }
+      }
+    },
     "Add your first transaction now!" : {
       "localizations" : {
         "es" : {

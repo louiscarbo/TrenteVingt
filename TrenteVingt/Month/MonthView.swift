@@ -24,19 +24,17 @@ struct MonthView: View {
         ZStack(alignment: .bottom) {
             VStack(alignment: .leading) {
                 if let transactions = monthBudget.transactions {
-                    if transactions.isEmpty {
-                        Text("Add your first transaction now!")
-                    } else {
-                        List {
-                            ChartView(monthBudget: monthBudget, showRemaining: $showRemaining)
-                                .listRowBackground(Color(.clear))
-                                .id(updateCharts)
-                                .onChange(of: monthBudget.transactions) {
-                                    updateCharts.toggle()
-                                }
-                            Section {
-                                ChartLegendView(monthBudget: monthBudget, showRemaining: $showRemaining)
+                    List {
+                        ChartView(monthBudget: monthBudget, showRemaining: $showRemaining)
+                            .listRowBackground(Color(.clear))
+                            .id(updateCharts)
+                            .onChange(of: monthBudget.transactions) {
+                                updateCharts.toggle()
                             }
+                        Section {
+                            ChartLegendView(monthBudget: monthBudget, showRemaining: $showRemaining)
+                        }
+                        if transactions.count > 0 {
                             Section("Transactions") {
                                 ForEach(transactionsDisplayedInList.prefix(5)) { transaction in
                                     TransactionRowView(transaction: transaction, monthBudget: monthBudget)
@@ -46,10 +44,16 @@ struct MonthView: View {
                                     Text("Show all transactions")
                                 }
                             }
-                            Text("")
-                                .listRowBackground(Color(.clear))
+                        } else {
+                            Section {
+                                Text("Add your first transaction now and see how your budget evolves!")
+                            }
                         }
+                        Text("")
+                            .listRowBackground(Color(.clear))
                     }
+                } else {
+                    Text("Add your first transaction now!")
                 }
             }
             .onChange(of: shouldDismiss) {
