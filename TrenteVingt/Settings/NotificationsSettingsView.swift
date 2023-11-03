@@ -42,7 +42,7 @@ struct NotificationsSettingsView: View {
                             }
                             Text(":")
                             Picker("Minutes", selection: $minutes) {
-                                ForEach(0..<13) { i in
+                                ForEach(0..<12) { i in
                                     Text("\(i*5)").tag(i*5)
                                 }
                             }

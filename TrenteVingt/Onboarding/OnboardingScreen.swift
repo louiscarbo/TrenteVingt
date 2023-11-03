@@ -11,7 +11,8 @@ struct OnboardingScreen: View {
             WelcomeView(selectedTab: $selectedTab).tag(1)
             MonthlyDisposableIncomeView(selectedTab: $selectedTab, monthBudget: newMonthBudget).tag(2)
             BudgetRepartitionView(newMonthBudget: newMonthBudget, selectedTab: $selectedTab).tag(3)
-            ConfirmationView(showOnboarding: $showOnboarding, selectedTab: $selectedTab).tag(4)
+            OnboardingNotificationsView(selectedTab: $selectedTab).tag(4)
+            ConfirmationView(showOnboarding: $showOnboarding, selectedTab: $selectedTab).tag(5)
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
         .animation(.easeInOut, value: 1)

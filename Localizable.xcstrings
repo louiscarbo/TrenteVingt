@@ -49,6 +49,9 @@
         }
       }
     },
+    "**TrenteVingt** can send you a notification each day to remind you to log your latest transactions." : {
+
+    },
     "%@" : {
       "localizations" : {
         "es" : {
@@ -735,6 +738,9 @@
         }
       }
     },
+    "At which time?" : {
+
+    },
     "August" : {
       "localizations" : {
         "es" : {
@@ -1102,6 +1108,9 @@
           }
         }
       }
+    },
+    "Do you want to receive reminders?" : {
+
     },
     "Each day, TrenteVingt will remind you to log your transactions at %lld:%@." : {
       "localizations" : {
@@ -2021,6 +2030,9 @@
           }
         }
       }
+    },
+    "Receive notifications" : {
+
     },
     "Remaining" : {
       "localizations" : {
