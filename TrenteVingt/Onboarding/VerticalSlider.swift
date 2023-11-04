@@ -25,7 +25,7 @@ struct VerticalSlider: View {
                 .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .frame(width: 100, height: 10)
-                    .offset(y: CGFloat(heightSlider2))
+                    .offset(y: CGFloat(heightSlider2)-5)
                     .gesture(
                         DragGesture()
                             .onChanged { value in
@@ -49,7 +49,7 @@ struct VerticalSlider: View {
                 .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .frame(width: 100, height: 10)
-                    .offset(y: CGFloat(heightSlider1))
+                    .offset(y: CGFloat(heightSlider1)-5)
                     .gesture(
                         DragGesture()
                             .onChanged { value in
