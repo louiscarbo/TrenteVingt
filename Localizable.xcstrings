@@ -50,7 +50,20 @@
       }
     },
     "**TrenteVingt** can send you a notification each day to remind you to log your latest transactions." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**TrenteVingt** puede recordarte registrar nuevas transacciones cada día."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**TrenteVingt** peut vous envoyer une notification chaque jour pour vous rappeler d'enregistrer vos dernières transactions."
+          }
+        }
+      }
     },
     "%@" : {
       "localizations" : {
@@ -739,7 +752,20 @@
       }
     },
     "At which time?" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿A qué hora?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A quelle heure ?"
+          }
+        }
+      }
     },
     "August" : {
       "localizations" : {
@@ -1110,7 +1136,20 @@
       }
     },
     "Do you want to receive reminders?" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Quieres recibir recordatorios?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voulez-vous recevoir des rappels ?"
+          }
+        }
+      }
     },
     "Each day, TrenteVingt will remind you to log your transactions at %lld:%@." : {
       "localizations" : {
@@ -2032,7 +2071,20 @@
       }
     },
     "Receive notifications" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recibir recordatorios"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recevoir les notifications"
+          }
+        }
+      }
     },
     "Remaining" : {
       "localizations" : {
@@ -2788,7 +2840,20 @@
       }
     },
     "You refused to receive notifications for **TrenteVingt**. You can change this in the Settings of your device." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechazaste recibir notificaciones para **TrenteVingt**. Puedes cambiar esto en los Ajustes de tu dispositivo."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous avez refusé de recevoir des notifications pour **TrenteVingt**. Vous pouvez changer ceci dans les réglages de votre appareil."
+          }
+        }
+      }
     },
     "Your search didn't give any results. Try to use other keywords or filters." : {
       "localizations" : {
