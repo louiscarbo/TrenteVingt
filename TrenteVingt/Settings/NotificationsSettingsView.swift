@@ -43,7 +43,7 @@ struct NotificationsSettingsView: View {
                             Text(":")
                             Picker("Minutes", selection: $minutes) {
                                 ForEach(0..<12) { i in
-                                    Text("\(i*5)").tag(i*5)
+                                    Text(String(format: "%02d", i*5)).tag(i*5)
                                 }
                             }
                             .pickerStyle(.wheel)
@@ -74,8 +74,9 @@ struct NotificationsSettingsView: View {
         }
         .navigationTitle("Daily Reminders")
         .onAppear {
-            NotificationHandler.shared.requestAuthorization()
-            getNotificationStatus()
+            NotificationHandler.shared.requestAuthorization() {
+                getNotificationStatus()
+            }
             retrieveHoursMinutes()
             retrieveNotificationsAreOn()
         }

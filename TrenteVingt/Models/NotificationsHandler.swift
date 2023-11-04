@@ -33,11 +33,13 @@ public class NotificationHandler {
         }
     }
     
-    func requestAuthorization() {
-        notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { (_, error) in
+    func requestAuthorization(completion: @escaping () -> Void) {
+        notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if let error = error {
                 print("Error requesting authorization: \(error.localizedDescription)")
             }
+            // Call the completion handler regardless of the result to proceed with the next step.
+            completion()
         }
     }
     

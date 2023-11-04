@@ -2787,6 +2787,9 @@
         }
       }
     },
+    "You refused to receive notifications for **TrenteVingt**. You can change this in the Settings of your device." : {
+
+    },
     "Your search didn't give any results. Try to use other keywords or filters." : {
       "localizations" : {
         "es" : {

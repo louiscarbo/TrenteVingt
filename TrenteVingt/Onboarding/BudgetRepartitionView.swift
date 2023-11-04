@@ -16,7 +16,9 @@ struct BudgetRepartitionView: View {
                     .font(.system(.callout, design: .serif))
                     .italic()
                 Divider()
+                Spacer()
                 BudgetRepartitionSlider(monthBudget: newMonthBudget, showIndications: true, maxHeight: 400)
+                Spacer()
             }
             .padding()
             Spacer()

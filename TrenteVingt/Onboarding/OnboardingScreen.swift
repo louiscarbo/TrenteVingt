@@ -15,7 +15,7 @@ struct OnboardingScreen: View {
             ConfirmationView(showOnboarding: $showOnboarding, selectedTab: $selectedTab).tag(5)
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
-        .animation(.easeInOut, value: 1)
+        .animation(.easeInOut, value: 0.8)
     }
 }
 

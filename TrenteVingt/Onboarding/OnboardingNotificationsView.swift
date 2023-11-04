@@ -15,6 +15,7 @@ struct OnboardingNotificationsView: View {
     @State private var minutes = 0
     
     @State private var showTimeSettings = false
+    @State private var notificationStatus: UNAuthorizationStatus?
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -49,14 +50,24 @@ struct OnboardingNotificationsView: View {
             }
             .onChange(of: receiveNotifications) {
                 if receiveNotifications == true {
-                    NotificationHandler.shared.requestAuthorization()
+                    NotificationHandler.shared.requestAuthorization() {
+                        NotificationHandler.shared.checkAuthorizationStatus { status in
+                            notificationStatus = status
+                        }
+                    }
                 }
                 UserDefaults.standard.set(receiveNotifications, forKey: "notificationsAreOn")
                 withAnimation {
                     showTimeSettings = receiveNotifications
                 }
             }
-            if showTimeSettings {
+            .onAppear {
+                receiveNotifications = UserDefaults.standard.bool(forKey: "notificationsAreOn")
+                hours = UserDefaults.standard.integer(forKey: "hoursNotification")
+                minutes = UserDefaults.standard.integer(forKey: "minutesNotifications")
+            }
+            
+            if showTimeSettings && notificationStatus == .authorized {
                 VStack {
                     HStack {
                         Text("At which time?")
@@ -76,7 +87,7 @@ struct OnboardingNotificationsView: View {
                         Text(":")
                         Picker("Minutes", selection: $minutes) {
                             ForEach(0..<12) { i in
-                                Text("\(i*5)").tag(i*5)
+                                Text(String(format: "%02d", i*5)).tag(i*5)
                             }
                         }
                         .pickerStyle(.wheel)
@@ -94,6 +105,9 @@ struct OnboardingNotificationsView: View {
                     RoundedRectangle(cornerRadius: 10)
                         .foregroundStyle(.gray.opacity(0.2))
                 }
+            }
+            else if notificationStatus == .denied {
+                Text("You refused to receive notifications for **TrenteVingt**. You can change this in the Settings of your device.")
             }
             Spacer()
             HStack {

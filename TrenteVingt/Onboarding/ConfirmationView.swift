@@ -1,4 +1,5 @@
 import SwiftUI
+import WidgetKit
 
 struct ConfirmationView: View {
     @Binding var showOnboarding: Bool
@@ -17,10 +18,11 @@ struct ConfirmationView: View {
             Text("You can now start easily tracking your budget with TrenteVingt.")
                 .font(.system(.headline, design: .serif, weight: .semibold))
                 .multilineTextAlignment(.center)
-                .padding()
+                .padding([.bottom, .leading, .trailing])
             Spacer()
             Button {
                 showOnboarding = false
+                WidgetCenter.shared.reloadAllTimelines()
             } label: {
                 Text("Start Tracking")
                     .font(.system(.title, design: .serif))
