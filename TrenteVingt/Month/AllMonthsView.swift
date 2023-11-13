@@ -1,6 +1,7 @@
 import SwiftUI
 import SwiftData
 import WidgetKit
+import StoreKit
 
 struct AllMonthsView: View {
     @Query var monthBudgets: [MonthBudget]
@@ -8,6 +9,7 @@ struct AllMonthsView: View {
     @AppStorage("showOnboarding") private var showOnboarding = true
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.requestReview) var requestReview
     
     @State private var isPresentingNewMonthView = false
     @State private var showDeletionAlert = false
@@ -143,6 +145,11 @@ struct AllMonthsView: View {
                     })
                 }
                 .padding()
+            }
+        }
+        .onAppear {
+            if monthBudgets.count > 1 {
+                requestReview()
             }
         }
     }
