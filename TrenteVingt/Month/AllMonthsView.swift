@@ -164,28 +164,30 @@ struct CurrentMonthView: View {
             
             Divider()
             
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Remaining")
-                        .font(.subheadline)
-                    let color = currentMonth.remaining < 0 ? Color(.red) : Color(.green)
-                    let currencyCode = currentMonth.currency.code
-                    let remainingBudget = currentMonth.remaining
-                    Text("\(remainingBudget.formatted(.currency(code: currencyCode).presentation(.narrow).grouping(.automatic)))")
-                        .font(.system(.title, design: .serif, weight: .semibold))
-                        .foregroundStyle(color)
-                }
-                
-                Spacer()
-                VStack(alignment: .trailing) {
-                    Text("Spent")
-                        .font(.subheadline)
-                    let color = Color(.red)
-                    let currencyCode = currentMonth.currency.code
-                    let spentBudget = currentMonth.totalSpent
-                    Text("\(spentBudget.formatted(.currency(code: currencyCode).presentation(.narrow).grouping(.automatic)))")
-                        .font(.system(.title, design: .serif, weight: .semibold))
-                        .foregroundStyle(color)
+            VStack {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Remaining")
+                            .font(.subheadline)
+                        let color = currentMonth.remaining < 0 ? Color(.red) : Color(.green)
+                        let currencyCode = currentMonth.currency.code
+                        let remainingBudget = currentMonth.remaining
+                        Text("\(remainingBudget.formatted(.currency(code: currencyCode).presentation(.narrow).grouping(.automatic)))")
+                            .font(.system(.title, design: .serif, weight: .semibold))
+                            .foregroundStyle(color)
+                    }
+                    
+                    Spacer()
+                    VStack(alignment: .trailing) {
+                        Text("Spent")
+                            .font(.subheadline)
+                        let color = Color(.red)
+                        let currencyCode = currentMonth.currency.code
+                        let spentBudget = currentMonth.totalSpent
+                        Text("\(spentBudget.formatted(.currency(code: currencyCode).presentation(.narrow).grouping(.automatic)))")
+                            .font(.system(.title, design: .serif, weight: .semibold))
+                            .foregroundStyle(color)
+                    }
                 }
             }
         }
