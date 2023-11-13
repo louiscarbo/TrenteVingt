@@ -2315,10 +2315,36 @@
       }
     },
     "Show and hide your remaining budget by tapping on the amount." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muestra y oculta tu monto restante tocando la cantidad"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Montrez et cachez votre budget restant en appuyant sur le montant."
+          }
+        }
+      }
     },
     "Show remaining" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar el monto restante"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Montrer le montant restant"
+          }
+        }
+      }
     },
     "Sign" : {
       "localizations" : {
