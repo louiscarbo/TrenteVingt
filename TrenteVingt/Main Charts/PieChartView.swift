@@ -1,5 +1,21 @@
 import SwiftUI
 import Charts
+import TipKit
+
+struct remainingSpentTip: Tip {
+    var title: Text {
+        Text("Show remaining")
+    }
+    var message: Text? {
+        Text("Show and hide your remaining budget by tapping on the amount.")
+    }
+    var image: Image? {
+        Image(systemName: "hand.tap.fill")
+    }
+    var options: [Option] {
+        MaxDisplayCount(3)
+    }
+}
 
 struct PieChartView: View {
     @Environment(\.colorScheme) private var colorScheme
@@ -71,6 +87,8 @@ struct PieChartView: View {
         ]
     }
     
+    var tip = remainingSpentTip()
+    
     var body: some View {
         ZStack {
             Chart{
@@ -98,6 +116,7 @@ struct PieChartView: View {
             }
             if showText {
                 Button {
+                    tip.invalidate(reason: .actionPerformed)
                     withAnimation {
                         presentsSpentMoney.toggle()
                         showRemaining.toggle()
@@ -121,6 +140,7 @@ struct PieChartView: View {
                     }
                     .foregroundStyle(colorScheme == .light ? .black : .white)
                 }
+                .popoverTip(tip)
                 .buttonStyle(.borderless)
                 .frame(width: 130)
             }

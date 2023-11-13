@@ -1366,6 +1366,9 @@
         }
       }
     },
+    "Hello, World!" : {
+
+    },
     "Hey there! A new month just started. Let's get those budgeting goals in place!" : {
       "localizations" : {
         "es" : {
@@ -2310,6 +2313,12 @@
           }
         }
       }
+    },
+    "Show and hide your remaining budget by tapping on the amount." : {
+
+    },
+    "Show remaining" : {
+
     },
     "Sign" : {
       "localizations" : {

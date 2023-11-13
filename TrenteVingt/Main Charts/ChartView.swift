@@ -1,6 +1,7 @@
 import SwiftUI
 import SwiftData
 import Charts
+import TipKit
 
 struct ChartData: Identifiable {
     let id = UUID()
@@ -45,7 +46,7 @@ struct ChartTypePicker: View {
     
     @State private var lastShowRemainingValue = false
     @State private var pickerShowAsPieChart = true
-    
+        
     var body: some View {
         Picker("Chart type", selection: $pickerShowAsPieChart) {
             Image(systemName: "chart.pie.fill").tag(true)

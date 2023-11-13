@@ -3,6 +3,7 @@ import SwiftData
 import BackgroundTasks
 import UserNotifications
 import WidgetKit
+import TipKit
 
 @main
 struct TrenteVingtApp: App {
@@ -11,6 +12,7 @@ struct TrenteVingtApp: App {
         if UserDefaults.standard.bool(forKey: "notificationsAreOn") {
             NotificationHandler.shared.scheduleDailyNotifications()
         }
+        try? Tips.configure()
     }
     
     var body: some Scene {

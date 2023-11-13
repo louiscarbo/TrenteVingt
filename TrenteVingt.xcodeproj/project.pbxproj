@@ -43,6 +43,7 @@
 		7BAB4E6C2AEE5B2A002AC0AD /* BackgroundTaskHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB4E6B2AEE5B2A002AC0AD /* BackgroundTaskHandler.swift */; };
 		7BC5EF022A868AB200B02275 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC5EF012A868AB200B02275 /* TransactionDetailView.swift */; };
 		7BCF819D2AF56A2F000C55A8 /* OnboardingNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF819C2AF56A2F000C55A8 /* OnboardingNotificationsView.swift */; };
+		7BD918262AF984BB00E4F53F /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD918252AF984BB00E4F53F /* TipView.swift */; };
 		7BDAE06C2AE0746800CD20C4 /* MonthBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F90462A59BAA000CE0BD4 /* MonthBudget.swift */; };
 		7BDAE06D2AE078AA00CD20C4 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F90482A59BC4B00CE0BD4 /* Transaction.swift */; };
 		7BDAE06F2AE10DF600CD20C4 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70272F2A7D38430012FA5B /* ChartView.swift */; };
@@ -119,6 +120,7 @@
 		7BAB4E6B2AEE5B2A002AC0AD /* BackgroundTaskHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTaskHandler.swift; sourceTree = "<group>"; };
 		7BC5EF012A868AB200B02275 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		7BCF819C2AF56A2F000C55A8 /* OnboardingNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNotificationsView.swift; sourceTree = "<group>"; };
+		7BD918252AF984BB00E4F53F /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		7BDAE06E2AE0F82200CD20C4 /* TrenteVingtWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrenteVingtWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		7BDAE0702AE112B000CD20C4 /* RemainingSpentWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainingSpentWidget.swift; sourceTree = "<group>"; };
 		7BF8172A2A5AB155007027BF /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				7B9996342AE6BA9200F3C243 /* CreditsView.swift */,
 				7BAB4E612AEC355D002AC0AD /* SettingsView.swift */,
 				7BAB4E642AED52A8002AC0AD /* NotificationsSettingsView.swift */,
+				7BD918252AF984BB00E4F53F /* TipView.swift */,
 				7B868ED62AEEBB97008BA1C5 /* MonthStartingDayView.swift */,
 			);
 			path = Settings;
@@ -428,6 +431,7 @@
 				7B7323832A81409000C6D6FD /* BudgetRepartitionSlider.swift in Sources */,
 				7B3F90492A59BC4B00CE0BD4 /* Transaction.swift in Sources */,
 				7BF817362A5AEC36007027BF /* VerticalSlider.swift in Sources */,
+				7BD918262AF984BB00E4F53F /* TipView.swift in Sources */,
 				7BF8173C2A5B0B13007027BF /* ConfirmationView.swift in Sources */,
 				7B7027302A7D38430012FA5B /* ChartView.swift in Sources */,
 				7B868ED72AEEBB97008BA1C5 /* MonthStartingDayView.swift in Sources */,
