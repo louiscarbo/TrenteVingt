@@ -4,7 +4,7 @@ import SwiftUI
 @main
 struct TrenteVingtWidgetsBundle: WidgetBundle {
     var body: some Widget {
-        PieChartWidget()
+        //PieChartWidget()
         RemainingSpentWidget()
     }
 }

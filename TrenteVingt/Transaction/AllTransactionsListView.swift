@@ -7,11 +7,11 @@ enum SortBy: String, CaseIterable {
     var displayName: String {
         switch self {
         case .date:
-            return "Added Date"
+            return String(localized: "Added Date")
         case .title:
-            return "Title"
+            return String(localized: "Title")
         case .amount:
-            return "Amount"
+            return String(localized: "Amount")
         }
     }
 }
@@ -21,10 +21,10 @@ enum FilterBy: String, CaseIterable {
     
     var displayName: String {
         switch self {
-        case.needs : return "Needs"
-        case .wants: return "Wants"
-        case .savingsAndDebts: return "Savings and debts"
-        case .positiveTransactions: return "Positive transactions"
+        case.needs : return String(localized: "Needs")
+        case .wants: return String(localized: "Wants")
+        case .savingsAndDebts: return String(localized: "Savings and debts")
+        case .positiveTransactions: return String(localized: "Positive transactions")
         }
     }
     
@@ -41,9 +41,7 @@ enum FilterBy: String, CaseIterable {
 struct AllTransactionsListView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
-    
-    @Query var transactions: [Transaction]
-    
+        
     @State var monthBudget: MonthBudget
     
     @State private var searchText = ""
@@ -93,30 +91,34 @@ struct AllTransactionsListView: View {
     }
 
     var transactionsDisplayedInList: [Transaction] {
-        guard !searchText.isEmpty else {
+        if let transactions = monthBudget.transactions {
+            guard !searchText.isEmpty else {
+                return transactions
+                    .filter(filterDescriptor)
+                    .filter { $0.monthBudget == monthBudget }
+                    .sorted(by: sortDescriptor)
+            }
+            
             return transactions
                 .filter(filterDescriptor)
                 .filter { $0.monthBudget == monthBudget }
-                .sorted(by: sortDescriptor)
-            }
-        
-        return transactions
-            .filter(filterDescriptor)
-            .filter { $0.monthBudget == monthBudget }
-            .filter {
-                let amountWithPeriod = String($0.amount)
-                let amountWithComma = amountWithPeriod.replacingOccurrences(of: ".", with: ",")
-
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "EEEE d MMMM yyyy"
-                let fullDateWithDayName = dateFormatter.string(from: $0.addedDate)
-
-                return $0.title.localizedCaseInsensitiveContains(searchText) ||
+                .filter {
+                    let amountWithPeriod = String($0.amount)
+                    let amountWithComma = amountWithPeriod.replacingOccurrences(of: ".", with: ",")
+                    
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "EEEE d MMMM yyyy"
+                    let fullDateWithDayName = dateFormatter.string(from: $0.addedDate)
+                    
+                    return $0.title.localizedCaseInsensitiveContains(searchText) ||
                     amountWithPeriod.contains(searchText) ||
                     amountWithComma.contains(searchText) ||
                     fullDateWithDayName.localizedCaseInsensitiveContains(searchText)
-            }
-            .sorted(by: sortDescriptor)
+                }
+                .sorted(by: sortDescriptor)
+        } else {
+            return [Transaction]()
+        }
     }
     
     var body: some View {

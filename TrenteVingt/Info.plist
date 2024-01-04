@@ -2,12 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
+	<key></key>
+	<string></string>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
 		<string>NewMonth</string>
 	</array>
+	<key>CFBundleShortVersionString </key>
+	<string>1.0.3</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>NSUserNotificationsUsageDescription</key>
 	<string>TrenteVingt uses notifications to remind you to log new transactions. You can always disable these notifications later.</string>
 	<key>UIBackgroundModes</key>

@@ -19,6 +19,7 @@ struct MonthView: View {
     @State private var showRemaining = true
     @State private var updateCharts = false
     @State private var shouldDismiss = false
+    @State private var navigateToAllTransactions = false
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -38,7 +39,6 @@ struct MonthView: View {
                             Section("Transactions") {
                                 ForEach(transactionsDisplayedInList.prefix(5)) { transaction in
                                     TransactionRowView(transaction: transaction, monthBudget: monthBudget)
-                                    
                                 }
                                 NavigationLink(destination: AllTransactionsListView(monthBudget: monthBudget)) {
                                     Text("Show all transactions")

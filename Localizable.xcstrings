@@ -538,6 +538,12 @@
     "Add your first interaction now and see how your budget evolves!" : {
       "extractionState" : "stale",
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agrega tu primera transacción ahora y ¡mira cómo evoluciona tu presupuesto!"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -574,6 +580,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajoutez votre première transaction dès maintenant !"
+          }
+        }
+      }
+    },
+    "Added Date" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fecha de creación"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date d'ajout"
           }
         }
       }
@@ -1367,7 +1389,20 @@
       }
     },
     "Hello, World!" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello, World!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello, World!"
+          }
+        }
+      }
     },
     "Hey there! A new month just started. Let's get those budgeting goals in place!" : {
       "localizations" : {
@@ -2041,6 +2076,22 @@
         }
       }
     },
+    "Positive transactions" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transacciones Positivas"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transactions positives"
+          }
+        }
+      }
+    },
     "Preferences" : {
       "localizations" : {
         "es" : {
@@ -2186,6 +2237,22 @@
       }
     },
     "Savings and debts" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ahorros y Deudas"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Épargne et dettes"
+          }
+        }
+      }
+    },
+    "Savings and Debts" : {
       "extractionState" : "stale",
       "localizations" : {
         "es" : {
