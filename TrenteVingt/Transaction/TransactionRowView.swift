@@ -6,7 +6,7 @@ struct TransactionRowView: View {
     @Environment(\.modelContext) private var modelContext
     
     @State var transaction: Transaction
-    @State var monthBudget: MonthBudget
+    @State var currency: Currency
     
     var body: some View {
         HStack {
@@ -24,7 +24,7 @@ struct TransactionRowView: View {
                         .foregroundStyle(.secondary)
                 }
                 Spacer()
-                Text("\(transaction.amount.formatted(.currency(code: monthBudget.currency.code).presentation(.narrow).grouping(.automatic)))")
+                Text("\(transaction.amount.formatted(.currency(code: currency.code).presentation(.narrow).grouping(.automatic)))")
                     .font(.system(.title, design: .serif, weight: .semibold))
             }
         }

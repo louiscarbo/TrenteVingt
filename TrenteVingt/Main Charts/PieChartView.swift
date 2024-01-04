@@ -20,6 +20,8 @@ struct remainingSpentTip: Tip {
 struct PieChartView: View {
     @Environment(\.colorScheme) private var colorScheme
     
+    
+    
     @Binding var showRemaining: Bool
     @State var monthBudget: MonthBudget
     @State var showText = true

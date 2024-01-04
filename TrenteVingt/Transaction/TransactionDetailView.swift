@@ -2,6 +2,7 @@ import SwiftUI
 
 struct TransactionDetailView: View {
     @Bindable var transaction: Transaction
+    
     @Environment(\.dismiss) private var dismiss
     
     @State private var sign = "-"

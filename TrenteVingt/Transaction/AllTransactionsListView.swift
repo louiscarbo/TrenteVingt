@@ -41,8 +41,9 @@ enum FilterBy: String, CaseIterable {
 struct AllTransactionsListView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
-        
-    @State var monthBudget: MonthBudget
+    
+    @State var transactions: [Transaction]
+    @State var currency: Currency
     
     @State private var searchText = ""
     @State private var sortBy: SortBy = .date
@@ -91,41 +92,35 @@ struct AllTransactionsListView: View {
     }
 
     var transactionsDisplayedInList: [Transaction] {
-        if let transactions = monthBudget.transactions {
-            guard !searchText.isEmpty else {
-                return transactions
-                    .filter(filterDescriptor)
-                    .filter { $0.monthBudget == monthBudget }
-                    .sorted(by: sortDescriptor)
-            }
-            
+        guard !searchText.isEmpty else {
             return transactions
                 .filter(filterDescriptor)
-                .filter { $0.monthBudget == monthBudget }
-                .filter {
-                    let amountWithPeriod = String($0.amount)
-                    let amountWithComma = amountWithPeriod.replacingOccurrences(of: ".", with: ",")
-                    
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "EEEE d MMMM yyyy"
-                    let fullDateWithDayName = dateFormatter.string(from: $0.addedDate)
-                    
-                    return $0.title.localizedCaseInsensitiveContains(searchText) ||
-                    amountWithPeriod.contains(searchText) ||
-                    amountWithComma.contains(searchText) ||
-                    fullDateWithDayName.localizedCaseInsensitiveContains(searchText)
-                }
                 .sorted(by: sortDescriptor)
-        } else {
-            return [Transaction]()
         }
+        
+        return transactions
+            .filter(filterDescriptor)
+            .filter {
+                let amountWithPeriod = String($0.amount)
+                let amountWithComma = amountWithPeriod.replacingOccurrences(of: ".", with: ",")
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "EEEE d MMMM yyyy"
+                let fullDateWithDayName = dateFormatter.string(from: $0.addedDate)
+                
+                return $0.title.localizedCaseInsensitiveContains(searchText) ||
+                amountWithPeriod.contains(searchText) ||
+                amountWithComma.contains(searchText) ||
+                fullDateWithDayName.localizedCaseInsensitiveContains(searchText)
+            }
+            .sorted(by: sortDescriptor)
     }
     
     var body: some View {
         NavigationStack {
             List {
                 ForEach(transactionsDisplayedInList, id: \.id) { transaction in
-                    TransactionRowView(transaction: transaction, monthBudget: monthBudget)
+                    TransactionRowView(transaction: transaction, currency: currency)
                 }
                 if transactionsDisplayedInList.count == 0 {
                     Text("Your search didn't give any results. Try to use other keywords or filters.")
@@ -143,7 +138,7 @@ struct AllTransactionsListView: View {
                                     .foregroundStyle(.secondary)
                             }
                             Spacer()
-                            Text("\(totalAmount.formatted(.currency(code: monthBudget.currency.code).presentation(.narrow).grouping(.automatic)))")
+                            Text("\(totalAmount.formatted(.currency(code: currency.code).presentation(.narrow).grouping(.automatic)))")
                                 .font(.system(.title, design: .serif, weight: .semibold))
                         }
                     }

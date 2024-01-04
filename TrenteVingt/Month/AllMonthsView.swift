@@ -69,7 +69,7 @@ struct AllMonthsView: View {
                                 NavigationLink {
                                     MonthView(monthBudget: monthBudget)
                                 } label: {
-                                    MonthRowView(monthBudget: monthBudget)
+                                    MonthRowView(monthBudget: monthBudget, remaining: monthBudget.remaining, monthDesignation: monthBudget.monthDesignation)
                                 }
                                 .swipeActions {
                                     Button {
@@ -160,7 +160,7 @@ struct CurrentMonthView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            MonthRowView(monthBudget: currentMonth)
+            MonthRowView(monthBudget: currentMonth, remaining: currentMonth.remaining, monthDesignation: currentMonth.monthDesignation)
             
             Divider()
             

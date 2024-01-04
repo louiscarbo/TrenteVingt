@@ -2,18 +2,20 @@ import SwiftUI
 
 struct MonthRowView: View {
     @State var monthBudget: MonthBudget
+    @State var remaining: Double
+    @State var monthDesignation: String
     
     var body: some View {
         HStack {
-            Image(systemName: monthBudget.remaining >= 0 ? "checkmark.circle.fill" : "exclamationmark.circle.fill")
-                .foregroundStyle(monthBudget.remaining >= 0 ? .green : .red)
+            Image(systemName: remaining >= 0 ? "checkmark.circle.fill" : "exclamationmark.circle.fill")
+                .foregroundStyle(remaining >= 0 ? .green : .red)
                 .frame(height: 10)
             VStack(alignment: .leading) {
-                Text(monthBudget.monthDesignation)
+                Text(monthDesignation)
                     .font(.title3)
                     .fontWeight(.semibold)
                     .lineLimit(1)
-                Text(monthBudget.remaining >= 0 ? "Within Budget" : "Overspent")
+                Text(remaining >= 0 ? "Within Budget" : "Overspent")
                     .font(.callout)
                     .foregroundStyle(.secondary)
             }

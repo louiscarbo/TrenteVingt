@@ -358,9 +358,6 @@
 				Base,
 				fr,
 				es,
-				de,
-				"pt-PT",
-				it,
 			);
 			mainGroup = 7B3F90272A59BA6B00CE0BD4;
 			productRefGroup = 7B3F90312A59BA6B00CE0BD4 /* Products */;
@@ -669,7 +666,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = louiscarboestaque.TrenteVingt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -709,7 +706,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = louiscarboestaque.TrenteVingt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

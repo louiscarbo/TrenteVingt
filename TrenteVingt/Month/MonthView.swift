@@ -12,9 +12,12 @@ struct MonthView: View {
     @State private var isPresentingNewMonthView = false
     @State var showNewTransaction = false
     
-    @Query private var transactions : [Transaction]
     private var transactionsDisplayedInList: [Transaction] {
-        transactions.filter({$0.monthBudget == monthBudget}).sorted { $0.addedDate > $1.addedDate }
+        if let transactions = monthBudget.transactions {
+            return Array(transactions.sorted { $0.addedDate > $1.addedDate }.prefix(5))
+        } else {
+            return [Transaction]()
+        }
     }
     @State private var showRemaining = true
     @State private var updateCharts = false
@@ -37,11 +40,13 @@ struct MonthView: View {
                         }
                         if transactions.count > 0 {
                             Section("Transactions") {
-                                ForEach(transactionsDisplayedInList.prefix(5)) { transaction in
-                                    TransactionRowView(transaction: transaction, monthBudget: monthBudget)
+                                ForEach(transactionsDisplayedInList) { transaction in
+                                    TransactionRowView(transaction: transaction, currency: monthBudget.currency)
                                 }
-                                NavigationLink(destination: AllTransactionsListView(monthBudget: monthBudget)) {
-                                    Text("Show all transactions")
+                                if let transactions = monthBudget.transactions {
+                                    NavigationLink(destination: AllTransactionsListView(transactions: transactions, currency: monthBudget.currency)) {
+                                        Text("Show all transactions")
+                                    }
                                 }
                             }
                         } else {
