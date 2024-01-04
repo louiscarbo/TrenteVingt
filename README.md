@@ -1,4 +1,5 @@
 TrenteVingt is a budgeting app based on the popular 50/30/20 budgeting rule
+
 Download TrenteVingt now: https://apps.apple.com/fr/app/trentevingt-suivi-de-budget/id6462230497
 
 ![Alt](https://louiscarbo.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fc8dba28a-425b-4c4e-bee5-21c37f2ac393%2F01206f42-79ea-4bcc-ba9e-ea846a4d80c8%2F13x.jpg?table=block&id=05bf68f4-25f6-4c9c-993b-8594b6f85e3a&spaceId=c8dba28a-425b-4c4e-bee5-21c37f2ac393&width=2000&userId=&cache=v2 "Screenshot") ![Alt](https://louiscarbo.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fc8dba28a-425b-4c4e-bee5-21c37f2ac393%2F811f8443-9cf0-479c-ac67-c56c612e1daf%2F23x.jpg?table=block&id=a9a06807-6c4b-48c6-81b4-dfbffbfdf210&spaceId=c8dba28a-425b-4c4e-bee5-21c37f2ac393&width=2000&userId=&cache=v2 "Screenshot") ![Alt](https://louiscarbo.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fc8dba28a-425b-4c4e-bee5-21c37f2ac393%2F1a208700-e476-4d7c-a417-08dba57142e1%2F53x.jpg?table=block&id=dac56a32-ded8-4e52-aa30-471a4bee2200&spaceId=c8dba28a-425b-4c4e-bee5-21c37f2ac393&width=2000&userId=&cache=v2 "Screenshot")
