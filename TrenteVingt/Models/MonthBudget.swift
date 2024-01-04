@@ -71,7 +71,6 @@ extension MonthBudget {
     }
     
     // Pourcentages de Needs/Wants/Savings and debts définis par l'utilisateur (ex: 0.5/0.3/0.2)
-    @Transient
     var needsPercentage: Double { Double(needsBudgetRepartition) / 100 }
     @Transient
     var wantsPercentage: Double { Double(wantsBudgetRepartition) / 100 }
