@@ -35,6 +35,7 @@ struct VerticalSlider: View {
                                     monthBudget.needsBudgetRepartition = Double(heightSlider1*100/Double(geometry.size.height))
                                     monthBudget.wantsBudgetRepartition = Double((heightSlider2 - heightSlider1)*100/Double(geometry.size.height))
                                     monthBudget.savingsDebtsBudgetRepartition = 100 - monthBudget.needsBudgetRepartition - monthBudget.wantsBudgetRepartition
+                                    monthBudget.update()
                                 }
                             }
                     )
@@ -59,6 +60,7 @@ struct VerticalSlider: View {
                                     monthBudget.needsBudgetRepartition = Double(heightSlider1*100/Double(geometry.size.height))
                                     monthBudget.wantsBudgetRepartition = Double((heightSlider2 - heightSlider1)*100/Double(geometry.size.height))
                                     monthBudget.savingsDebtsBudgetRepartition = 100 - monthBudget.needsBudgetRepartition - monthBudget.wantsBudgetRepartition
+                                    monthBudget.update()
                                 }
                             }
                     )

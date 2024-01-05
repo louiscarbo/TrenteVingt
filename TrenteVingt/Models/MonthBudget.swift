@@ -12,6 +12,7 @@ final class MonthBudget {
     var savingsDebtsBudgetRepartition: Double = 20
     var currencySymbolSFName: String = ""
     var monthNumber: Int = 1
+    var creationDate: Date = Date()
     
     init(monthlyBudget: Double = 0, needsBudgetRepartition: Double = 50, wantsBudgetRepartition: Double = 30, savingsDebtsBudgetRepartition: Double = 20, monthNumber: Int = 1, currencySymbolSFName: String = "") {
         self.transactions = []

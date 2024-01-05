@@ -41,11 +41,13 @@ struct BudgetRepartitionSlider: View {
                         } else if monthBudget.wantsBudgetRepartition - 100/monthBudget.monthlyBudget >= 0 {
                             monthBudget.wantsBudgetRepartition -= (100/monthBudget.monthlyBudget)
                         }
+                        monthBudget.update()
                     } onDecrement: {
                         if monthBudget.needsBudgetRepartition - 100/monthBudget.monthlyBudget >= 0 {
                             monthBudget.needsBudgetRepartition -= (100/monthBudget.monthlyBudget)
                             monthBudget.wantsBudgetRepartition += (100/monthBudget.monthlyBudget)
                         }
+                        monthBudget.update()
                     }
                     .labelsHidden()
                     
@@ -68,10 +70,12 @@ struct BudgetRepartitionSlider: View {
                         } else if monthBudget.needsBudgetRepartition - 100/monthBudget.monthlyBudget >= 0 {
                             monthBudget.needsBudgetRepartition -= (100/monthBudget.monthlyBudget)
                         }
+                        monthBudget.update()
                     } onDecrement: {
                         if monthBudget.wantsBudgetRepartition - 100/monthBudget.monthlyBudget >= 0 {
                             monthBudget.wantsBudgetRepartition -= (100/monthBudget.monthlyBudget)
                         }
+                        monthBudget.update()
                     }
                     .labelsHidden()
                     

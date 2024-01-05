@@ -4,7 +4,7 @@ import WidgetKit
 import StoreKit
 
 struct AllMonthsView: View {
-    @Query var monthBudgets: [MonthBudget]
+    @Query(sort: [SortDescriptor(\MonthBudget.creationDate, order: .forward)]) var monthBudgets: [MonthBudget]
     
     @AppStorage("showOnboarding") private var showOnboarding = true
     @Environment(\.modelContext) private var modelContext

@@ -21,6 +21,7 @@ struct NewMonthView: View {
                 newMonthBudget.savingsDebtsBudgetRepartition = modelMonthBudget.savingsDebtsBudgetRepartition
                 newMonthBudget.currencySymbolSFName = modelMonthBudget.currencySymbolSFName
                 newMonthBudget.monthNumber = newMonthNumber
+                newMonthBudget.update()
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
