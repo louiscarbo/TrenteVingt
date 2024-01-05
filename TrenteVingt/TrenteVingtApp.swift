@@ -13,6 +13,7 @@ struct TrenteVingtApp: App {
             NotificationHandler.shared.scheduleDailyNotifications()
         }
         try? Tips.configure()
+        updateMonthBudgetsValues()
     }
     
     var body: some Scene {
@@ -50,6 +51,7 @@ struct TrenteVingtApp: App {
             newMonthBudget.currencySymbolSFName = modelMonthBudget.currencySymbolSFName
             newMonthBudget.monthNumber = newMonthNumber
             context.insert(newMonthBudget)
+            newMonthBudget.update()
             
             // Programmer une notification à la nouvelle date, en dehors de la nuit
             let currentHour = Calendar.current.component(.hour, from: Date())
@@ -62,6 +64,18 @@ struct TrenteVingtApp: App {
             WidgetCenter.shared.reloadAllTimelines()
             
             return
+        }
+    }
+    
+    @MainActor func updateMonthBudgetsValues() {
+        if let container = try? ModelContainer(for: MonthBudget.self) {
+            let context = container.mainContext
+            let monthBudgetsFetchDescriptor = FetchDescriptor<MonthBudget>()
+            if let monthBudgets = try? context.fetch(monthBudgetsFetchDescriptor) {
+                for monthBudget in monthBudgets {
+                    monthBudget.update()
+                }
+            }
         }
     }
 

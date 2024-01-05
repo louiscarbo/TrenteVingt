@@ -94,5 +94,8 @@ struct MonthDetailsView: View {
             wantsAmount = monthBudget.wantsBudget
             savingsDebtsAmount = monthBudget.savingsDebtsBudget
         }
+        .onDisappear {
+            monthBudget.update()
+        }
     }
 }

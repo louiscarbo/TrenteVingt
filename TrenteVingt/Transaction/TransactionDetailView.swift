@@ -138,6 +138,11 @@ struct TransactionDetailView: View {
                     sign = "-"
                 }
             }
+            .onDisappear {
+                if let monthBudget = transaction.monthBudget {
+                    monthBudget.update()
+                }
+            }
         }
     }
 }

@@ -158,6 +158,7 @@ struct NewTransactionView: View {
         modelContext.insert(newTransaction)
         newTransaction.monthBudget = currentMonthBudget
         currentMonthBudget.transactions?.append(newTransaction) ?? (currentMonthBudget.transactions = [newTransaction])
+        currentMonthBudget.update()
         WidgetCenter.shared.reloadAllTimelines()
         
         dismiss()

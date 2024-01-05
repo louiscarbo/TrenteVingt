@@ -57,6 +57,9 @@ struct MonthView: View {
                         Text("")
                             .listRowBackground(Color(.clear))
                     }
+                    .onChange(of: monthBudget.transactions) {
+                        monthBudget.update()
+                    }
                 } else {
                     Text("Add your first transaction now!")
                 }

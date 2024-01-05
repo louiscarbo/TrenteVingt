@@ -27,6 +27,7 @@ struct NewMonthView: View {
                     Button("Add") {
                         dismiss()
                         modelContext.insert(newMonthBudget)
+                        newMonthBudget.update()
                     }
                 }
                 

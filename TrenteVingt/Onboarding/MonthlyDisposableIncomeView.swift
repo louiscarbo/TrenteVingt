@@ -87,6 +87,7 @@ struct MonthlyDisposableIncomeView: View {
                 
                 Button {
                     modelContext.insert(monthBudget)
+                    monthBudget.update()
                     withAnimation {
                         selectedTab += 1
                     }

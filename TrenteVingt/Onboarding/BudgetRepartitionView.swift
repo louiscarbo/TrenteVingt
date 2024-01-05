@@ -47,6 +47,7 @@ struct BudgetRepartitionView: View {
                     newMonthBudget.monthNumber = currentMonthNumber
                     
                     modelContext.insert(newMonthBudget)
+                    newMonthBudget.update()
                 } label: {
                     Text("Next")
                         .font(.system(.title3, design: .serif))

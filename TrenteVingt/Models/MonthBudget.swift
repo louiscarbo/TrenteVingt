@@ -1,5 +1,6 @@
 import SwiftData
 import Foundation
+import WidgetKit
 
 @Model
 final class MonthBudget {
@@ -21,6 +22,53 @@ final class MonthBudget {
         self.monthNumber = monthNumber
         self.currencySymbolSFName = currencySymbolSFName
     }
+    
+    // Pourcentages de Needs/Wants/Savings and debts définis par l'utilisateur (ex: 0.5/0.3/0.2)
+    var needsPercentage: Double = 0.5
+    var wantsPercentage: Double = 0.3
+    var savingsDebtsPercentage: Double = 0.2
+    
+    // Montant disponible à dépenser pour chaque catégorie (ex: 500-300-200)
+    var needsBudget: Double = 500
+    var wantsBudget: Double = 300
+    var savingsDebtsBudget: Double = 200
+    
+    // Quantité NEGATIVE dépensée pour une catégorie donnée (ex: -250)
+    var spentNeedsBudget: Double = 0
+    var spentWantsBudget: Double = 0
+    var spentSavingsDebtsBudget: Double = 0
+    
+    // Pourcentage dépensé pour une catégorie donnée (ex : 50€ dépensés en Wants sur un total de 100€ pour la catégorie Wants
+    // fixé par l'utilisateur renvoie 0.5)
+    var spentNeedsCategoryPercentage : Double = 0.5
+    var spentWantsCategoryPercentage : Double = 0.3
+    var spentSavingsDebtsCategoryPercentage : Double = 0.2
+    
+    // Montant restant à dépenser pour une catégorie définie
+    var remainingNeeds: Double = 0
+    var remainingWants: Double = 0
+    var remainingSavingsDebts: Double = 0
+    
+    
+    // Total dépensé
+    var totalSpent: Double = 1000
+    
+    // Budget restant
+    var remaining: Double = 0
+    
+    // Pourcentage (sur 100) d'une catégorie sur le total dépensé (et non pas sur le total de la catégorie en question)
+    var spentNeedsPercentage: Double = 0
+    var spentWantsPercentage: Double = 0
+    var spentSavingsDebtsPercentage: Double = 0
+    
+    
+    // Total des transactions positives
+    var positiveTransactionsTotal: Double = 0
+    
+    // Montant disponible au total en comptant les transactions positives a priori exceptionnelles
+    var totalAvailableFunds: Double = 1000
+    
+    
 }
 
 enum Currency: String, CaseIterable {
@@ -70,73 +118,55 @@ extension MonthBudget {
         }
     }
     
-    // Pourcentages de Needs/Wants/Savings and debts définis par l'utilisateur (ex: 0.5/0.3/0.2)
-    var needsPercentage: Double { Double(needsBudgetRepartition) / 100 }
-    @Transient
-    var wantsPercentage: Double { Double(wantsBudgetRepartition) / 100 }
-    @Transient
-    var savingsDebtsPercentage: Double { Double(savingsDebtsBudgetRepartition) / 100 }
-    
-    // Montant disponible à dépenser pour chaque catégorie (ex: 500-300-200)
-    @Transient
-    var needsBudget: Double { totalAvailableFunds * needsPercentage }
-    @Transient
-    var wantsBudget: Double { totalAvailableFunds * wantsPercentage }
-    @Transient
-    var savingsDebtsBudget: Double { totalAvailableFunds * savingsDebtsPercentage }
-    
-    // Quantité NEGATIVE dépensée pour une catégorie donnée (ex: -250)
-    @Transient
-    var spentNeedsBudget: Double { transactions!.filter { $0.category == .needs && $0.amount < 0 }.reduce(0, { $0 + $1.amount }) }
-    @Transient
-    var spentWantsBudget: Double { transactions!.filter { $0.category == .wants && $0.amount < 0 }.reduce(0, { $0 + $1.amount }) }
-    @Transient
-    var spentSavingsDebtsBudget: Double { transactions!.filter { $0.category == .savingsDebts && $0.amount < 0 }.reduce(0, { $0 + $1.amount }) }
-    
-    // Pourcentage dépensé pour une catégorie donnée (ex : 50€ dépensés en Wants sur un total de 100€ pour la catégorie Wants
-    // fixé par l'utilisateur renvoie 0.5)
-    @Transient
-    var spentNeedsCategoryPercentage : Double { fabs(spentNeedsBudget / needsBudget) }
-    @Transient
-    var spentWantsCategoryPercentage : Double { fabs(spentWantsBudget / wantsBudget) }
-    @Transient
-    var spentSavingsDebtsCategoryPercentage : Double { fabs(spentSavingsDebtsBudget / savingsDebtsBudget) }
-    
-    // Montant restant à dépenser pour une catégorie définie
-    @Transient
-    var remainingNeeds: Double { needsBudget + spentNeedsBudget }
-    @Transient
-    var remainingWants: Double { wantsBudget + spentWantsBudget }
-    @Transient
-    var remainingSavingsDebts: Double { savingsDebtsBudget + spentSavingsDebtsBudget }
-    
-    
-    // Total dépensé
-    @Transient
-    var totalSpent: Double {
-        spentNeedsBudget + spentWantsBudget + spentSavingsDebtsBudget
+    func update() {
+        var tempPositiveTransactionsTotal: Double = 0
+        var tempSpentNeedsBudget: Double = 0
+        var tempSpentWantsBudget: Double = 0
+        var tempSpentSavingsDebtsBudget: Double = 0
+        
+        if let transactionsLoop = transactions {
+            for transaction in transactionsLoop {
+                switch transaction.category {
+                case transactionCategory.needs: tempSpentNeedsBudget += transaction.amount;
+                case transactionCategory.wants: tempSpentWantsBudget += transaction.amount;
+                case transactionCategory.savingsDebts: tempSpentSavingsDebtsBudget += transaction.amount;
+                case transactionCategory.positiveTransaction: tempPositiveTransactionsTotal += transaction.amount
+                }
+            }
+        }
+        
+        positiveTransactionsTotal = tempPositiveTransactionsTotal
+        
+        spentNeedsBudget = tempSpentNeedsBudget
+        spentWantsBudget = tempSpentWantsBudget
+        spentSavingsDebtsBudget = tempSpentSavingsDebtsBudget
+        
+        totalAvailableFunds = monthlyBudget + positiveTransactionsTotal
+        
+        needsPercentage = Double(needsBudgetRepartition) / 100
+        wantsPercentage = Double(wantsBudgetRepartition) / 100
+        savingsDebtsPercentage = Double(savingsDebtsBudgetRepartition) / 100
+        
+        needsBudget = totalAvailableFunds * needsPercentage
+        wantsBudget = totalAvailableFunds * wantsPercentage
+        savingsDebtsBudget = totalAvailableFunds * savingsDebtsPercentage
+        
+        spentNeedsCategoryPercentage = fabs(spentNeedsBudget / needsBudget)
+        spentWantsCategoryPercentage = fabs(spentWantsBudget / wantsBudget)
+        spentSavingsDebtsCategoryPercentage = fabs(spentSavingsDebtsBudget / savingsDebtsBudget)
+        
+        remainingNeeds = needsBudget + spentNeedsBudget
+        remainingWants = wantsBudget + spentWantsBudget
+        remainingSavingsDebts = savingsDebtsBudget + spentSavingsDebtsBudget
+        
+        totalSpent = spentNeedsBudget + spentWantsBudget + spentSavingsDebtsBudget
+        
+        remaining = totalAvailableFunds + totalSpent
+        
+        spentNeedsPercentage = spentNeedsBudget / totalSpent * 100
+        spentWantsPercentage = spentWantsBudget / totalSpent * 100
+        spentSavingsDebtsPercentage = spentSavingsDebtsBudget / totalSpent * 100
+        
+        WidgetCenter.shared.reloadAllTimelines()
     }
-    
-    // Budget restant
-    @Transient
-    var remaining: Double {
-        totalAvailableFunds + totalSpent
-    }
-    
-    // Pourcentage (sur 100) d'une catégorie sur le total dépensé (et non pas sur le total de la catégorie en question)
-    @Transient
-    var spentNeedsPercentage: Double { spentNeedsBudget / totalSpent * 100}
-    @Transient
-    var spentWantsPercentage: Double { spentWantsBudget / totalSpent * 100}
-    @Transient
-    var spentSavingsDebtsPercentage: Double { spentSavingsDebtsBudget / totalSpent * 100}
-    
-    
-    // Total des transactions positives
-    @Transient
-    var positiveTransactionsTotal: Double { transactions!.filter { $0.amount > 0 }.reduce(0, { $0 + $1.amount }) }
-    
-    // Montant disponible au total en comptant les transactions positives a priori exceptionnelles
-    @Transient
-    var totalAvailableFunds: Double { monthlyBudget + positiveTransactionsTotal }
 }
