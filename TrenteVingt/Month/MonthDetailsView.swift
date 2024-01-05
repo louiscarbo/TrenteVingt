@@ -51,6 +51,7 @@ struct MonthDetailsView: View {
                     monthBudget.needsBudgetRepartition = 50
                     monthBudget.wantsBudgetRepartition = 30
                     monthBudget.savingsDebtsBudgetRepartition = 20
+                    monthBudget.update()
                 }
             }
             

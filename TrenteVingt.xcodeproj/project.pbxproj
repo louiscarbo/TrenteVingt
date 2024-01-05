@@ -648,7 +648,7 @@
 				CODE_SIGN_ENTITLEMENTS = TrenteVingt/TrenteVingtDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"TrenteVingt/Preview Content\"";
 				DEVELOPMENT_TEAM = 7T9Q86X738;
 				ENABLE_PREVIEWS = YES;
@@ -688,7 +688,7 @@
 				CODE_SIGN_ENTITLEMENTS = TrenteVingt/TrenteVingt.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"TrenteVingt/Preview Content\"";
 				DEVELOPMENT_TEAM = 7T9Q86X738;
 				ENABLE_PREVIEWS = YES;
