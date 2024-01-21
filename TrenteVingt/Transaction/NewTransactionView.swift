@@ -8,16 +8,27 @@ struct NewTransactionView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
     
+    // Transaction Data
     @State private var falseText = ""
     @State private var transactionTitle = ""
     @State private var dummyCategory : transactionCategory? = nil
+    
+    // View Data
     @FocusState private var amountFocus
     @FocusState private var titleFocus
-    @State private var showTitleField = false
+    @State private var currentScreen = CurrentScreen.amount
+    
+    // Recurring Transaction Data
+    @State private var isRecurring = false
+    @State private var recurrenceType: RecurrenceType = .monthly
     
     private var doubleAmount : Double {
         let stringWithPeriod = falseText.replacingOccurrences(of: ",", with: ".")
         return Double(stringWithPeriod) ?? 0.00
+    }
+    
+    private enum CurrentScreen {
+        case amount, title, recurrence
     }
     
     private var descriptionText : String {
@@ -38,7 +49,8 @@ struct NewTransactionView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .center) {
-                if !showTitleField {
+                switch(currentScreen) {
+                case CurrentScreen.amount:
                     Picker("Category", selection: $dummyCategory) {
                         Text("Income").tag(Optional(transactionCategory.positiveTransaction))
                         Text("Needs").tag(Optional(transactionCategory.needs))
@@ -65,10 +77,14 @@ struct NewTransactionView: View {
                         }
                     Spacer()
                     HStack {
+                        Toggle("This is recurring",isOn: $isRecurring)
+                            .toggleStyle(CheckToggleStyle(color: Color.black))
+                            .tint(Color.black)
+                            .sensoryFeedback(.selection, trigger: isRecurring)
                         Spacer()
                         Button {
                             withAnimation {
-                                showTitleField.toggle()
+                                currentScreen = .title
                                 titleFocus = true
                             }
                         } label: {
@@ -81,7 +97,7 @@ struct NewTransactionView: View {
                         .tint(colorScheme == .light ? Color(.black) : Color(.white))
                         .disabled(falseText == "" || dummyCategory == nil || falseText == "-")
                     }
-                } else {
+                case CurrentScreen.title:
                     HStack {
                         Label("Enter a title for this transaction.", systemImage: "questionmark.circle")
                         Spacer()
@@ -91,7 +107,7 @@ struct NewTransactionView: View {
                         .submitLabel(.done)
                         .font(.system(size: 40, weight: .bold))
                         .multilineTextAlignment(.center)
-                        .transition(.move(edge: .trailing))
+                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
                         .focused($titleFocus)
                         .onSubmit {
                             addAndClose()
@@ -100,7 +116,62 @@ struct NewTransactionView: View {
                     HStack {
                         Button {
                             withAnimation {
-                                showTitleField.toggle()
+                                currentScreen = .amount
+                                amountFocus = true
+                            }
+                        } label: {
+                            Text("Previous")
+                                .foregroundStyle(colorScheme == .light ? .white : .black)
+                                .font(.system(.title3, design: .serif))
+                        }
+                        .buttonBorderShape(.capsule)
+                        .buttonStyle(.borderedProminent)
+                        .tint(colorScheme == .light ? Color(.black) : Color(.white))
+                        .disabled(falseText == "" || dummyCategory == nil || falseText == "-")
+                        Spacer()
+                        if isRecurring {
+                            Button {
+                                withAnimation {
+                                    currentScreen = .recurrence
+                                }
+                            } label: {
+                                Text("Next")
+                                    .foregroundStyle(colorScheme == .light ? .white : .black)
+                                    .font(.system(.title3, design: .serif))
+                            }
+                            .buttonBorderShape(.capsule)
+                            .buttonStyle(.borderedProminent)
+                            .tint(colorScheme == .light ? Color(.black) : Color(.white))
+                            .disabled(transactionTitle == "")
+                        }
+                    }
+                case CurrentScreen.recurrence:
+                    Form {
+                        Picker("Recurrence type", selection: $recurrenceType, content: {
+                            ForEach(RecurrenceType.allCases, content: { recurrenceType in
+                                Text(recurrenceType.designation)
+                            })
+                        })
+                        .pickerStyle(.inline)
+                    }
+                    .scrollContentBackground(.hidden)
+                    switch(recurrenceType) {
+                    case RecurrenceType.everyXDays:
+                        Text("Every X Days")
+                    case RecurrenceType.weekly:
+                        Text("Hi")
+                    case RecurrenceType.monthly:
+                        Text("Hi")
+                    case RecurrenceType.everyXMonths:
+                        Text("Hi")
+                    case RecurrenceType.yearly:
+                        Text("Hi")
+                    }
+                    Spacer()
+                    HStack {
+                        Button {
+                            withAnimation {
+                                currentScreen = .title
                                 amountFocus = true
                             }
                         } label: {
@@ -127,7 +198,7 @@ struct NewTransactionView: View {
                     Button("OK") {
                         addAndClose()
                     }
-                    .disabled(falseText == "" || transactionTitle == "")
+                    .disabled(falseText == "" || transactionTitle == "" || (isRecurring && currentScreen != .recurrence))
                 }
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
@@ -155,6 +226,10 @@ struct NewTransactionView: View {
             title: transactionTitle,
             amount: doubleAmount,
             category: dummyCategory ?? .needs)
+        
+        
+        
+        
         modelContext.insert(newTransaction)
         newTransaction.monthBudget = currentMonthBudget
         currentMonthBudget.transactions?.append(newTransaction) ?? (currentMonthBudget.transactions = [newTransaction])

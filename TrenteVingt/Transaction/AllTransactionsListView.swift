@@ -206,7 +206,7 @@ private struct SortByButton: View {
     }
 }
 
-private struct FilterByToggle: View {
+ struct FilterByToggle: View {
     let filterByCase: FilterBy
     
     @Binding var showCategory: Bool?
@@ -224,25 +224,25 @@ private struct FilterByToggle: View {
             }
             .sensoryFeedback(.impact, trigger: showCategoryLocal)
     }
+}
+
+public struct CheckToggleStyle: ToggleStyle {
+    let color: Color
     
-    struct CheckToggleStyle: ToggleStyle {
-        let color: Color
-        
-        func makeBody(configuration: Configuration) -> some View {
-            Button {
-                configuration.isOn.toggle()
-            } label: {
-                Label {
-                    configuration.label
-                } icon: {
-                    Image(systemName: configuration.isOn ? "checkmark.circle.fill" : "circle")
-                        .foregroundStyle(color)
-                        .accessibility(label: Text(configuration.isOn ? "Checked" : "Unchecked"))
-                        .imageScale(.large)
-                }
+    public func makeBody(configuration: Configuration) -> some View {
+        Button {
+            configuration.isOn.toggle()
+        } label: {
+            Label {
+                configuration.label
+            } icon: {
+                Image(systemName: configuration.isOn ? "checkmark.circle.fill" : "circle")
+                    .foregroundStyle(color)
+                    .accessibility(label: Text(configuration.isOn ? "Checked" : "Unchecked"))
+                    .imageScale(.large)
             }
-            .buttonStyle(.plain)
         }
+        .buttonStyle(.plain)
     }
 }
 

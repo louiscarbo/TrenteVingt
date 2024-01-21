@@ -36,6 +36,7 @@
 		7B99963D2AE6CA8500F3C243 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99963A2AE6C8DC00F3C243 /* PieChartView.swift */; };
 		7B9996402AE7DB8E00F3C243 /* AllMonthsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B99963F2AE7DB8E00F3C243 /* AllMonthsView.swift */; };
 		7B9996422AE7DBE600F3C243 /* MonthRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9996412AE7DBE600F3C243 /* MonthRowView.swift */; };
+		7BA6201E2B5D242600335700 /* RecurringTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6201D2B5D242600335700 /* RecurringTransaction.swift */; };
 		7BAABC4E2A9B5314001D07F7 /* NewTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAABC4D2A9B5314001D07F7 /* NewTransactionView.swift */; };
 		7BAB4E622AEC355D002AC0AD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB4E612AEC355D002AC0AD /* SettingsView.swift */; };
 		7BAB4E652AED52A8002AC0AD /* NotificationsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB4E642AED52A8002AC0AD /* NotificationsSettingsView.swift */; };
@@ -113,6 +114,7 @@
 		7B99963E2AE6CBC600F3C243 /* TrenteVingtDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrenteVingtDebug.entitlements; sourceTree = "<group>"; };
 		7B99963F2AE7DB8E00F3C243 /* AllMonthsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMonthsView.swift; sourceTree = "<group>"; };
 		7B9996412AE7DBE600F3C243 /* MonthRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthRowView.swift; sourceTree = "<group>"; };
+		7BA6201D2B5D242600335700 /* RecurringTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringTransaction.swift; sourceTree = "<group>"; };
 		7BAABC4D2A9B5314001D07F7 /* NewTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionView.swift; sourceTree = "<group>"; };
 		7BAB4E612AEC355D002AC0AD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7BAB4E642AED52A8002AC0AD /* NotificationsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsView.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			children = (
 				7B3F90462A59BAA000CE0BD4 /* MonthBudget.swift */,
 				7B3F90482A59BC4B00CE0BD4 /* Transaction.swift */,
+				7BA6201D2B5D242600335700 /* RecurringTransaction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				7B3F90472A59BAA000CE0BD4 /* MonthBudget.swift in Sources */,
 				7BDAE0712AE112B000CD20C4 /* RemainingSpentWidget.swift in Sources */,
 				7BCF819D2AF56A2F000C55A8 /* OnboardingNotificationsView.swift in Sources */,
+				7BA6201E2B5D242600335700 /* RecurringTransaction.swift in Sources */,
 				7B7323892A867AD000C6D6FD /* MonthDetailsView.swift in Sources */,
 				7BAABC4E2A9B5314001D07F7 /* NewTransactionView.swift in Sources */,
 				7B2F8DD02A5EA2F90090E88E /* TransactionRowView.swift in Sources */,

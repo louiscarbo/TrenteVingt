@@ -1292,6 +1292,15 @@
         }
       }
     },
+    "Every X days" : {
+
+    },
+    "Every X Days" : {
+
+    },
+    "Every X months" : {
+
+    },
     "Extras like dining out and shopping." : {
       "localizations" : {
         "es" : {
@@ -1435,6 +1444,9 @@
           }
         }
       }
+    },
+    "Hi" : {
+
     },
     "Hours" : {
       "localizations" : {
@@ -1755,6 +1767,9 @@
           }
         }
       }
+    },
+    "Monthly" : {
+
     },
     "Monthly disposable income" : {
       "localizations" : {
@@ -2139,6 +2154,9 @@
           }
         }
       }
+    },
+    "Recurrence type" : {
+
     },
     "Remaining" : {
       "localizations" : {
@@ -2637,6 +2655,9 @@
         }
       }
     },
+    "This is recurring" : {
+
+    },
     "Time" : {
       "localizations" : {
         "es" : {
@@ -2813,6 +2834,9 @@
         }
       }
     },
+    "Weekly" : {
+
+    },
     "Welcome to TrenteVingt" : {
       "localizations" : {
         "es" : {
@@ -2892,6 +2916,9 @@
           }
         }
       }
+    },
+    "Yearly" : {
+
     },
     "You can now start easily tracking your budget with TrenteVingt." : {
       "localizations" : {
