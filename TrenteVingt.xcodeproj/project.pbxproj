@@ -211,6 +211,7 @@
 				7B0780332A8BEAF70076979D /* Info.plist */,
 				7B0780322A8BE5E20076979D /* TrenteVingt.entitlements */,
 				7B3F90332A59BA6B00CE0BD4 /* TrenteVingtApp.swift */,
+				7BA6201C2B5D20A900335700 /* Handlers */,
 				7B3F90452A59BA9700CE0BD4 /* Models */,
 				7BAB4E632AED5197002AC0AD /* Settings */,
 				7B9996372AE6BB0700F3C243 /* Month */,
@@ -236,8 +237,6 @@
 			children = (
 				7B3F90462A59BAA000CE0BD4 /* MonthBudget.swift */,
 				7B3F90482A59BC4B00CE0BD4 /* Transaction.swift */,
-				7BAB4E682AED5431002AC0AD /* NotificationsHandler.swift */,
-				7BAB4E6B2AEE5B2A002AC0AD /* BackgroundTaskHandler.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +263,15 @@
 				7B7323842A81470200C6D6FD /* NewMonthView.swift */,
 			);
 			path = Month;
+			sourceTree = "<group>";
+		};
+		7BA6201C2B5D20A900335700 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				7BAB4E682AED5431002AC0AD /* NotificationsHandler.swift */,
+				7BAB4E6B2AEE5B2A002AC0AD /* BackgroundTaskHandler.swift */,
+			);
+			path = Handlers;
 			sourceTree = "<group>";
 		};
 		7BAB4E632AED5197002AC0AD /* Settings */ = {
