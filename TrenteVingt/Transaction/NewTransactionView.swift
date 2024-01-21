@@ -21,6 +21,9 @@ struct NewTransactionView: View {
     // Recurring Transaction Data
     @State private var isRecurring = false
     @State private var recurrenceType: RecurrenceType = .monthly
+    @State private var interval: Int = 1
+    @State private var day: Int = 1
+    @State private var startingDate: Date = Date()
     
     private var doubleAmount : Double {
         let stringWithPeriod = falseText.replacingOccurrences(of: ",", with: ".")
@@ -78,7 +81,7 @@ struct NewTransactionView: View {
                     Spacer()
                     HStack {
                         Toggle("This is recurring",isOn: $isRecurring)
-                            .toggleStyle(CheckToggleStyle(color: Color.black))
+                            .toggleStyle(CheckToggleStyle(color: colorScheme == .light ? .black : .white))
                             .tint(Color.black)
                             .sensoryFeedback(.selection, trigger: isRecurring)
                         Spacer()
@@ -133,6 +136,7 @@ struct NewTransactionView: View {
                             Button {
                                 withAnimation {
                                     currentScreen = .recurrence
+                                    titleFocus = false
                                 }
                             } label: {
                                 Text("Next")
@@ -146,27 +150,10 @@ struct NewTransactionView: View {
                         }
                     }
                 case CurrentScreen.recurrence:
-                    Form {
-                        Picker("Recurrence type", selection: $recurrenceType, content: {
-                            ForEach(RecurrenceType.allCases, content: { recurrenceType in
-                                Text(recurrenceType.designation)
-                            })
-                        })
-                        .pickerStyle(.inline)
-                    }
-                    .scrollContentBackground(.hidden)
-                    switch(recurrenceType) {
-                    case RecurrenceType.everyXDays:
-                        Text("Every X Days")
-                    case RecurrenceType.weekly:
-                        Text("Hi")
-                    case RecurrenceType.monthly:
-                        Text("Hi")
-                    case RecurrenceType.everyXMonths:
-                        Text("Hi")
-                    case RecurrenceType.yearly:
-                        Text("Hi")
-                    }
+                    RecurrenceTypePicker(selectedRecurrenceType: $recurrenceType)
+                    Spacer()
+                        .frame(height: 30)
+                    RecurrenceDetailsPicker(recurrenceType: $recurrenceType, interval: $interval, day: $day, startingDate: $startingDate)
                     Spacer()
                     HStack {
                         Button {
@@ -237,5 +224,41 @@ struct NewTransactionView: View {
         WidgetCenter.shared.reloadAllTimelines()
         
         dismiss()
+    }
+    
+    struct RecurrenceTypePicker: View {
+        @Binding var selectedRecurrenceType : RecurrenceType
+        @Environment (\.colorScheme) private var colorScheme
+        
+        var body: some View {
+            VStack(alignment: .leading) {
+                Text("RECURRENCE TYPE :")
+                    .font(.caption)
+                    .padding(.leading)
+                    .foregroundStyle(.gray)
+                VStack(spacing: 0) {
+                    ForEach(RecurrenceType.allCases) { recurrenceType in
+                        let isSelected = recurrenceType == selectedRecurrenceType
+                        HStack {
+                            Button {
+                                selectedRecurrenceType = recurrenceType
+                            } label: {
+                                Text(recurrenceType.designation)
+                                    .foregroundStyle(colorScheme == .light ? .black : .white)
+                                    .padding(4)
+                                Spacer()
+                                if isSelected {
+                                    Image(systemName: "checkmark")
+                                }
+                            }
+                            .buttonBorderShape(.roundedRectangle(radius: 0))
+                            .buttonStyle(.bordered)
+                        }
+                        Divider()
+                    }
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
+        }
     }
 }

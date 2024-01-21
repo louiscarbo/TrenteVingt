@@ -1061,6 +1061,12 @@
         }
       }
     },
+    "day, starting :" : {
+
+    },
+    "days, starting :" : {
+
+    },
     "December" : {
       "localizations" : {
         "es" : {
@@ -1295,12 +1301,6 @@
     "Every X days" : {
 
     },
-    "Every X Days" : {
-
-    },
-    "Every X months" : {
-
-    },
     "Extras like dining out and shopping." : {
       "localizations" : {
         "es" : {
@@ -1364,6 +1364,9 @@
           }
         }
       }
+    },
+    "Friday" : {
+
     },
     "Give your budget a little boost. Log today's transactions, it's quick and easy!" : {
       "localizations" : {
@@ -1444,9 +1447,6 @@
           }
         }
       }
-    },
-    "Hi" : {
-
     },
     "Hours" : {
       "localizations" : {
@@ -1720,6 +1720,9 @@
         }
       }
     },
+    "Monday" : {
+
+    },
     "Money saved and debts due." : {
       "localizations" : {
         "es" : {
@@ -1898,6 +1901,9 @@
           }
         }
       }
+    },
+    "of each month." : {
+
     },
     "OK" : {
       "localizations" : {
@@ -2155,7 +2161,7 @@
         }
       }
     },
-    "Recurrence type" : {
+    "RECURRENCE TYPE :" : {
 
     },
     "Remaining" : {
@@ -2221,6 +2227,9 @@
           }
         }
       }
+    },
+    "Saturday" : {
+
     },
     "Savings" : {
       "localizations" : {
@@ -2591,6 +2600,9 @@
         }
       }
     },
+    "Sunday" : {
+
+    },
     "Take a quick sec to log today's spendings. It's the key to mastering your budget!" : {
       "localizations" : {
         "es" : {
@@ -2656,6 +2668,21 @@
       }
     },
     "This is recurring" : {
+
+    },
+    "This transaction will happen every " : {
+
+    },
+    "This transaction will happen every week, on :" : {
+
+    },
+    "This transaction will happen every year, starting on:" : {
+
+    },
+    "This transaction will happen on day " : {
+
+    },
+    "Thursday" : {
 
     },
     "Time" : {
@@ -2754,6 +2781,9 @@
         }
       }
     },
+    "Tuesday" : {
+
+    },
     "Turn on daily reminders?" : {
       "localizations" : {
         "es" : {
@@ -2833,6 +2863,9 @@
           }
         }
       }
+    },
+    "Wednesday" : {
+
     },
     "Weekly" : {
 

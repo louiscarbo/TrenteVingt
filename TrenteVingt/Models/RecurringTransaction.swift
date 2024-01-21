@@ -17,13 +17,11 @@ enum RecurrenceType: Codable, CaseIterable, Identifiable {
     case everyXDays
     case weekly
     case monthly
-    case everyXMonths
     case yearly
     
     var id: RecurrenceType { self }
     var designation: String {
         switch self {
-        case .everyXMonths: return String(localized: "Every X months")
         case .yearly: return String(localized: "Yearly")
         case .monthly: return String(localized: "Monthly")
         case .everyXDays: return String(localized: "Every X days")
@@ -51,13 +49,17 @@ public func getMonth(from integer: Int) -> String? {
 }
 
 public func getDayOfWeek(from integer: Int) -> String? {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "EEEE"
     
-    guard let date = Calendar.current.date(bySetting: .weekday, value: integer, of: Date()) else {
-        return nil
+    switch(integer) {
+    case 1: return String(localized: "Monday")
+    case 2: return String(localized: "Tuesday")
+    case 3: return String(localized: "Wednesday")
+    case 4: return String(localized: "Thursday")
+    case 5: return String(localized: "Friday")
+    case 6: return String(localized: "Saturday")
+    case 7: return String(localized: "Sunday")
+    default: return nil
     }
     
-    return formatter.string(from: date)
 }
 
