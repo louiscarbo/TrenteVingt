@@ -18,10 +18,14 @@ struct RecurrenceDetailsPicker: View {
                     .frame(width: 70)
                     .multilineTextAlignment(.center)
                     .font(.title)
+                    .keyboardType(.numberPad)
                 Text(interval == 1 ? "day, starting :" : "days, starting :")
                 DatePicker("", selection: $startingDate, in: Date()..., displayedComponents: .date)
                     .datePickerStyle(.automatic)
                     .frame(width: 1)
+            }
+            .onAppear {
+                interval = 1
             }
         case RecurrenceType.weekly:
             VStack {
@@ -46,6 +50,9 @@ struct RecurrenceDetailsPicker: View {
                         Divider()
                     }
                 }
+                .onAppear {
+                    day = 1
+                }
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             }
         case RecurrenceType.monthly:
@@ -56,7 +63,14 @@ struct RecurrenceDetailsPicker: View {
                     .frame(width: 70)
                     .multilineTextAlignment(.center)
                     .font(.title)
+                    .onChange(of: day) {
+                        checkDayNumber()
+                    }
+                    .keyboardType(.numberPad)
                 Text("of each month.")
+            }
+            .onAppear {
+                day = 1
             }
         case RecurrenceType.yearly:
             VStack {
@@ -69,8 +83,24 @@ struct RecurrenceDetailsPicker: View {
             }
         }
     }
+    
+    func checkDayNumber() -> Void {
+        let decimalDigits = CharacterSet.decimalDigits
+        if day > 31 {
+            day = 31
+        } else if day < 1 {
+            day = 1
+        }
+    }
+    
+    func checkString(string: String) -> Bool {
+        let digits = CharacterSet.decimalDigits
+        let stringSet = CharacterSet(charactersIn: string)
+
+        return digits.isSuperset(of: stringSet)
+    }
 }
 
 #Preview {
-    RecurrenceDetailsPicker(recurrenceType: .constant(.everyXDays), interval: .constant(1), day: .constant(1), startingDate: .constant(Date()))
+    RecurrenceDetailsPicker(recurrenceType: .constant(.monthly), interval: .constant(1), day: .constant(1), startingDate: .constant(Date()))
 }
