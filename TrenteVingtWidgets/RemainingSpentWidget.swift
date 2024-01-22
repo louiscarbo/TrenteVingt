@@ -68,7 +68,7 @@ struct RemainingSpentWidgetView : View {
                             .foregroundStyle(color)
                     }
                     
-                    if family == .systemMedium {
+                    if family == .systemMedium || family == .systemLarge {
                         Spacer()
                         VStack(alignment: .trailing) {
                             Text("Spent")
@@ -92,7 +92,7 @@ struct RemainingSpentWidgetView : View {
                             .font(.caption)
                     }
                     Spacer()
-                    if family == .systemMedium {
+                    if family == .systemMedium || family == .systemLarge {
                         Link(destination: URL(string: "trentevingt://newtransaction/"+"\(monthBudget.identifier.uuidString)")!){
                             Button {
                             } label: {
@@ -105,6 +105,18 @@ struct RemainingSpentWidgetView : View {
                             .tint(colorScheme == .light ? Color(.black) : Color(.white))
                         }
                     }
+                }
+                
+                if family == .systemLarge {
+                    VStack(alignment: .leading, spacing: 10) {
+                        if let transactions = entry.monthBudget?.transactions?.sorted(by: { return $0.addedDate > $1.addedDate }) {
+                            ForEach(Array(transactions.prefix(3))) { transaction in
+                                Divider()
+                                TransactionRowView(transaction: transaction, currency: monthBudget.currency)
+                            }
+                        }
+                    }
+                    .padding(.top, 10)
                 }
             }
         } else {
@@ -123,7 +135,7 @@ struct RemainingSpentWidget: Widget {
         }
         .configurationDisplayName("Remaining / Spent budget")
         .description("See how much money remains for the month, or how much you spent.")
-        .supportedFamilies([.systemSmall, .systemMedium])
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
 

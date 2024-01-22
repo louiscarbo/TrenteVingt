@@ -47,6 +47,8 @@
 		7BC5EF022A868AB200B02275 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC5EF012A868AB200B02275 /* TransactionDetailView.swift */; };
 		7BC6152E2B5F0E6000FD5464 /* RecurringTransactionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6152D2B5F0E6000FD5464 /* RecurringTransactionRowView.swift */; };
 		7BC615302B5F137000FD5464 /* AllRecurringTransactionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6152F2B5F137000FD5464 /* AllRecurringTransactionsListView.swift */; };
+		7BC615312B5F24AD00FD5464 /* TransactionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F8DCF2A5EA2F90090E88E /* TransactionRowView.swift */; };
+		7BC615322B5F24BB00FD5464 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC5EF012A868AB200B02275 /* TransactionDetailView.swift */; };
 		7BCF819D2AF56A2F000C55A8 /* OnboardingNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF819C2AF56A2F000C55A8 /* OnboardingNotificationsView.swift */; };
 		7BD918262AF984BB00E4F53F /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD918252AF984BB00E4F53F /* TipView.swift */; };
 		7BDAE06C2AE0746800CD20C4 /* MonthBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F90462A59BAA000CE0BD4 /* MonthBudget.swift */; };
@@ -427,7 +429,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B99963D2AE6CA8500F3C243 /* PieChartView.swift in Sources */,
+				7BC615322B5F24BB00FD5464 /* TransactionDetailView.swift in Sources */,
 				7BA620272B5E89F600335700 /* RecurringTransaction.swift in Sources */,
+				7BC615312B5F24AD00FD5464 /* TransactionRowView.swift in Sources */,
 				7B2F8DBD2A5B264E0090E88E /* PieChartWidget.swift in Sources */,
 				7B2F8DBB2A5B264E0090E88E /* TrenteVingtWidgetsBundle.swift in Sources */,
 				7BDAE06D2AE078AA00CD20C4 /* Transaction.swift in Sources */,
