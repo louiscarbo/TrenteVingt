@@ -19,7 +19,7 @@ struct MonthView: View {
     
     private var transactionsDisplayedInList: [Transaction] {
         if let transactions = monthBudget.transactions {
-            return Array(transactions.sorted { $0.addedDate > $1.addedDate }.prefix(5))
+            return Array(transactions.sorted { $0.addedDate > $1.addedDate }.prefix(3))
         } else {
             return [Transaction]()
         }
