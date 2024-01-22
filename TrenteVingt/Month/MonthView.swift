@@ -7,6 +7,11 @@ struct MonthView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.dismiss) private var dismiss
     
+    @Query var recurringTransactions: [RecurringTransaction]
+    private var recurringTransactionsDisplayedInList: [RecurringTransaction] {
+        return Array(recurringTransactions.prefix(3))
+    }
+    
     @Bindable var monthBudget: MonthBudget
     @State var showSettings = false
     @State private var isPresentingNewMonthView = false
@@ -54,6 +59,24 @@ struct MonthView: View {
                                 Text("Add your first transaction now and see how your budget evolves!")
                             }
                         }
+                        
+                        if recurringTransactions.count > 0 {
+                            Section("Recurring Transactions") {
+                                ForEach(recurringTransactionsDisplayedInList) { recurringTransaction in
+                                    RecurringTransactionRowView(currency: monthBudget.currency, recurringTransaction: recurringTransaction)
+                                }
+                                if recurringTransactions.count > 3 {
+                                    NavigationLink(destination: AllRecurringTransactionsListView(recurringTransactions: recurringTransactions, currency: monthBudget.currency)) {
+                                        Text("Show all recurring transactions")
+                                    }
+                                }
+                            }
+                        } else {
+                            Section {
+                                Text("Add your first recurring transaction now by tapping 'Add Transaction'!")
+                            }
+                        }
+                        
                         Text("")
                             .listRowBackground(Color(.clear))
                     }

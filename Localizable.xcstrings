@@ -552,6 +552,9 @@
         }
       }
     },
+    "Add your first recurring transaction now by tapping 'Add Transaction'!" : {
+
+    },
     "Add your first transaction now and see how your budget evolves!" : {
       "localizations" : {
         "es" : {
@@ -1061,12 +1064,6 @@
         }
       }
     },
-    "day, starting :" : {
-
-    },
-    "days, starting :" : {
-
-    },
     "December" : {
       "localizations" : {
         "es" : {
@@ -1146,6 +1143,9 @@
           }
         }
       }
+    },
+    "didn't find transaction :(" : {
+
     },
     "Dining out, entertainment, vacations..." : {
       "localizations" : {
@@ -1265,6 +1265,9 @@
         }
       }
     },
+    "Erreur" : {
+
+    },
     "Estimate your likely spending for this month. Remember, you can adjust this at any time during or between months." : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1297,9 +1300,6 @@
           }
         }
       }
-    },
-    "Every X days" : {
-
     },
     "Extras like dining out and shopping." : {
       "localizations" : {
@@ -2164,6 +2164,9 @@
     "RECURRENCE TYPE :" : {
 
     },
+    "Recurring Transactions" : {
+
+    },
     "Remaining" : {
       "localizations" : {
         "es" : {
@@ -2392,6 +2395,9 @@
         }
       }
     },
+    "Show all recurring transactions" : {
+
+    },
     "Show all transactions" : {
       "localizations" : {
         "es" : {
@@ -2600,6 +2606,9 @@
         }
       }
     },
+    "Sum of all recurring transactions" : {
+
+    },
     "Sunday" : {
 
     },
@@ -2670,7 +2679,7 @@
     "This is recurring" : {
 
     },
-    "This transaction will happen every " : {
+    "This transaction is set for today. Open TrenteVingt to confirm it!" : {
 
     },
     "This transaction will happen every week, on :" : {

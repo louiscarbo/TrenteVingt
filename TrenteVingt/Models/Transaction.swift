@@ -9,6 +9,7 @@ final class Transaction {
     var amount: Double = 0.0
     var addedDate: Date = Date()
     var category: transactionCategory = transactionCategory.needs
+    var recurringTransaction: RecurringTransaction?
 
     init(title: String, amount: Double, category: transactionCategory) {
         self.title = title

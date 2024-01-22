@@ -214,14 +214,32 @@ struct NewTransactionView: View {
             amount: doubleAmount,
             category: dummyCategory ?? .needs)
         
-        
-        
-        
-        modelContext.insert(newTransaction)
-        newTransaction.monthBudget = currentMonthBudget
-        currentMonthBudget.transactions?.append(newTransaction) ?? (currentMonthBudget.transactions = [newTransaction])
-        currentMonthBudget.update()
-        WidgetCenter.shared.reloadAllTimelines()
+        if isRecurring {
+            let newRecurringTransaction = RecurringTransaction(transaction: newTransaction)
+            
+            var newRecurrenceDetails = RecurrenceDetails(recurrenceType: recurrenceType)
+            switch(recurrenceType) {
+//            case .everyXDays:
+//                newRecurrenceDetails.interval = interval
+//                newRecurrenceDetails.startingDate = startingDate
+            case .weekly:
+                newRecurrenceDetails.day = day
+            case .monthly:
+                newRecurrenceDetails.day = day
+            case .yearly:
+                newRecurrenceDetails.startingDate = startingDate
+            }
+            
+            newRecurringTransaction.recurrenceDetails = newRecurrenceDetails
+            modelContext.insert(newRecurringTransaction)
+            NotificationHandler.shared.scheduleRecurringTransactionNotification(recurringTransaction: newRecurringTransaction)
+        } else {
+            modelContext.insert(newTransaction)
+            newTransaction.monthBudget = currentMonthBudget
+            currentMonthBudget.transactions?.append(newTransaction) ?? (currentMonthBudget.transactions = [newTransaction])
+            currentMonthBudget.update()
+            WidgetCenter.shared.reloadAllTimelines()
+        }
         
         dismiss()
     }

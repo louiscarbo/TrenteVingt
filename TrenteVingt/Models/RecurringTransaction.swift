@@ -3,10 +3,11 @@ import SwiftData
 
 @Model
 final class RecurringTransaction {
+    var identifier = UUID()
     var transaction: Transaction?
     var recurrenceDetails: RecurrenceDetails = RecurrenceDetails(recurrenceType: .monthly, day: 1)
-    var monthBudgetsWhereAdded: [MonthBudget] = []
     var archived: Bool = false
+    var lastScheduledNotificationDate: Date?
     
     init(transaction: Transaction) {
         self.transaction = transaction
@@ -14,7 +15,6 @@ final class RecurringTransaction {
 }
 
 enum RecurrenceType: Codable, CaseIterable, Identifiable {
-    case everyXDays
     case weekly
     case monthly
     case yearly
@@ -24,17 +24,16 @@ enum RecurrenceType: Codable, CaseIterable, Identifiable {
         switch self {
         case .yearly: return String(localized: "Yearly")
         case .monthly: return String(localized: "Monthly")
-        case .everyXDays: return String(localized: "Every X days")
         case .weekly: return String(localized: "Weekly")
         }
     }
 }
 
 struct RecurrenceDetails: Codable {
-    var recurrenceType: RecurrenceType
+    var recurrenceType: RecurrenceType = .monthly
     var interval: Int? // Interval in days or months
     var day: Int? // Date or day of the week
-    var month: Int? // Date
+    var startingDate: Date? // Date for .everyXMonths and .yearly
 }
 
 public func getMonth(from integer: Int) -> String? {
@@ -48,7 +47,7 @@ public func getMonth(from integer: Int) -> String? {
     return formatter.string(from: date)
 }
 
-public func getDayOfWeek(from integer: Int) -> String? {
+public func getDayOfWeek(from integer: Int) -> String {
     
     switch(integer) {
     case 1: return String(localized: "Monday")
@@ -58,8 +57,24 @@ public func getDayOfWeek(from integer: Int) -> String? {
     case 5: return String(localized: "Friday")
     case 6: return String(localized: "Saturday")
     case 7: return String(localized: "Sunday")
-    default: return nil
+    default: return String(localized: "Erreur")
     }
     
 }
 
+func getNextOccurenceDate(for recurringTransaction: RecurringTransaction) -> Date? {
+    let calendar = Calendar.current
+    if let lastOccurrence = recurringTransaction.lastScheduledNotificationDate == nil ? recurringTransaction.recurrenceDetails.startingDate : recurringTransaction.lastScheduledNotificationDate {
+        if let interval = recurringTransaction.recurrenceDetails.interval {
+            if let nextOccurrenceDate = calendar.date(byAdding: .day, value: interval, to: lastOccurrence) {
+                return nextOccurrenceDate
+            }
+        }
+    }
+   print("Error calculating next occurrence date.")
+   return nil
+}
+
+func setLastScheduledNotificationDate(atDate date: Date, for recurringTransaction: RecurringTransaction) {
+    recurringTransaction.lastScheduledNotificationDate = date
+}

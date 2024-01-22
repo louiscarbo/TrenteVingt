@@ -136,18 +136,64 @@ public class NotificationHandler {
         }
     }
     
-    // 4. Cancel All Notifications but the one that says that a new month started
+    func scheduleRecurringTransactionNotification(recurringTransaction: RecurringTransaction) {
+        print("Scheduling a new recurring transaction notification.")
+        
+        let transaction = recurringTransaction.transaction
+        
+        let content = UNMutableNotificationContent()
+        if let title = transaction?.title {
+            content.title = "⌛️ " + title
+        } else {
+            content.title = "⌛️ Recurring Transaction"
+        }
+        content.body = String(localized:"This transaction is set for today. Open TrenteVingt to confirm it!")
+        content.sound = .default
+                
+        var dateComponents = DateComponents()
+        dateComponents.hour = 8
+        dateComponents.minute = 0
+        
+        var trigger: UNCalendarNotificationTrigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.hour, .minute, .month, .day, .year], from: Date().addingTimeInterval(TimeInterval(9999))), repeats: false)
+        
+        switch(recurringTransaction.recurrenceDetails.recurrenceType) {
+        case .weekly:
+            dateComponents.weekday = convertEuropeanToAmericanWeekday(recurringTransaction.recurrenceDetails.day!)
+            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        case .monthly:
+            dateComponents.day = recurringTransaction.recurrenceDetails.day
+            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        case .yearly:
+            if let startingDate = recurringTransaction.recurrenceDetails.startingDate {
+                dateComponents = Calendar.current.dateComponents([.day, .month], from: startingDate)
+                trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            }
+        }
+                
+        let identifier = "recurring" + recurringTransaction.identifier.entityIdentifierString
+        
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        notificationCenter.add(request) { (error) in
+            if let error = error {
+                print("Error scheduling notification: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    // TODO Don't cancel recurring transactions
+    // 4. Cancel All  daily Notifications
     func cancelAllNotifications(completion: @escaping () -> Void) {
         notificationCenter.removeAllPendingNotificationRequests()
         
         notificationCenter.getPendingNotificationRequests { (requests) in
             // Filter out the request with identifier "monthStarts"
-            if let monthStartsRequest = requests.first(where: { $0.identifier == "monthStarts" }) {
+            if let requestsToKeep = requests.first(where: { $0.identifier == "monthStarts"  || $0.identifier.contains("recurring")}) {
                 // Remove all pending notifications
                 self.notificationCenter.removeAllPendingNotificationRequests()
                 
-                // Re-add the monthStarts notification
-                self.notificationCenter.add(monthStartsRequest, withCompletionHandler: { (error) in
+                // Re-add the requests to keep
+                self.notificationCenter.add(requestsToKeep, withCompletionHandler: { (error) in
                     if let error = error {
                         print("Error re-adding notification: \(error)")
                     }
@@ -160,6 +206,23 @@ public class NotificationHandler {
             }
         }
     }
+}
+
+func getNextDate() -> Void {
+    var dateComponents = DateComponents()
+    dateComponents.day = 31
+    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+
+    if let nextTriggerDate = trigger.nextTriggerDate()?.formatted(.dateTime) {
+        print(nextTriggerDate)
+    } else {
+        print("Oops!")
+    }
+}
+
+func convertEuropeanToAmericanWeekday(_ europeanWeekday: Int) -> Int {
+    let americanWeekday = (europeanWeekday + 5) % 7 + 1
+    return americanWeekday
 }
 
 struct NotificationStyle {

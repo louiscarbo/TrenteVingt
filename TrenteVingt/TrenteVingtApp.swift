@@ -4,18 +4,8 @@ import BackgroundTasks
 import UserNotifications
 import WidgetKit
 import TipKit
-
 @main
 struct TrenteVingtApp: App {
-    init() {
-        print("Notifications are on : \(UserDefaults.standard.bool(forKey: "notificationsAreOn"))")
-        if UserDefaults.standard.bool(forKey: "notificationsAreOn") {
-            NotificationHandler.shared.scheduleDailyNotifications()
-        }
-        try? Tips.configure()
-        updateMonthBudgetsValues()
-    }
-    
     var body: some Scene {
         WindowGroup {
             AllMonthsView()
@@ -27,6 +17,15 @@ struct TrenteVingtApp: App {
         .backgroundTask(.appRefresh("NewMonth")) {
             await startNewMonthInBackground()
         }
+    }
+    
+    init() {
+        print("Notifications are on : \(UserDefaults.standard.bool(forKey: "notificationsAreOn"))")
+        if UserDefaults.standard.bool(forKey: "notificationsAreOn") {
+            NotificationHandler.shared.scheduleDailyNotifications()
+        }
+        try? Tips.configure()
+        updateMonthBudgetsValues()
     }
     
     @MainActor func startNewMonthInBackground() async {
@@ -68,14 +67,23 @@ struct TrenteVingtApp: App {
     }
     
     @MainActor func updateMonthBudgetsValues() {
-        if let container = try? ModelContainer(for: MonthBudget.self) {
+        if let container = try? ModelContainer(for: MonthBudget.self, Transaction.self, RecurringTransaction.self) {
             let context = container.mainContext
             let monthBudgetsFetchDescriptor = FetchDescriptor<MonthBudget>()
+            
             if let monthBudgets = try? context.fetch(monthBudgetsFetchDescriptor) {
                 for monthBudget in monthBudgets {
                     monthBudget.update()
                 }
             }
+            
+            // DEBUG
+//            if let recurrings = try? context.fetch(FetchDescriptor<RecurringTransaction>()) {
+//                for recurring in recurrings {
+//                    context.delete(recurring)
+//                    print("Deleted \(recurring.transaction?.title ?? "TITLE") of type \(recurring.recurrenceDetails.recurrenceType)")
+//                }
+//            }
         }
     }
 
