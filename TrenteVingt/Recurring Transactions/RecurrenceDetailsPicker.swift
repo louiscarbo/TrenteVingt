@@ -10,23 +10,23 @@ struct RecurrenceDetailsPicker: View {
     
     var body: some View {
         switch(recurrenceType) {
-        case RecurrenceType.everyXDays:
-            VStack {
-                Text("This transaction will happen every ")
-                TextField("", value: $interval, format: .number)
-                    .textFieldStyle(.roundedBorder)
-                    .frame(width: 70)
-                    .multilineTextAlignment(.center)
-                    .font(.title)
-                    .keyboardType(.numberPad)
-                Text(interval == 1 ? "day, starting :" : "days, starting :")
-                DatePicker("", selection: $startingDate, in: Date()..., displayedComponents: .date)
-                    .datePickerStyle(.automatic)
-                    .frame(width: 1)
-            }
-            .onAppear {
-                interval = 1
-            }
+//        case RecurrenceType.everyXDays:
+//            VStack {
+//                Text("This transaction will happen every ")
+//                TextField("", value: $interval, format: .number)
+//                    .textFieldStyle(.roundedBorder)
+//                    .frame(width: 70)
+//                    .multilineTextAlignment(.center)
+//                    .font(.title)
+//                    .keyboardType(.numberPad)
+//                Text(interval == 1 ? "day, starting :" : "days, starting :")
+//                DatePicker("", selection: $startingDate, in: Date()..., displayedComponents: .date)
+//                    .datePickerStyle(.automatic)
+//                    .frame(width: 1)
+//            }
+//            .onAppear {
+//                interval = 1
+//            }
         case RecurrenceType.weekly:
             VStack {
                 Text("This transaction will happen every week, on :")
@@ -85,7 +85,6 @@ struct RecurrenceDetailsPicker: View {
     }
     
     func checkDayNumber() -> Void {
-        let decimalDigits = CharacterSet.decimalDigits
         if day > 31 {
             day = 31
         } else if day < 1 {
