@@ -3,6 +3,7 @@ import SwiftUI
 struct SettingsView: View {
     @State private var showCredits = false
     @State private var showRecurringTransactionsExplanations = false
+    @State private var showAboutMe = false
     
     var body: some View {
         NavigationStack {
@@ -26,6 +27,15 @@ struct SettingsView: View {
                     } label: {
                         Label("App Credits", systemImage: "scroll")
                     }
+                    
+                    Button {
+                        showAboutMe.toggle()
+                    } label: {
+                        Label("About Me", systemImage: "person")
+                    }
+                    .sheet(isPresented: $showAboutMe, content: {
+                        AboutMe()
+                    })
                     
                     Button {
                         let mailTo = String(localized: "mailto:TrenteVingt@carbo-estaque.fr?subject=TrenteVingt Feedback").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)

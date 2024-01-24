@@ -76,7 +76,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "**Validation Simple :** Pour ajouter ou valider rapidement une transaction pour le mois en cours, il suffit de faire glisser la transaction récurrente vers la droite. Cette validation ajoute la transaction à votre budget du mois en cours et veille à ce que chaque transaction que l'on ajoute ait bien lieu."
+            "value" : "**Validation Simple :** Pour ajouter rapidement une transaction récurrente au mois en cours, il suffit de faire glisser la transaction récurrente vers la droite. Cette validation ajoute la transaction à votre budget du mois en cours, et veille à ce que chaque transaction ajoutée à TrenteVingt ait bien eu lieu."
           }
         }
       }
@@ -534,6 +534,9 @@
           }
         }
       }
+    },
+    "About Me" : {
+
     },
     "About TrenteVingt" : {
       "localizations" : {
@@ -1532,6 +1535,9 @@
         }
       }
     },
+    "Github" : {
+
+    },
     "Give your budget a little boost. Log today's transactions, it's quick and easy!" : {
       "localizations" : {
         "es" : {
@@ -1612,6 +1618,9 @@
         }
       }
     },
+    "Hi, I'm Louis 👋" : {
+
+    },
     "Hours" : {
       "localizations" : {
         "es" : {
@@ -1659,6 +1668,18 @@
           }
         }
       }
+    },
+    "https://github.com/louiscarbo" : {
+
+    },
+    "https://www.linkedin.com/in/louis-carbo-estaque" : {
+
+    },
+    "I'm a French 🇫🇷 Engineering student passionate about app development! " : {
+
+    },
+    "I'm constantly improving, and so does TrenteVingt! If you have any suggestion, feel free to contact me!" : {
+
     },
     "Illustrations" : {
       "localizations" : {
@@ -1851,6 +1872,9 @@
           }
         }
       }
+    },
+    "LinkedIn" : {
+
     },
     "Logging a transaction takes less than a minute. Open TrenteVingt and let's keep that budget in check!" : {
       "localizations" : {
@@ -2300,6 +2324,9 @@
         }
       }
     },
+    "Payment Time by Vectors Market from Noun Project (CC BY 3.0)" : {
+
+    },
     "Pick a category for this transaction." : {
       "localizations" : {
         "es" : {
@@ -2455,10 +2482,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les transactions récurrentes sont des dépenses ou des revenus qui arrivent à intervalles réguliers, que ce soit chaque semaine, chaque mois, ou tous les ans. Elles peuvent être des factures mensuelles, des abonnements, ou des revenus annuels ou hebdomadaires."
+            "value" : "Les transactions récurrentes sont des dépenses ou des revenus qui arrivent à intervalles réguliers, que ce soit chaque semaine, chaque mois, ou tous les ans. Par exemple, elles peuvent être des factures mensuelles, des abonnements, ou des revenus hebdomadaires."
           }
         }
       }
+    },
+    "Recurring Transactions Screen" : {
+
     },
     "Remaining" : {
       "localizations" : {
@@ -2988,6 +3018,9 @@
           }
         }
       }
+    },
+    "Thank you so much for using TrenteVingt! This app is a personal project that allows me to learn iOS app development." : {
+
     },
     "The next month will start on %@" : {
       "localizations" : {

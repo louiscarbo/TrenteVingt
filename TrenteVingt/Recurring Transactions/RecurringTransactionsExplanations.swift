@@ -58,7 +58,7 @@ struct RecurringTransactionsExplanations: View {
                         .scaledToFit()
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
-                .offset(y: -120)
+                .offset(y: -140)
                 .padding()
             }
         }

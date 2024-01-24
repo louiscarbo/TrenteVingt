@@ -13,31 +13,31 @@ struct NewMonthView: View {
     var body: some View {
         NavigationStack {
             MonthDetailsView(monthBudget: newMonthBudget, isPresenting: $dummyIsPresenting, isInSettings: false, shouldDismiss: .constant(false))
-            .onAppear {
-                let newMonthNumber : Int = nextMonthNumber(from: modelMonthBudget.monthNumber) ?? modelMonthBudget.monthNumber
-                newMonthBudget.monthlyBudget = modelMonthBudget.monthlyBudget
-                newMonthBudget.needsBudgetRepartition = modelMonthBudget.needsBudgetRepartition
-                newMonthBudget.wantsBudgetRepartition = modelMonthBudget.wantsBudgetRepartition
-                newMonthBudget.savingsDebtsBudgetRepartition = modelMonthBudget.savingsDebtsBudgetRepartition
-                newMonthBudget.currencySymbolSFName = modelMonthBudget.currencySymbolSFName
-                newMonthBudget.monthNumber = newMonthNumber
-                newMonthBudget.update()
-            }
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Add") {
-                        dismiss()
-                        modelContext.insert(newMonthBudget)
-                        newMonthBudget.update()
+                .onAppear {
+                    let newMonthNumber : Int = nextMonthNumber(from: modelMonthBudget.monthNumber) ?? modelMonthBudget.monthNumber
+                    newMonthBudget.monthlyBudget = modelMonthBudget.monthlyBudget
+                    newMonthBudget.needsBudgetRepartition = modelMonthBudget.needsBudgetRepartition
+                    newMonthBudget.wantsBudgetRepartition = modelMonthBudget.wantsBudgetRepartition
+                    newMonthBudget.savingsDebtsBudgetRepartition = modelMonthBudget.savingsDebtsBudgetRepartition
+                    newMonthBudget.currencySymbolSFName = modelMonthBudget.currencySymbolSFName
+                    newMonthBudget.monthNumber = newMonthNumber
+                    newMonthBudget.update()
+                }
+                .toolbar {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Add") {
+                            dismiss()
+                            modelContext.insert(newMonthBudget)
+                            newMonthBudget.update()
+                        }
+                    }
+                    
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel") {
+                            isPresentingNewMonthView = false
+                        }
                     }
                 }
-                
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                        isPresentingNewMonthView = false
-                    }
-                }
-            }
         }
     }
 }

@@ -17,9 +17,14 @@ struct CreditsView: View {
                         Text("Payment Schedule by Vectors Market from Noun Project (CCBY3.0)")
                     }
                     VStack(alignment: .leading) {
-                        Text("App Icon and Onboarding Screen")
+                        Text("Onboarding Screen")
                             .font(.headline)
                         Text("Financial Report by Vectors Market from Noun Project (CCBY3.0)")
+                    }
+                    VStack(alignment: .leading) {
+                        Text("Recurring Transactions Screen")
+                            .font(.headline)
+                        Text("Payment Time by Vectors Market from Noun Project (CC BY 3.0)")
                     }
                 }
             }
