@@ -3,6 +3,26 @@
     {
       "filename" : "monthly-budget.pdf",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "filename" : "monthly-budget 1.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "monthly-budget-dark.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

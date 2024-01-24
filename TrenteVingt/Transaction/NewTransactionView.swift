@@ -219,9 +219,6 @@ struct NewTransactionView: View {
             
             var newRecurrenceDetails = RecurrenceDetails(recurrenceType: recurrenceType)
             switch(recurrenceType) {
-//            case .everyXDays:
-//                newRecurrenceDetails.interval = interval
-//                newRecurrenceDetails.startingDate = startingDate
             case .weekly:
                 newRecurrenceDetails.day = day
             case .monthly:

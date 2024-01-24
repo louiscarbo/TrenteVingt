@@ -49,6 +49,15 @@
         }
       }
     },
+    "**Declare a New Recurring Transaction:** Tap on 'Add Transaction' and easily set up your recurring transactions, specifying the frequency – whether it's every week, month, or year." : {
+
+    },
+    "**Easy Validation:** To seamlessly add or validate a transaction for the current month, a simple swipe to the right is all it takes. This validation adds the transaction to your current month's budget, and makes sure that we're not adding a transaction that didn't actually happen." : {
+
+    },
+    "**Receive Timely Notifications:** We've got your back! You'll receive notifications when a recurring transaction is due. No more forgetting those important payments or paychecks." : {
+
+    },
     "**TrenteVingt** can send you a notification each day to remind you to log your latest transactions." : {
       "localizations" : {
         "es" : {
@@ -553,7 +562,14 @@
       }
     },
     "Add your first recurring transaction now by tapping 'Add Transaction'!" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez votre première transaction récurrente dès maintenant en appuyant sur \"Nouvelle Transaction\" !"
+          }
+        }
+      }
     },
     "Add your first transaction now and see how your budget evolves!" : {
       "localizations" : {
@@ -952,6 +968,22 @@
         }
       }
     },
+    "Confirm" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirmar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirmer"
+          }
+        }
+      }
+    },
     "Consistency is key! Ready to log today's expenses?" : {
       "localizations" : {
         "es" : {
@@ -1285,6 +1317,38 @@
         }
       }
     },
+    "Every %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cada %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chaque %@"
+          }
+        }
+      }
+    },
+    "Every %@ day of the month" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cada %@ día del mes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chaque %@ jour du mois"
+          }
+        }
+      }
+    },
     "Every little step counts. Let's log today's transactions and keep moving forward!" : {
       "localizations" : {
         "es" : {
@@ -1365,8 +1429,24 @@
         }
       }
     },
-    "Friday" : {
+    "Frequently Asked Questions" : {
 
+    },
+    "Friday" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viernes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vendredi"
+          }
+        }
+      }
     },
     "Give your budget a little boost. Log today's transactions, it's quick and easy!" : {
       "localizations" : {
@@ -1476,6 +1556,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Logement, courses, santé..."
+          }
+        }
+      }
+    },
+    "How does it work?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Cómo funciona?"
           }
         }
       }
@@ -1608,6 +1698,32 @@
         }
       }
     },
+    "Latest Transactions" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Últimas Transacciones"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dernières Transactions"
+          }
+        }
+      }
+    },
+    "Learn more about recurring transactions" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saber más sobre las transacciones recurrentes"
+          }
+        }
+      }
+    },
     "Let's get started" : {
       "localizations" : {
         "es" : {
@@ -1721,7 +1837,20 @@
       }
     },
     "Monday" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lunes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lundi"
+          }
+        }
+      }
     },
     "Money saved and debts due." : {
       "localizations" : {
@@ -1772,7 +1901,20 @@
       }
     },
     "Monthly" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mensual"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mensuel"
+          }
+        }
+      }
     },
     "Monthly disposable income" : {
       "localizations" : {
@@ -1854,6 +1996,22 @@
         }
       }
     },
+    "Next Recurring Transactions" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximas Transacciones Recurrentes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prochaines Transactions Récurrentes"
+          }
+        }
+      }
+    },
     "Notification Settings" : {
       "localizations" : {
         "es" : {
@@ -1903,7 +2061,20 @@
       }
     },
     "of each month." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "de cada mes."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "de chaque mois"
+          }
+        }
+      }
     },
     "OK" : {
       "localizations" : {
@@ -2162,9 +2333,22 @@
       }
     },
     "RECURRENCE TYPE :" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TIPO DE RECURRENCIA:"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TYPE DE RÉCURRENCE :"
+          }
+        }
+      }
     },
-    "Recurring Transactions" : {
+    "Recurring transactions are regular expenses or income that happen at fixed intervals, whether weekly, monthly, or yearly. Think of them as your reliable bills or income sources that occur like clockwork." : {
 
     },
     "Remaining" : {
@@ -2232,7 +2416,20 @@
       }
     },
     "Saturday" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sábado"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samedi"
+          }
+        }
+      }
     },
     "Savings" : {
       "localizations" : {
@@ -2363,6 +2560,9 @@
         }
       }
     },
+    "See sheet" : {
+
+    },
     "September" : {
       "localizations" : {
         "es" : {
@@ -2396,7 +2596,20 @@
       }
     },
     "Show all recurring transactions" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver todas las transacciones recurrentes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voir toutes les transactions récurrentes"
+          }
+        }
+      }
     },
     "Show all transactions" : {
       "localizations" : {
@@ -2607,10 +2820,36 @@
       }
     },
     "Sum of all recurring transactions" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suma de todas las transacciones recurrentes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Somme de toutes les transactions récurrentes"
+          }
+        }
+      }
     },
     "Sunday" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domingo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dimanche"
+          }
+        }
+      }
     },
     "Take a quick sec to log today's spendings. It's the key to mastering your budget!" : {
       "localizations" : {
@@ -2677,22 +2916,100 @@
       }
     },
     "This is recurring" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transacción recurrente"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transaction récurrente"
+          }
+        }
+      }
     },
     "This transaction is set for today. Open TrenteVingt to confirm it!" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta transacción está programada para hoy. ¡Abre TrenteVingt para confirmarla!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cette transaction est planifiée pour aujourd'hui. Ouvrez TrenteVingt pour la confirmer !"
+          }
+        }
+      }
     },
     "This transaction will happen every week, on :" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta transacción se realizará cada semana, el:"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cette transaction aura lieu chaque semaine, le :"
+          }
+        }
+      }
     },
     "This transaction will happen every year, starting on:" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta transacción se realizará cada año, empezado el:"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cette transaction aura lieu chaque année, et commencera le :"
+          }
+        }
+      }
     },
     "This transaction will happen on day " : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta transacción se realizará cada día."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cette transaction aura lieu le"
+          }
+        }
+      }
     },
     "Thursday" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jueves"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeudi"
+          }
+        }
+      }
     },
     "Time" : {
       "localizations" : {
@@ -2791,7 +3108,20 @@
       }
     },
     "Tuesday" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Martes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mardi"
+          }
+        }
+      }
     },
     "Turn on daily reminders?" : {
       "localizations" : {
@@ -2841,6 +3171,22 @@
         }
       }
     },
+    "Validating this transaction will add it as a transaction to the current month. Do you want to add it?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Al validar esta transacción, se agregará como una transacción al mes actual. ¿Quieres añadirla?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En validant cette transaction, vous l'ajouterez au mois en cours. Voulez-vous l'ajouter ?"
+          }
+        }
+      }
+    },
     "Wants" : {
       "localizations" : {
         "es" : {
@@ -2874,10 +3220,36 @@
       }
     },
     "Wednesday" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miércoles"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mercredi"
+          }
+        }
+      }
     },
     "Weekly" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semanal"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hebdomadaire"
+          }
+        }
+      }
     },
     "Welcome to TrenteVingt" : {
       "localizations" : {
@@ -2907,6 +3279,19 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bienvenue dans TrenteVingt !"
+          }
+        }
+      }
+    },
+    "What are recurring transactions and how do they work?" : {
+
+    },
+    "What are recurring transactions?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Qué son transacciones recurrentes?"
           }
         }
       }
@@ -2960,7 +3345,36 @@
       }
     },
     "Yearly" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anual"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuel"
+          }
+        }
+      }
+    },
+    "Yes, add" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sí, añadir"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oui, ajouter"
+          }
+        }
+      }
     },
     "You can now start easily tracking your budget with TrenteVingt." : {
       "localizations" : {

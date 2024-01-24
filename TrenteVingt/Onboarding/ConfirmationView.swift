@@ -9,7 +9,7 @@ struct ConfirmationView: View {
     var body: some View {
         VStack {
             Spacer()
-            Image(colorScheme == .light ? "confirmation" : "confirmation-dark")
+            Image("confirmation")
                 .resizable()
                 .frame(maxWidth: 336, maxHeight: 400)
                 .offset(x: 100)

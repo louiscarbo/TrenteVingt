@@ -7,6 +7,7 @@ struct TransactionRowView: View {
     
     @State var transaction: Transaction
     @State var currency: Currency
+    @State var associatedRecurringTransaction: RecurringTransaction?
     
     var body: some View {
         HStack {
@@ -39,6 +40,10 @@ struct TransactionRowView: View {
             Button(role: .destructive) {
                 withAnimation {
                     modelContext.delete(transaction)
+                    if let recurringTransaction = transaction.recurringTransaction {
+                        NotificationHandler.shared.cancelRecurringTransactionNotification(completion: {}, recurringTransaction: recurringTransaction)
+                        modelContext.delete(recurringTransaction)
+                    }
                     WidgetCenter.shared.reloadAllTimelines()
                 }
             } label: {

@@ -15,7 +15,7 @@ struct MonthlyDisposableIncomeView: View {
         VStack {
             ScrollView(.vertical) {
                 VStack(alignment: .leading) {
-                    Image(colorScheme == .light ? "monthly-budget" : "monthly-budget-dark")
+                    Image("monthly-budget")
                         .resizable()
                         .frame(maxWidth: 320, maxHeight: 280)
                         .offset(x: 120)

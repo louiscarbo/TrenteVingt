@@ -74,7 +74,7 @@ public class NotificationHandler {
             let hour = UserDefaults.standard.integer(forKey: "hoursNotification")
             let minute = UserDefaults.standard.integer(forKey: "minutesNotification")
             
-            for day in 0...6 { // For the next 60 days
+            for day in 0...6 { // For the next 7 days
                 let notificationStyle = self.NotificationStyles.randomElement()!
                 
                 let content = UNMutableNotificationContent()
@@ -138,12 +138,10 @@ public class NotificationHandler {
     
     func scheduleRecurringTransactionNotification(recurringTransaction: RecurringTransaction) {
         print("Scheduling a new recurring transaction notification.")
-        
-        let transaction = recurringTransaction.transaction
-        
+                
         let content = UNMutableNotificationContent()
-        if let title = transaction?.title {
-            content.title = "⌛️ " + title
+        if let transaction = recurringTransaction.transaction {
+            content.title = "⌛️ " + transaction.title + ", " + transaction.amount.formatted(.currency(code: transaction.monthBudget?.currency.code ?? "EUR"))
         } else {
             content.title = "⌛️ Recurring Transaction"
         }
@@ -166,13 +164,21 @@ public class NotificationHandler {
         case .yearly:
             if let startingDate = recurringTransaction.recurrenceDetails.startingDate {
                 dateComponents = Calendar.current.dateComponents([.day, .month], from: startingDate)
+                dateComponents.hour = 8
+                dateComponents.minute = 0
                 trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
             }
         }
-                
-        let identifier = "recurring" + recurringTransaction.identifier.entityIdentifierString
         
+        // DEBUG
+//        let debugTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
+//        print(debugTrigger.nextTriggerDate())
+//        print(trigger.nextTriggerDate())
+
+        let identifier = "recurring" + recurringTransaction.identifier.entityIdentifierString
+
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+//        request = UNNotificationRequest(identifier: identifier, content: content, trigger: debugTrigger)
         
         notificationCenter.add(request) { (error) in
             if let error = error {
@@ -181,11 +187,8 @@ public class NotificationHandler {
         }
     }
     
-    // TODO Don't cancel recurring transactions
     // 4. Cancel All  daily Notifications
     func cancelAllNotifications(completion: @escaping () -> Void) {
-        notificationCenter.removeAllPendingNotificationRequests()
-        
         notificationCenter.getPendingNotificationRequests { (requests) in
             // Filter out the request with identifier "monthStarts"
             if let requestsToKeep = requests.first(where: { $0.identifier == "monthStarts"  || $0.identifier.contains("recurring")}) {
@@ -206,6 +209,11 @@ public class NotificationHandler {
             }
         }
     }
+    
+    func cancelRecurringTransactionNotification(completion: @escaping () -> Void, recurringTransaction: RecurringTransaction) {
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: ["recurring" + recurringTransaction.identifier.entityIdentifierString])
+        notificationCenter.removeDeliveredNotifications(withIdentifiers: ["recurring" + recurringTransaction.identifier.entityIdentifierString])
+    }
 }
 
 func getNextDate() -> Void {
@@ -218,11 +226,6 @@ func getNextDate() -> Void {
     } else {
         print("Oops!")
     }
-}
-
-func convertEuropeanToAmericanWeekday(_ europeanWeekday: Int) -> Int {
-    let americanWeekday = (europeanWeekday + 5) % 7 + 1
-    return americanWeekday
 }
 
 struct NotificationStyle {

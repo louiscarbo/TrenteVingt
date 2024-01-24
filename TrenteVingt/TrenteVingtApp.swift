@@ -4,6 +4,7 @@ import BackgroundTasks
 import UserNotifications
 import WidgetKit
 import TipKit
+
 @main
 struct TrenteVingtApp: App {
     var body: some Scene {
@@ -81,6 +82,7 @@ struct TrenteVingtApp: App {
 //            if let recurrings = try? context.fetch(FetchDescriptor<RecurringTransaction>()) {
 //                for recurring in recurrings {
 //                    context.delete(recurring)
+//                    NotificationHandler.shared.cancelRecurringTransactionNotification(completion: {}, recurringTransaction: recurring)
 //                    print("Deleted \(recurring.transaction?.title ?? "TITLE") of type \(recurring.recurrenceDetails.recurrenceType)")
 //                }
 //            }

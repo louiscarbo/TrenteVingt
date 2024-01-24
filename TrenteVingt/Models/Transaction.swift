@@ -3,7 +3,8 @@ import SwiftUI
 import Foundation
 
 @Model
-final class Transaction {
+final class Transaction: NSCopying {
+    
     var monthBudget: MonthBudget?
     var title: String = ""
     var amount: Double = 0.0
@@ -15,6 +16,12 @@ final class Transaction {
         self.title = title
         self.amount = amount
         self.category = category
+    }
+    
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Transaction(title: title, amount: amount, category: category)
+        copy.monthBudget = monthBudget
+        return copy
     }
 }
 

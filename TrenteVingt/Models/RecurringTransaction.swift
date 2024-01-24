@@ -12,6 +12,44 @@ final class RecurringTransaction {
     init(transaction: Transaction) {
         self.transaction = transaction
     }
+    
+    var nextRecurrenceDate: Date {
+        let now = Date()
+        var dateComponents = DateComponents()
+        
+        switch recurrenceDetails.recurrenceType {
+        case .weekly:
+            guard let dayOfWeek = recurrenceDetails.day else {
+                fatalError("Day of week must be set for weekly recurrence")
+            }
+            dateComponents.weekday = convertEuropeanToAmericanWeekday(dayOfWeek)
+            guard let nextDate = Calendar.current.nextDate(after: now, matching: dateComponents, matchingPolicy: .nextTime) else {
+                fatalError("Could not calculate next date")
+            }
+            return nextDate
+        case .monthly:
+            guard let dayOfMonth = recurrenceDetails.day else {
+                fatalError("Day of month must be set for monthly recurrence")
+            }
+            dateComponents.day = min(dayOfMonth, Calendar.current.range(of: .day, in: .month, for: now)?.count ?? 31)
+            dateComponents.month = Calendar.current.component(.month, from: now) + 1
+            guard let nextDate = Calendar.current.nextDate(after: now, matching: dateComponents, matchingPolicy: .nextTime) else {
+                fatalError("Could not calculate next date")
+            }
+            return nextDate
+        case .yearly:
+            guard let startingDate = recurrenceDetails.startingDate else {
+                fatalError("Starting date must be set for yearly recurrence")
+            }
+            dateComponents.year = Calendar.current.component(.year, from: now) + 1
+            dateComponents.month = Calendar.current.component(.month, from: startingDate)
+            dateComponents.day = Calendar.current.component(.day, from: startingDate)
+            guard let nextDate = Calendar.current.nextDate(after: now, matching: dateComponents, matchingPolicy: .nextTime) else {
+                fatalError("Could not calculate next date")
+            }
+            return nextDate
+        }
+    }
 }
 
 enum RecurrenceType: Codable, CaseIterable, Identifiable {
@@ -31,7 +69,6 @@ enum RecurrenceType: Codable, CaseIterable, Identifiable {
 
 struct RecurrenceDetails: Codable {
     var recurrenceType: RecurrenceType = .monthly
-    var interval: Int? // Interval in days or months
     var day: Int? // Date or day of the week
     var startingDate: Date? // Date for .everyXMonths and .yearly
 }
@@ -62,19 +99,11 @@ public func getDayOfWeek(from integer: Int) -> String {
     
 }
 
-func getNextOccurenceDate(for recurringTransaction: RecurringTransaction) -> Date? {
-    let calendar = Calendar.current
-    if let lastOccurrence = recurringTransaction.lastScheduledNotificationDate == nil ? recurringTransaction.recurrenceDetails.startingDate : recurringTransaction.lastScheduledNotificationDate {
-        if let interval = recurringTransaction.recurrenceDetails.interval {
-            if let nextOccurrenceDate = calendar.date(byAdding: .day, value: interval, to: lastOccurrence) {
-                return nextOccurrenceDate
-            }
-        }
-    }
-   print("Error calculating next occurrence date.")
-   return nil
-}
-
 func setLastScheduledNotificationDate(atDate date: Date, for recurringTransaction: RecurringTransaction) {
     recurringTransaction.lastScheduledNotificationDate = date
+}
+
+func convertEuropeanToAmericanWeekday(_ europeanWeekday: Int) -> Int {
+    let americanWeekday = europeanWeekday % 7 + 1
+    return americanWeekday
 }

@@ -19,7 +19,7 @@ struct RecurrenceDetailsPicker: View {
                             Button {
                                 day = dayNumber
                             } label: {
-                                Text(getDayOfWeek(from:dayNumber) ?? "Monday")
+                                Text(getDayOfWeek(from:dayNumber))
                                     .foregroundStyle(colorScheme == .light ? .black : .white)
                                     .padding(4)
                                 Spacer()

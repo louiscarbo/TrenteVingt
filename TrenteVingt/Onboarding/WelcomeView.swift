@@ -6,7 +6,7 @@ struct WelcomeView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Image(colorScheme == .light ? "piggy-bank" : "piggy-bank-dark")
+            Image("piggy-bank")
                 .resizable()
                 .frame(width: 317, height: 380)
                 .offset(x: 120, y: 20)

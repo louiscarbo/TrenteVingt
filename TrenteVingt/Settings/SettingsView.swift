@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var showCredits = false
+    @State private var showRecurringTransactionsExplanations = false
     
     var body: some View {
         NavigationStack {
@@ -35,6 +36,15 @@ struct SettingsView: View {
                     } label: {
                         Label("Contact me", systemImage: "message")
                     }
+                }
+                
+                Section("Frequently Asked Questions") {
+                    Button("What are recurring transactions and how do they work?") {
+                        showRecurringTransactionsExplanations.toggle()
+                    }
+                    .sheet(isPresented: $showRecurringTransactionsExplanations, content: {
+                        RecurringTransactionsExplanations()
+                    })
                 }
             }
             .navigationTitle("Settings")

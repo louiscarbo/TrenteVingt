@@ -2,20 +2,20 @@ import SwiftUI
 import SwiftData
 
 struct MonthView: View {
-    
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.dismiss) private var dismiss
     
     @Query var recurringTransactions: [RecurringTransaction]
     private var recurringTransactionsDisplayedInList: [RecurringTransaction] {
-        return Array(recurringTransactions.prefix(3))
+        return Array(recurringTransactions.sorted(by: { return $0.nextRecurrenceDate < $1.nextRecurrenceDate }).prefix(3))
     }
     
     @Bindable var monthBudget: MonthBudget
     @State var showSettings = false
     @State private var isPresentingNewMonthView = false
     @State var showNewTransaction = false
+    @State private var showRecurringTransactionsExplanatorySheet = false
     
     private var transactionsDisplayedInList: [Transaction] {
         if let transactions = monthBudget.transactions {
@@ -44,7 +44,7 @@ struct MonthView: View {
                             ChartLegendView(monthBudget: monthBudget, showRemaining: $showRemaining)
                         }
                         if transactions.count > 0 {
-                            Section("Transactions") {
+                            Section("Latest Transactions") {
                                 ForEach(transactionsDisplayedInList) { transaction in
                                     TransactionRowView(transaction: transaction, currency: monthBudget.currency)
                                 }
@@ -61,12 +61,12 @@ struct MonthView: View {
                         }
                         
                         if recurringTransactions.count > 0 {
-                            Section("Recurring Transactions") {
+                            Section("Next Recurring Transactions") {
                                 ForEach(recurringTransactionsDisplayedInList) { recurringTransaction in
-                                    RecurringTransactionRowView(currency: monthBudget.currency, recurringTransaction: recurringTransaction)
+                                    RecurringTransactionRowView(monthBudget: monthBudget, recurringTransaction: recurringTransaction)
                                 }
                                 if recurringTransactions.count > 3 {
-                                    NavigationLink(destination: AllRecurringTransactionsListView(recurringTransactions: recurringTransactions, currency: monthBudget.currency)) {
+                                    NavigationLink(destination: AllRecurringTransactionsListView(recurringTransactions: recurringTransactions, monthBudget: monthBudget)) {
                                         Text("Show all recurring transactions")
                                     }
                                 }
@@ -74,7 +74,15 @@ struct MonthView: View {
                         } else {
                             Section {
                                 Text("Add your first recurring transaction now by tapping 'Add Transaction'!")
+                                Button {
+                                    showRecurringTransactionsExplanatorySheet.toggle()
+                                } label: {
+                                    Label("Learn more about recurring transactions", systemImage: "info.circle")
+                                }
                             }
+                            .sheet(isPresented: $showRecurringTransactionsExplanatorySheet, content: {
+                                RecurringTransactionsExplanations()
+                            })
                         }
                         
                         Text("")
