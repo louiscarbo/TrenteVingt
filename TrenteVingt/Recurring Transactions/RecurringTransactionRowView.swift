@@ -16,6 +16,7 @@ struct RecurringTransactionRowView: View {
     
     @State private var showConfirmAlert = false
     @State private var recurrenceDescriptor: String = ""
+    @State private var showEditingSheet = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
@@ -44,15 +45,16 @@ struct RecurringTransactionRowView: View {
             }
         }
         .onAppear {
-            let recurrenceDetails = recurringTransaction.recurrenceDetails
-            switch(recurringTransaction.recurrenceDetails.recurrenceType) {
-            case .weekly:
-                recurrenceDescriptor = String(localized: "Every \(getDayOfWeek(from: recurrenceDetails.day ?? 1))")
-            case .monthly:
-                recurrenceDescriptor = String(localized: "Every \(ordinalString(from: recurrenceDetails.day ?? 1)) day of the month")
-            case .yearly:
-                recurrenceDescriptor = String(localized: "Every \(getDateName(date: recurrenceDetails.startingDate ?? Date()))")
-            }
+            updateRecurrenceDetailsLabel()
+        }
+        .onChange(of: recurringTransaction.recurrenceDetails.day) {
+            updateRecurrenceDetailsLabel()
+        }
+        .onChange(of: recurringTransaction.recurrenceDetails.startingDate) {
+            updateRecurrenceDetailsLabel()
+        }
+        .onChange(of: recurringTransaction.recurrenceDetails.recurrenceType) {
+            updateRecurrenceDetailsLabel()
         }
         .swipeActions(edge: .leading) {
             Button {
@@ -80,6 +82,24 @@ struct RecurringTransactionRowView: View {
                     }
                 }
             }
+        }
+        .onTapGesture {
+            showEditingSheet.toggle()
+        }
+        .sheet(isPresented: $showEditingSheet) {
+            RecurringTransactionDetailView(recurringTransaction: recurringTransaction)
+        }
+    }
+    
+    func updateRecurrenceDetailsLabel() {
+        let recurrenceDetails = recurringTransaction.recurrenceDetails
+        switch(recurringTransaction.recurrenceDetails.recurrenceType) {
+        case .weekly:
+            recurrenceDescriptor = String(localized: "Every \(getDayOfWeek(from: recurrenceDetails.day ?? 1))")
+        case .monthly:
+            recurrenceDescriptor = String(localized: "Every \(ordinalString(from: recurrenceDetails.day ?? 1)) day of the month")
+        case .yearly:
+            recurrenceDescriptor = String(localized: "Every \(getDateName(date: recurrenceDetails.startingDate ?? Date()))")
         }
     }
 }

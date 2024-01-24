@@ -153,7 +153,7 @@ struct NewTransactionView: View {
                     RecurrenceTypePicker(selectedRecurrenceType: $recurrenceType)
                     Spacer()
                         .frame(height: 30)
-                    RecurrenceDetailsPicker(recurrenceType: $recurrenceType, interval: $interval, day: $day, startingDate: $startingDate)
+                    RecurrenceDetailsPicker(recurrenceType: $recurrenceType, day: $day, startingDate: $startingDate)
                     Spacer()
                     HStack {
                         Button {
@@ -239,41 +239,5 @@ struct NewTransactionView: View {
         }
         
         dismiss()
-    }
-    
-    struct RecurrenceTypePicker: View {
-        @Binding var selectedRecurrenceType : RecurrenceType
-        @Environment (\.colorScheme) private var colorScheme
-        
-        var body: some View {
-            VStack(alignment: .leading) {
-                Text("RECURRENCE TYPE :")
-                    .font(.caption)
-                    .padding(.leading)
-                    .foregroundStyle(.gray)
-                VStack(spacing: 0) {
-                    ForEach(RecurrenceType.allCases) { recurrenceType in
-                        let isSelected = recurrenceType == selectedRecurrenceType
-                        HStack {
-                            Button {
-                                selectedRecurrenceType = recurrenceType
-                            } label: {
-                                Text(recurrenceType.designation)
-                                    .foregroundStyle(colorScheme == .light ? .black : .white)
-                                    .padding(4)
-                                Spacer()
-                                if isSelected {
-                                    Image(systemName: "checkmark")
-                                }
-                            }
-                            .buttonBorderShape(.roundedRectangle(radius: 0))
-                            .buttonStyle(.bordered)
-                        }
-                        Divider()
-                    }
-                }
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-            }
-        }
     }
 }

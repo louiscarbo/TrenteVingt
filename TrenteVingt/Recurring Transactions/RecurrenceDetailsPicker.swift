@@ -4,7 +4,6 @@ struct RecurrenceDetailsPicker: View {
     @Environment(\.colorScheme) private var colorScheme
     
     @Binding var recurrenceType: RecurrenceType
-    @Binding var interval: Int
     @Binding var day: Int
     @Binding var startingDate: Date
     
@@ -12,7 +11,10 @@ struct RecurrenceDetailsPicker: View {
         switch(recurrenceType) {
         case RecurrenceType.weekly:
             VStack {
-                Text("This transaction will happen every week, on :")
+                HStack {
+                    Text("This transaction will happen every week, on :")
+                    Spacer()
+                }
                 VStack(spacing: 0) {
                     ForEach(1..<8) { dayNumber in
                         HStack {
@@ -39,18 +41,22 @@ struct RecurrenceDetailsPicker: View {
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             }
         case RecurrenceType.monthly:
-            VStack {
-                Text("This transaction will happen on day ")
-                TextField("", value: $day, format: .number)
-                    .textFieldStyle(.roundedBorder)
-                    .frame(width: 70)
-                    .multilineTextAlignment(.center)
-                    .font(.title)
-                    .onChange(of: day) {
-                        checkDayNumber()
-                    }
-                    .keyboardType(.numberPad)
-                Text("of each month.")
+            HStack {
+                Spacer()
+                VStack {
+                    Text("This transaction will happen on day ")
+                    TextField("", value: $day, format: .number)
+                        .textFieldStyle(.roundedBorder)
+                        .frame(width: 70)
+                        .multilineTextAlignment(.center)
+                        .font(.title)
+                        .onChange(of: day) {
+                            checkDayNumber()
+                        }
+                        .keyboardType(.numberPad)
+                    Text("of each month.")
+                }
+                Spacer()
             }
             .onAppear {
                 day = 1
@@ -84,5 +90,5 @@ struct RecurrenceDetailsPicker: View {
 }
 
 #Preview {
-    RecurrenceDetailsPicker(recurrenceType: .constant(.monthly), interval: .constant(1), day: .constant(1), startingDate: .constant(Date()))
+    RecurrenceDetailsPicker(recurrenceType: .constant(.monthly), day: .constant(1), startingDate: .constant(Date()))
 }

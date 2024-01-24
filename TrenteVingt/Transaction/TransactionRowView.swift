@@ -2,7 +2,7 @@ import SwiftUI
 import WidgetKit
 
 struct TransactionRowView: View {
-    @State private var showSheet: Bool = false
+    @State private var showEditSheet: Bool = false
     @Environment(\.modelContext) private var modelContext
     
     @State var transaction: Transaction
@@ -30,11 +30,19 @@ struct TransactionRowView: View {
             }
         }
         .onTapGesture {
-            showSheet = true
+            showEditSheet = true
         }
-        .sheet(isPresented: $showSheet) {
-            TransactionDetailView(transaction: transaction)
-                .presentationDetents([.medium, .large])
+        .sheet(isPresented: $showEditSheet) {
+            if let recurringTransaction = associatedRecurringTransaction {
+                RecurringTransactionDetailView(recurringTransaction: recurringTransaction)
+            } else {
+                NavigationStack {
+                    Form {
+                        TransactionDetailView(transaction: transaction)
+                            .presentationDetents([.medium, .large])
+                    }
+                }
+            }
         }
         .swipeActions {
             Button(role: .destructive) {
@@ -51,7 +59,7 @@ struct TransactionRowView: View {
                     .symbolVariant(.fill)
             }
             Button {
-                showSheet = true
+                showEditSheet = true
             } label: {
                 Label("Edit", systemImage: "pencil")
             }

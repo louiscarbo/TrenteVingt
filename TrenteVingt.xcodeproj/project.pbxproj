@@ -51,6 +51,11 @@
 		7BC615322B5F24BB00FD5464 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC5EF012A868AB200B02275 /* TransactionDetailView.swift */; };
 		7BC615332B5FC89B00FD5464 /* NotificationsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB4E682AED5431002AC0AD /* NotificationsHandler.swift */; };
 		7BC615352B613F0500FD5464 /* RecurringTransactionsExplanations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC615342B613F0500FD5464 /* RecurringTransactionsExplanations.swift */; };
+		7BC615372B615B6C00FD5464 /* RecurringTransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC615362B615B6C00FD5464 /* RecurringTransactionDetailView.swift */; };
+		7BC615382B615DAF00FD5464 /* RecurringTransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC615362B615B6C00FD5464 /* RecurringTransactionDetailView.swift */; };
+		7BC615392B615DBA00FD5464 /* RecurrenceDetailsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA620212B5DC0A300335700 /* RecurrenceDetailsPicker.swift */; };
+		7BC6153B2B6162FD00FD5464 /* RecurrenceTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6153A2B6162FD00FD5464 /* RecurrenceTypePicker.swift */; };
+		7BC6153C2B61633500FD5464 /* RecurrenceTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6153A2B6162FD00FD5464 /* RecurrenceTypePicker.swift */; };
 		7BCF819D2AF56A2F000C55A8 /* OnboardingNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF819C2AF56A2F000C55A8 /* OnboardingNotificationsView.swift */; };
 		7BD918262AF984BB00E4F53F /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD918252AF984BB00E4F53F /* TipView.swift */; };
 		7BDAE06C2AE0746800CD20C4 /* MonthBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F90462A59BAA000CE0BD4 /* MonthBudget.swift */; };
@@ -133,6 +138,8 @@
 		7BC6152D2B5F0E6000FD5464 /* RecurringTransactionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringTransactionRowView.swift; sourceTree = "<group>"; };
 		7BC6152F2B5F137000FD5464 /* AllRecurringTransactionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecurringTransactionsListView.swift; sourceTree = "<group>"; };
 		7BC615342B613F0500FD5464 /* RecurringTransactionsExplanations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringTransactionsExplanations.swift; sourceTree = "<group>"; };
+		7BC615362B615B6C00FD5464 /* RecurringTransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringTransactionDetailView.swift; sourceTree = "<group>"; };
+		7BC6153A2B6162FD00FD5464 /* RecurrenceTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurrenceTypePicker.swift; sourceTree = "<group>"; };
 		7BCF819C2AF56A2F000C55A8 /* OnboardingNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNotificationsView.swift; sourceTree = "<group>"; };
 		7BD918252AF984BB00E4F53F /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		7BDAE06E2AE0F82200CD20C4 /* TrenteVingtWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrenteVingtWidgetsExtension.entitlements; sourceTree = "<group>"; };
@@ -306,6 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				7BA620212B5DC0A300335700 /* RecurrenceDetailsPicker.swift */,
+				7BC6153A2B6162FD00FD5464 /* RecurrenceTypePicker.swift */,
+				7BC615362B615B6C00FD5464 /* RecurringTransactionDetailView.swift */,
 				7BC615342B613F0500FD5464 /* RecurringTransactionsExplanations.swift */,
 				7BC6152F2B5F137000FD5464 /* AllRecurringTransactionsListView.swift */,
 				7BC6152D2B5F0E6000FD5464 /* RecurringTransactionRowView.swift */,
@@ -435,14 +444,17 @@
 				7B99963D2AE6CA8500F3C243 /* PieChartView.swift in Sources */,
 				7BC615322B5F24BB00FD5464 /* TransactionDetailView.swift in Sources */,
 				7BA620272B5E89F600335700 /* RecurringTransaction.swift in Sources */,
+				7BC615382B615DAF00FD5464 /* RecurringTransactionDetailView.swift in Sources */,
 				7BC615312B5F24AD00FD5464 /* TransactionRowView.swift in Sources */,
 				7B2F8DBD2A5B264E0090E88E /* PieChartWidget.swift in Sources */,
 				7BC615332B5FC89B00FD5464 /* NotificationsHandler.swift in Sources */,
 				7B2F8DBB2A5B264E0090E88E /* TrenteVingtWidgetsBundle.swift in Sources */,
 				7BDAE06D2AE078AA00CD20C4 /* Transaction.swift in Sources */,
+				7BC6153C2B61633500FD5464 /* RecurrenceTypePicker.swift in Sources */,
 				7BDAE06F2AE10DF600CD20C4 /* ChartView.swift in Sources */,
 				7B99963C2AE6CA8500F3C243 /* BarChartView.swift in Sources */,
 				7BDAE06C2AE0746800CD20C4 /* MonthBudget.swift in Sources */,
+				7BC615392B615DBA00FD5464 /* RecurrenceDetailsPicker.swift in Sources */,
 				7BDAE0722AE112B000CD20C4 /* RemainingSpentWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +469,7 @@
 				7BF8172E2A5AB2B0007027BF /* WelcomeView.swift in Sources */,
 				7B9996392AE6C87C00F3C243 /* BarChartView.swift in Sources */,
 				7BF8172B2A5AB155007027BF /* OnboardingScreen.swift in Sources */,
+				7BC615372B615B6C00FD5464 /* RecurringTransactionDetailView.swift in Sources */,
 				7B2F8DD22A5EA37A0090E88E /* AllTransactionsListView.swift in Sources */,
 				7BC6152E2B5F0E6000FD5464 /* RecurringTransactionRowView.swift in Sources */,
 				7B3F90342A59BA6B00CE0BD4 /* TrenteVingtApp.swift in Sources */,
@@ -471,6 +484,7 @@
 				7BD918262AF984BB00E4F53F /* TipView.swift in Sources */,
 				7BC615352B613F0500FD5464 /* RecurringTransactionsExplanations.swift in Sources */,
 				7BF8173C2A5B0B13007027BF /* ConfirmationView.swift in Sources */,
+				7BC6153B2B6162FD00FD5464 /* RecurrenceTypePicker.swift in Sources */,
 				7B7027302A7D38430012FA5B /* ChartView.swift in Sources */,
 				7B868ED72AEEBB97008BA1C5 /* MonthStartingDayView.swift in Sources */,
 				7BA620222B5DC0A300335700 /* RecurrenceDetailsPicker.swift in Sources */,
