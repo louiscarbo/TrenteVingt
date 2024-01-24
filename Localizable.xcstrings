@@ -50,13 +50,52 @@
       }
     },
     "**Declare a New Recurring Transaction:** Tap on 'Add Transaction' and easily set up your recurring transactions, specifying the frequency – whether it's every week, month, or year." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Añade una Nueva Transacción Recurrente:** Toca 'Nueva Transacción' y configura fácilmente tu transacción recurrente, especificando la frecuencia: ya sea cada semana, mes o año."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Ajoutez une Nouvelle Transaction Récurrente :** Appuyez sur 'Ajouter une Transaction' et configurez facilement votre transaction récurrente en précisant la fréquence, que ce soit chaque semaine, chaque mois ou chaque année."
+          }
+        }
+      }
     },
     "**Easy Validation:** To seamlessly add or validate a transaction for the current month, a simple swipe to the right is all it takes. This validation adds the transaction to your current month's budget, and makes sure that we're not adding a transaction that didn't actually happen." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Validación Sencilla:** Para agregar o validar una transacción para el mes actual de manera fluida, simplemente desliza hacia la derecha. Esta validación añade la transacción a tu presupuesto actual del mes y garantiza que no estemos agregando una transacción que realmente no sucedió."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Validation Simple :** Pour ajouter ou valider rapidement une transaction pour le mois en cours, il suffit de faire glisser la transaction récurrente vers la droite. Cette validation ajoute la transaction à votre budget du mois en cours et veille à ce que chaque transaction que l'on ajoute ait bien lieu."
+          }
+        }
+      }
     },
     "**Receive Timely Notifications:** We've got your back! You'll receive notifications when a recurring transaction is due. No more forgetting those important payments or paychecks." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Recibe Notificaciones a Tiempo:** ¡TrenteVingt te respalda! Recibirás notificaciones cuando una transacción recurrente esté pendiente. No más olvidos en pagos importantes o cheques."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Soyez Notifié au Bon Moment :** Pas de panique avec TrenteVingt ! Vous recevrez une notification à chaque fois qu'une transaction récurrente est prévue. Fini les transactions passées sous le radar !"
+          }
+        }
+      }
     },
     "**TrenteVingt** can send you a notification each day to remind you to log your latest transactions." : {
       "localizations" : {
@@ -563,6 +602,12 @@
     },
     "Add your first recurring transaction now by tapping 'Add Transaction'!" : {
       "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade tu Primera Transacción Recurrente ahora tocando 'Nueva Transacción'"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1177,7 +1222,20 @@
       }
     },
     "didn't find transaction :(" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "didn't find transaction :("
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "didn't find transaction :("
+          }
+        }
+      }
     },
     "Dining out, entertainment, vacations..." : {
       "localizations" : {
@@ -1298,7 +1356,20 @@
       }
     },
     "Erreur" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur"
+          }
+        }
+      }
     },
     "Estimate your likely spending for this month. Remember, you can adjust this at any time during or between months." : {
       "extractionState" : "stale",
@@ -1430,7 +1501,20 @@
       }
     },
     "Frequently Asked Questions" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preguntas Frecuentes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questions Fréquentes"
+          }
+        }
+      }
     },
     "Friday" : {
       "localizations" : {
@@ -1566,6 +1650,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "¿Cómo funciona?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment ça marche ?"
           }
         }
       }
@@ -1720,6 +1810,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Saber más sobre las transacciones recurrentes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En savoir plus sur les transactions récurrentes"
           }
         }
       }
@@ -2349,7 +2445,20 @@
       }
     },
     "Recurring transactions are regular expenses or income that happen at fixed intervals, whether weekly, monthly, or yearly. Think of them as your reliable bills or income sources that occur like clockwork." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transacciones recurrentes son gastos regulares o ingresos que suceden en intervalos fijos, ya sea semanal, mensual o anualmente. Imagínalas como tus facturas confiables o fuentes de ingresos que ocurren como un reloj."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les transactions récurrentes sont des dépenses ou des revenus qui arrivent à intervalles réguliers, que ce soit chaque semaine, chaque mois, ou tous les ans. Elles peuvent être des factures mensuelles, des abonnements, ou des revenus annuels ou hebdomadaires."
+          }
+        }
+      }
     },
     "Remaining" : {
       "localizations" : {
@@ -2561,7 +2670,20 @@
       }
     },
     "See sheet" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "See sheet"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "See sheet"
+          }
+        }
+      }
     },
     "September" : {
       "localizations" : {
@@ -3284,7 +3406,20 @@
       }
     },
     "What are recurring transactions and how do they work?" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Qué son transacciones recurrentes y cómo funcionan?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que sont les transactions récurrentes, et comment fonctionnent-elles ?"
+          }
+        }
+      }
     },
     "What are recurring transactions?" : {
       "localizations" : {
@@ -3292,6 +3427,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "¿Qué son transacciones recurrentes?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment fonctionnent les transactions récurrentes ?"
           }
         }
       }
