@@ -20,6 +20,7 @@ struct AllMonthsView: View {
     @State private var currentMonth: MonthBudget?
     
     @State private var updateView = false
+    @State private var showRecurringTransactionsSheet = false
     
     var tip = CurrentMonthTip()
     
@@ -154,6 +155,18 @@ struct AllMonthsView: View {
             if monthBudgets.count > 1 {
                 requestReview()
             }
+        }
+        .onOpenURL { url in
+            guard
+                url.scheme == "trentevingt",
+                url.host == "recurringtransactionsevent"
+            else {
+                return
+            }
+            showRecurringTransactionsSheet = true
+        }
+        .sheet(isPresented: $showRecurringTransactionsSheet) {
+            RecurringTransactionsExplanations()
         }
     }
 }

@@ -4,6 +4,17 @@
 <dict>
 	<key></key>
 	<string></string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>louiscarboestaque.TrenteVingt.trentevingt</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>trentevingt</string>
+			</array>
+		</dict>
+	</array>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
 		<string>NewMonth</string>
