@@ -11,6 +11,7 @@ struct AllMonthsView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.requestReview) var requestReview
+    @AppStorage("showedUpdatePresentation110") private var showedUpdatePresentation = false
     
     @State private var isPresentingNewMonthView = false
     @State private var showDeletionAlert = false
@@ -21,6 +22,7 @@ struct AllMonthsView: View {
     
     @State private var updateView = false
     @State private var showRecurringTransactionsSheet = false
+    @State private var showUpdatePresentation = false
     
     var tip = CurrentMonthTip()
     
@@ -155,6 +157,10 @@ struct AllMonthsView: View {
             if monthBudgets.count > 1 {
                 requestReview()
             }
+            if !showedUpdatePresentation && monthBudgets.count > 0 {
+                showUpdatePresentation.toggle()
+                showedUpdatePresentation = true
+            }
         }
         .onOpenURL { url in
             guard
@@ -167,6 +173,9 @@ struct AllMonthsView: View {
         }
         .sheet(isPresented: $showRecurringTransactionsSheet) {
             RecurringTransactionsExplanations()
+        }
+        .sheet(isPresented: $showUpdatePresentation) {
+            UpdatePresentationView()
         }
     }
 }

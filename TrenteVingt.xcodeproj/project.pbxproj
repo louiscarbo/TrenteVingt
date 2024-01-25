@@ -44,6 +44,7 @@
 		7BAB4E652AED52A8002AC0AD /* NotificationsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB4E642AED52A8002AC0AD /* NotificationsSettingsView.swift */; };
 		7BAB4E692AED5431002AC0AD /* NotificationsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB4E682AED5431002AC0AD /* NotificationsHandler.swift */; };
 		7BAB4E6C2AEE5B2A002AC0AD /* BackgroundTaskHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB4E6B2AEE5B2A002AC0AD /* BackgroundTaskHandler.swift */; };
+		7BB545602B62F15600BDA5EC /* UpdatePresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB5455F2B62F15600BDA5EC /* UpdatePresentationView.swift */; };
 		7BC5EF022A868AB200B02275 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC5EF012A868AB200B02275 /* TransactionDetailView.swift */; };
 		7BC6152E2B5F0E6000FD5464 /* RecurringTransactionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6152D2B5F0E6000FD5464 /* RecurringTransactionRowView.swift */; };
 		7BC615302B5F137000FD5464 /* AllRecurringTransactionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6152F2B5F137000FD5464 /* AllRecurringTransactionsListView.swift */; };
@@ -135,6 +136,7 @@
 		7BAB4E642AED52A8002AC0AD /* NotificationsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsView.swift; sourceTree = "<group>"; };
 		7BAB4E682AED5431002AC0AD /* NotificationsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHandler.swift; sourceTree = "<group>"; };
 		7BAB4E6B2AEE5B2A002AC0AD /* BackgroundTaskHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTaskHandler.swift; sourceTree = "<group>"; };
+		7BB5455F2B62F15600BDA5EC /* UpdatePresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePresentationView.swift; sourceTree = "<group>"; };
 		7BC5EF012A868AB200B02275 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		7BC6152D2B5F0E6000FD5464 /* RecurringTransactionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringTransactionRowView.swift; sourceTree = "<group>"; };
 		7BC6152F2B5F137000FD5464 /* AllRecurringTransactionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecurringTransactionsListView.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				7BC6153D2B61698100FD5464 /* AboutMe.swift */,
 				7BD918252AF984BB00E4F53F /* TipView.swift */,
 				7B868ED62AEEBB97008BA1C5 /* MonthStartingDayView.swift */,
+				7BB5455F2B62F15600BDA5EC /* UpdatePresentationView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				7BA620222B5DC0A300335700 /* RecurrenceDetailsPicker.swift in Sources */,
 				7B9996352AE6BA9200F3C243 /* CreditsView.swift in Sources */,
 				7B2F8DCB2A5D9C5A0090E88E /* MonthView.swift in Sources */,
+				7BB545602B62F15600BDA5EC /* UpdatePresentationView.swift in Sources */,
 				7BF817302A5AB57B007027BF /* MonthlyDisposableIncomeView.swift in Sources */,
 				7BF817382A5AEC57007027BF /* BudgetRepartitionView.swift in Sources */,
 				7BAB4E6C2AEE5B2A002AC0AD /* BackgroundTaskHandler.swift in Sources */,

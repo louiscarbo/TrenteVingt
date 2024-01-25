@@ -49,6 +49,22 @@
         }
       }
     },
+    "**Current Month:** You can now manually choose the current month by swiping it towards the right." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Mes Actual:** Ahora puedes elegir el mes actual deslizándolo hacía la derecha."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Mois en Cours :** Vous pouvez maintenant choisir manuellement le mois en cours en le faisant swiper vers la droite."
+          }
+        }
+      }
+    },
     "**Declare a New Recurring Transaction:** Tap on 'Add Transaction' and easily set up your recurring transactions, specifying the frequency – whether it's every week, month, or year." : {
       "localizations" : {
         "es" : {
@@ -81,6 +97,22 @@
         }
       }
     },
+    "**New Widget:** Want to quickly see which transactions you added to TrenteVingt? You can now add a big widget that displays your last 3 transactions." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Nuevo Widget:** ¿Quiere ver rápidamente las últimas transacciones que añadió? Ahora puede ver sus últimas transacciones desde un gran widget en su pantalla de inicio. "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Nouveau Widget :** Vous voulez voir en un clin d'œil quelles sont les dernières transactions que vous avez ajouté dans TrenteVingt ? Vous pouvez maintenant ajouter un grand widget qui affiche vos 3 dernières transactions."
+          }
+        }
+      }
+    },
     "**Receive Timely Notifications:** We've got your back! You'll receive notifications when a recurring transaction is due. No more forgetting those important payments or paychecks." : {
       "localizations" : {
         "es" : {
@@ -93,6 +125,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "**Recevez une Notification au Bon Moment :** Pas de panique avec TrenteVingt ! Vous recevrez une notification à chaque fois qu'une transaction récurrente est prévue. Fini les transactions passées sous le radar !"
+          }
+        }
+      }
+    },
+    "**Recurring Transactions:** They're here! You can now add recurring transactions to TrenteVingt, from the same place where you're already adding your daily transactions." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Transacciones recurrentes:** ¡Ya están aquí! Ahora puede agregar transacciones recurrentes a TrenteVingt, desde el mismo lugar donde ya está agregando sus transacciones diarias."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Transaction Récurrentes :** Les voilà ! Vous pouvez maintenant ajouter vos transactions récurrentes dans TrenteVingt, au même endroit où vous ajoutez déjà vos transactions quotidiennes."
           }
         }
       }
@@ -1676,6 +1724,22 @@
         }
       }
     },
+    "Hi, it's Louis! Here are the new features that I've worked on! Any suggestion? Feel free to contact me at: TrenteVingt@carbo-estaque.fr" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hola, ¡soy Louis! Aquí son las últimas herramientas que he añadido en TrenteVingt! ¿Una sugerencia? No dude en contactarme en: TrenteVingt@carbo-estaque.fr"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salut, c'est Louis ! Voilà les nouvelles fonctionnalités sur lesquelles j'ai travaillé ! Une remarque, une suggestion ? N'hésitez pas à me contacter à : TrenteVingt@carbo-estaque.fr"
+          }
+        }
+      }
+    },
     "Hours" : {
       "localizations" : {
         "es" : {
@@ -3197,6 +3261,22 @@
         }
       }
     },
+    "Test" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test"
+          }
+        }
+      }
+    },
     "Thank you so much for using TrenteVingt! This app is a personal project that allows me to learn iOS app development." : {
       "localizations" : {
         "es" : {
@@ -3677,6 +3757,22 @@
         }
       }
     },
+    "What are the new features of version 1.1.0?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Cuáles son las novedades de la versión 1.1.0?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelles sont les nouveautés de la version 1.1.0 ?"
+          }
+        }
+      }
+    },
     "What is your monthly disposable income?" : {
       "localizations" : {
         "es" : {
@@ -3705,6 +3801,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Un montant perçu"
+          }
+        }
+      }
+    },
+    "What's new in TrenteVingt?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Qué hay de nuevo en TrenteVingt?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quoi de neuf dans TrenteVingt?"
           }
         }
       }

@@ -17,9 +17,9 @@ func scheduleAppRefresh() {
     try? BGTaskScheduler.shared.submit(request)
     
     // DEBUG
-    print("Background task was succesfully scheduled.")
-    print("Refresh day number: \(refreshDayNumber)")
-    print("Corresponding date: \(nextDateForDay(refreshDayNumber))")
+//    print("Background task was succesfully scheduled.")
+//    print("Refresh day number: \(refreshDayNumber)")
+//    print("Corresponding date: \(nextDateForDay(refreshDayNumber))")
 }
 
 func nextDateForDay(_ day: Int) -> Date {
