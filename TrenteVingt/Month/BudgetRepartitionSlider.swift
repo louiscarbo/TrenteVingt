@@ -35,17 +35,17 @@ struct BudgetRepartitionSlider: View {
                     
                     Stepper {
                     } onIncrement: {
-                        if 100 - (monthBudget.needsBudgetRepartition + 100/monthBudget.monthlyBudget) - monthBudget.wantsBudgetRepartition >= 0 {
-                            monthBudget.needsBudgetRepartition += (100/monthBudget.monthlyBudget)
-                            monthBudget.wantsBudgetRepartition -= (100/monthBudget.monthlyBudget)
-                        } else if monthBudget.wantsBudgetRepartition - 100/monthBudget.monthlyBudget >= 0 {
-                            monthBudget.wantsBudgetRepartition -= (100/monthBudget.monthlyBudget)
+                        if 100 - (monthBudget.needsBudgetRepartition + 100/monthBudget.totalAvailableFunds) - monthBudget.wantsBudgetRepartition >= 0 {
+                            monthBudget.needsBudgetRepartition += (100/monthBudget.totalAvailableFunds)
+                            monthBudget.wantsBudgetRepartition -= (100/monthBudget.totalAvailableFunds)
+                        } else if monthBudget.wantsBudgetRepartition - 100/monthBudget.totalAvailableFunds >= 0 {
+                            monthBudget.wantsBudgetRepartition -= (100/monthBudget.totalAvailableFunds)
                         }
                         monthBudget.update()
                     } onDecrement: {
-                        if monthBudget.needsBudgetRepartition - 100/monthBudget.monthlyBudget >= 0 {
-                            monthBudget.needsBudgetRepartition -= (100/monthBudget.monthlyBudget)
-                            monthBudget.wantsBudgetRepartition += (100/monthBudget.monthlyBudget)
+                        if monthBudget.needsBudgetRepartition - 100/monthBudget.totalAvailableFunds >= 0 {
+                            monthBudget.needsBudgetRepartition -= (100/monthBudget.totalAvailableFunds)
+                            monthBudget.wantsBudgetRepartition += (100/monthBudget.totalAvailableFunds)
                         }
                         monthBudget.update()
                     }
@@ -65,15 +65,15 @@ struct BudgetRepartitionSlider: View {
                     
                     Stepper {
                     } onIncrement: {
-                        if 100 - monthBudget.needsBudgetRepartition - (monthBudget.wantsBudgetRepartition + 100/monthBudget.monthlyBudget) >= 0 {
-                            monthBudget.wantsBudgetRepartition += (100/monthBudget.monthlyBudget)
-                        } else if monthBudget.needsBudgetRepartition - 100/monthBudget.monthlyBudget >= 0 {
-                            monthBudget.needsBudgetRepartition -= (100/monthBudget.monthlyBudget)
+                        if 100 - monthBudget.needsBudgetRepartition - (monthBudget.wantsBudgetRepartition + 100/monthBudget.totalAvailableFunds) >= 0 {
+                            monthBudget.wantsBudgetRepartition += (100/monthBudget.totalAvailableFunds)
+                        } else if monthBudget.needsBudgetRepartition - 100/monthBudget.totalAvailableFunds >= 0 {
+                            monthBudget.needsBudgetRepartition -= (100/monthBudget.totalAvailableFunds)
                         }
                         monthBudget.update()
                     } onDecrement: {
-                        if monthBudget.wantsBudgetRepartition - 100/monthBudget.monthlyBudget >= 0 {
-                            monthBudget.wantsBudgetRepartition -= (100/monthBudget.monthlyBudget)
+                        if monthBudget.wantsBudgetRepartition - 100/monthBudget.totalAvailableFunds >= 0 {
+                            monthBudget.wantsBudgetRepartition -= (100/monthBudget.totalAvailableFunds)
                         }
                         monthBudget.update()
                     }
@@ -81,7 +81,7 @@ struct BudgetRepartitionSlider: View {
                     
                     Spacer()
                     
-                    Text("\(100 - Int(monthBudget.needsBudgetRepartition) - Int(monthBudget.wantsBudgetRepartition))% - \(formatter.string(from: NSNumber(value: monthBudget.monthlyBudget - monthBudget.needsBudget - monthBudget.wantsBudget)) ?? "")")
+                    Text("\(100 - Int(monthBudget.needsBudgetRepartition) - Int(monthBudget.wantsBudgetRepartition))% - \(formatter.string(from: NSNumber(value: monthBudget.totalAvailableFunds - monthBudget.needsBudget - monthBudget.wantsBudget)) ?? "")")
                         .font(.system(.title, design: .serif, weight: .bold))
                     Text("on savings and debt repayment")
                         .font(.system(.subheadline, design: .serif))

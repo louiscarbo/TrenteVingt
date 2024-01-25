@@ -83,6 +83,18 @@ struct AllMonthsView: View {
                                     }
                                     .tint(.red)
                                 }
+                                .swipeActions(edge: .leading) {
+                                    Button {
+                                        withAnimation {
+                                            monthBudget.creationDate = Date()
+                                        }
+                                        WidgetCenter.shared.reloadAllTimelines()
+                                    } label: {
+                                        Label("Make main month", systemImage: "star")
+                                            .symbolVariant(.fill)
+                                    }
+                                    .tint(.yellow)
+                                }
                                 .confirmationDialog(
                                     Text("Deleting this month will also delete all associated transactions. This action is definitive."),
                                     isPresented: $showDeletionAlert,

@@ -2012,6 +2012,22 @@
         }
       }
     },
+    "Make main month" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hacer mes principal"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Définir comme mois principal"
+          }
+        }
+      }
+    },
     "March" : {
       "localizations" : {
         "es" : {
