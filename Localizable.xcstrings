@@ -536,7 +536,20 @@
       }
     },
     "About Me" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acerca de mí"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À Propos de Moi"
+          }
+        }
+      }
     },
     "About TrenteVingt" : {
       "localizations" : {
@@ -1536,7 +1549,20 @@
       }
     },
     "Github" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Github"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Github"
+          }
+        }
+      }
     },
     "Give your budget a little boost. Log today's transactions, it's quick and easy!" : {
       "localizations" : {
@@ -1619,7 +1645,20 @@
       }
     },
     "Hi, I'm Louis 👋" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hola, soy Louis 👋"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salut, c'est Louis 👋"
+          }
+        }
+      }
     },
     "Hours" : {
       "localizations" : {
@@ -1670,16 +1709,68 @@
       }
     },
     "https://github.com/louiscarbo" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://github.com/louiscarbo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://github.com/louiscarbo"
+          }
+        }
+      }
     },
     "https://www.linkedin.com/in/louis-carbo-estaque" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://www.linkedin.com/in/louis-carbo-estaque"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://www.linkedin.com/in/louis-carbo-estaque"
+          }
+        }
+      }
     },
     "I'm a French 🇫🇷 Engineering student passionate about app development! " : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soy un estudiante de ingeniería francés apasionado por el desarrollo de aplicaciones."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je suis un étudiant en école d'ingénieurs, passionné de développement d'applications !"
+          }
+        }
+      }
     },
     "I'm constantly improving, and so does TrenteVingt! If you have any suggestion, feel free to contact me!" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estoy siempre mejorando, ¡y TrenteVingt también! Si tiene una sugerencia, por favor, ¡contácteme! Además, he traducido solo toda la app. Si hay un error de traducción, por favor, mándeme un mensaje."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je ne cesse de m'améliorer, tout comme TrenteVingt ! Si vous avez une suggestion ou une remarque, n'hésitez pas à m'en faire part !"
+          }
+        }
+      }
     },
     "Illustrations" : {
       "localizations" : {
@@ -1874,7 +1965,20 @@
       }
     },
     "LinkedIn" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LinkedIn"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LinkedIn"
+          }
+        }
+      }
     },
     "Logging a transaction takes less than a minute. Open TrenteVingt and let's keep that budget in check!" : {
       "localizations" : {
@@ -2325,7 +2429,20 @@
       }
     },
     "Payment Time by Vectors Market from Noun Project (CC BY 3.0)" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Payment Time by Vectors Market from Noun Project (CC BY 3.0)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Payment Time by Vectors Market from Noun Project (CC BY 3.0)"
+          }
+        }
+      }
     },
     "Pick a category for this transaction." : {
       "localizations" : {
@@ -2488,7 +2605,20 @@
       }
     },
     "Recurring Transactions Screen" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pantalla de Transacciones Recurrentes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ecran des Transactions Récurrentes"
+          }
+        }
+      }
     },
     "Remaining" : {
       "localizations" : {
@@ -3020,7 +3150,20 @@
       }
     },
     "Thank you so much for using TrenteVingt! This app is a personal project that allows me to learn iOS app development." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Muchas gracias por usar TrenteVingt! Esta app es un proyecto personal que me permite aprender el desarrollo de aplicaciones iOS."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merci beaucoup d'utiliser TrenteVingt ! Cette application est un projet personnel qui me permet d'apprendre le développement d'applications pour iOS."
+          }
+        }
+      }
     },
     "The next month will start on %@" : {
       "localizations" : {
