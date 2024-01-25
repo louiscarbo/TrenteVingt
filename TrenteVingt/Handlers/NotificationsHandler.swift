@@ -137,6 +137,9 @@ public class NotificationHandler {
     }
     
     func scheduleRecurringTransactionNotification(recurringTransaction: RecurringTransaction) {
+        let identifier = "recurring" + recurringTransaction.identifier.entityIdentifierString
+        
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
         print("Scheduling a new recurring transaction notification.")
                 
         let content = UNMutableNotificationContent()
@@ -149,6 +152,7 @@ public class NotificationHandler {
         content.sound = .default
                 
         var dateComponents = DateComponents()
+        
         dateComponents.hour = 8
         dateComponents.minute = 0
         
@@ -174,8 +178,6 @@ public class NotificationHandler {
 //        let debugTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
 //        print(debugTrigger.nextTriggerDate())
 //        print(trigger.nextTriggerDate())
-
-        let identifier = "recurring" + recurringTransaction.identifier.entityIdentifierString
 
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
 //        request = UNNotificationRequest(identifier: identifier, content: content, trigger: debugTrigger)

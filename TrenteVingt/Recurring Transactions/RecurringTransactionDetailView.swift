@@ -31,6 +31,13 @@ struct RecurringTransactionDetailView: View {
                     )
                 }
             }
+            .onDisappear {
+                recurringTransaction.recurrenceDetails.day = day
+                recurringTransaction.recurrenceDetails.recurrenceType = recurrenceType
+                recurringTransaction.recurrenceDetails.startingDate = startingDate
+
+                NotificationHandler.shared.scheduleRecurringTransactionNotification(recurringTransaction: recurringTransaction)
+            }
             .onAppear {
                 recurrenceType = recurringTransaction.recurrenceDetails.recurrenceType
                 if let day = recurringTransaction.recurrenceDetails.day {
@@ -39,15 +46,6 @@ struct RecurringTransactionDetailView: View {
                 if let startingDate = recurringTransaction.recurrenceDetails.startingDate {
                     self.startingDate = startingDate
                 }
-            }
-            .onChange(of: recurrenceType) {
-                recurringTransaction.recurrenceDetails.recurrenceType = recurrenceType
-            }
-            .onChange(of: day) {
-                recurringTransaction.recurrenceDetails.day = day
-            }
-            .onChange(of: startingDate) {
-                recurringTransaction.recurrenceDetails.startingDate = startingDate
             }
         }
     }
