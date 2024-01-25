@@ -583,6 +583,22 @@
         }
       }
     },
+    "Add a recurring transaction to the current month by swiping it right." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade una transacción recurrente al mes deslizándola hacía la derecha. "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez une transaction récurrente au mois en cours en faisant glisser la transaction vers la droite."
+          }
+        }
+      }
+    },
     "Add transaction" : {
       "localizations" : {
         "es" : {
@@ -2877,6 +2893,22 @@
         }
       }
     },
+    "Set the current month" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Establecer el mes actual"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Définir le mois en cours"
+          }
+        }
+      }
+    },
     "Settings" : {
       "localizations" : {
         "es" : {
@@ -3485,6 +3517,22 @@
         }
       }
     },
+    "Validate a recurring transaction" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Validar una transacción recurrente"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valider une transaction récurrente"
+          }
+        }
+      }
+    },
     "Validating this transaction will add it as a transaction to the current month. Do you want to add it?" : {
       "localizations" : {
         "es" : {
@@ -3721,6 +3769,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vous pouvez maintenant commencer à suivre facilement votre budget avec TrenteVingt."
+          }
+        }
+      }
+    },
+    "You can set any month in the list as the current month by swiping it right. This month will be displayed in the widgets on your home screen." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puede establecer cualquier mes de la lista como el mes actual deslizándolo hacía la derecha. Este mes sera mostrado en los widgets de su pantalla de inicio."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous pouvez définir n'importe quel mois comme étant le mois en cours el le faisant glisser vers la droite. Ce mois sera affiché dans les widgets de votre écran d'accueil."
           }
         }
       }

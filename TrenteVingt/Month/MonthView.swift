@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import TipKit
 
 struct MonthView: View {
     @Environment(\.modelContext) private var modelContext
@@ -28,6 +29,8 @@ struct MonthView: View {
     @State private var updateCharts = false
     @State private var shouldDismiss = false
     @State private var navigateToAllTransactions = false
+    
+    let tip = ValidateTransactionTip()
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -62,6 +65,7 @@ struct MonthView: View {
                         
                         if recurringTransactions.count > 0 {
                             Section("Next Recurring Transactions") {
+                                TipKit.TipView(tip)
                                 ForEach(recurringTransactionsDisplayedInList) { recurringTransaction in
                                     RecurringTransactionRowView(monthBudget: monthBudget, recurringTransaction: recurringTransaction)
                                 }
@@ -151,6 +155,21 @@ struct MonthView: View {
                 }
             }
         }
+    }
+}
+
+struct ValidateTransactionTip: Tip {
+    var title: Text {
+        Text("Validate a recurring transaction")
+    }
+    var message: Text? {
+        Text("Add a recurring transaction to the current month by swiping it right.")
+    }
+    var image: Image? {
+        Image(systemName: "hand.draw")
+    }
+    var options: [Option] {
+        MaxDisplayCount(3)
     }
 }
 

@@ -2,6 +2,7 @@ import SwiftUI
 import SwiftData
 import WidgetKit
 import StoreKit
+import TipKit
 
 struct AllMonthsView: View {
     @Query(sort: [SortDescriptor(\MonthBudget.creationDate, order: .forward)]) var monthBudgets: [MonthBudget]
@@ -20,6 +21,8 @@ struct AllMonthsView: View {
     
     @State private var updateView = false
     
+    var tip = CurrentMonthTip()
+    
     private var monthBudgetsInDisplay: [MonthBudget] {
         Array(monthBudgets.reversed().dropFirst())
     }
@@ -30,7 +33,7 @@ struct AllMonthsView: View {
                 List {
                     Section("Current Month") {
                         NavigationLink {
-                            MonthView(monthBudget: monthBudgets.last ?? MonthBudget())
+                            MonthView(monthBudget: monthBudgets.last!)
                         } label: {
                             CurrentMonthView(currentMonth: monthBudgets.last ?? MonthBudget())
                                 .id(updateView)
@@ -65,6 +68,7 @@ struct AllMonthsView: View {
                     }
                     if monthBudgetsInDisplay.count >= 1 {
                         Section("Archived months") {
+                            TipKit.TipView(tip, arrowEdge: .bottom)
                             ForEach(monthBudgetsInDisplay) { monthBudget in
                                 NavigationLink {
                                     MonthView(monthBudget: monthBudget)
@@ -85,6 +89,7 @@ struct AllMonthsView: View {
                                 }
                                 .swipeActions(edge: .leading) {
                                     Button {
+                                        tip.invalidate(reason: .actionPerformed)
                                         withAnimation {
                                             monthBudget.creationDate = Date()
                                         }
@@ -142,21 +147,7 @@ struct AllMonthsView: View {
                     navigateToLatestMonth = true
                 }
             } else {
-                VStack {
-                    Text("Welcome to TrenteVingt!")
-                    Button("Start tracking my budget") {
-                        showOnboarding = true
-                    }
-                    .font(.system(.title2, design: .serif, weight: .semibold))
-                    .foregroundStyle(colorScheme == .light ? .white : .black)
-                    .tint(colorScheme == .light ? .black : .white)
-                    .buttonStyle(.borderedProminent)
-                    .buttonBorderShape(.capsule)
-                    .sheet(isPresented: $showOnboarding, content: {
-                        OnboardingScreen(showOnboarding: $showOnboarding)
-                    })
-                }
-                .padding()
+                NoDataView(showOnboarding: $showOnboarding)
             }
         }
         .onAppear {
@@ -206,7 +197,45 @@ struct CurrentMonthView: View {
     }
 }
 
+struct CurrentMonthTip: Tip {
+    var title: Text {
+        Text("Set the current month")
+    }
+    var message: Text? {
+        Text("You can set any month in the list as the current month by swiping it right. This month will be displayed in the widgets on your home screen.")
+    }
+    var image: Image? {
+        Image(systemName: "hand.draw")
+    }
+    var options: [Option] {
+        MaxDisplayCount(3)
+    }
+}
+
 #Preview {
     AllMonthsView()
         .modelContainer(for: MonthBudget.self)
+}
+
+struct NoDataView: View {
+    @Environment(\.colorScheme) private var colorScheme
+    @Binding var showOnboarding: Bool
+    
+    var body: some View {
+        VStack {
+            Text("Welcome to TrenteVingt!")
+            Button("Start tracking my budget") {
+                showOnboarding = true
+            }
+            .font(.system(.title2, design: .serif, weight: .semibold))
+            .foregroundStyle(colorScheme == .light ? .white : .black)
+            .tint(colorScheme == .light ? .black : .white)
+            .buttonStyle(.borderedProminent)
+            .buttonBorderShape(.capsule)
+            .sheet(isPresented: $showOnboarding, content: {
+                OnboardingScreen(showOnboarding: $showOnboarding)
+            })
+        }
+        .padding()
+    }
 }

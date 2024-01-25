@@ -7,6 +7,7 @@ import TipKit
 
 @main
 struct TrenteVingtApp: App {
+    
     var body: some Scene {
         WindowGroup {
             AllMonthsView()
@@ -26,6 +27,7 @@ struct TrenteVingtApp: App {
             NotificationHandler.shared.scheduleDailyNotifications()
         }
         try? Tips.configure()
+        
         updateMonthBudgetsValues()
     }
     
