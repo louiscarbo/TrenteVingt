@@ -110,9 +110,17 @@ struct RemainingSpentWidgetView : View {
                 if family == .systemLarge {
                     VStack(alignment: .leading, spacing: 10) {
                         if let transactions = entry.monthBudget?.transactions?.sorted(by: { return $0.addedDate > $1.addedDate }) {
-                            ForEach(Array(transactions.prefix(3))) { transaction in
+                            if transactions.count > 0 {
+                                ForEach(Array(transactions.prefix(3))) { transaction in
+                                    Divider()
+                                    TransactionRowView(transaction: transaction, currency: monthBudget.currency)
+                                }
+                                Spacer()
+                            } else {
                                 Divider()
-                                TransactionRowView(transaction: transaction, currency: monthBudget.currency)
+                                Spacer()
+                                Text("There are no transactions for this month. Open TrenteVingt to add one!")
+                                Spacer()
                             }
                         }
                     }

@@ -2689,7 +2689,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Transacciones recurrentes son gastos regulares o ingresos que suceden en intervalos fijos, ya sea semanal, mensual o anualmente. Imagínalas como tus facturas confiables o fuentes de ingresos que ocurren como un reloj."
+            "value" : "Las transacciones recurrentes son gastos regulares o ingresos que suceden en intervalos fijos, ya sea semanal, mensual o anualmente. Imagínalas como tus facturas confiables o fuentes de ingresos que ocurren como un reloj."
           }
         },
         "fr" : {
@@ -3325,6 +3325,9 @@
         }
       }
     },
+    "There are no transactions for this month. Open TrenteVingt to add one!" : {
+
+    },
     "Think of your monthly disposable income as the money you're free to spend each month, once all the taxes are taken care of." : {
       "localizations" : {
         "es" : {
@@ -3730,7 +3733,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "¿Qué son transacciones recurrentes y cómo funcionan?"
+            "value" : "¿Qué son las transacciones recurrentes y cómo funcionan?"
           }
         },
         "fr" : {
@@ -3746,7 +3749,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "¿Qué son transacciones recurrentes?"
+            "value" : "¿Qué son las transacciones recurrentes?"
           }
         },
         "fr" : {
