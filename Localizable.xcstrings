@@ -3326,7 +3326,20 @@
       }
     },
     "There are no transactions for this month. Open TrenteVingt to add one!" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay transacciones para este mes. ¡Abre TrenteVingt para añadir una!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous n'avez pas encore ajouté de transactions pour ce mois. Ouvrez TrenteVingt pour le faire."
+          }
+        }
+      }
     },
     "Think of your monthly disposable income as the money you're free to spend each month, once all the taxes are taken care of." : {
       "localizations" : {

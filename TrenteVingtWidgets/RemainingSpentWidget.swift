@@ -116,6 +116,7 @@ struct RemainingSpentWidgetView : View {
                                     TransactionRowView(transaction: transaction, currency: monthBudget.currency)
                                 }
                                 Spacer()
+                                    .frame(minHeight: 0)
                             } else {
                                 Divider()
                                 Spacer()
