@@ -777,12 +777,6 @@
     },
     "And now, your budget" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Und jetzt, Ihr Budget"
-          }
-        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
