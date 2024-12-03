@@ -32,7 +32,8 @@ final class RecurringTransaction {
                 fatalError("Day of month must be set for monthly recurrence")
             }
             dateComponents.day = min(dayOfMonth, Calendar.current.range(of: .day, in: .month, for: now)?.count ?? 31)
-            dateComponents.month = Calendar.current.component(.month, from: now) + 1
+            let currentMonth = Calendar.current.component(.month, from: now);
+            dateComponents.month = currentMonth == 12 ? 1 : currentMonth + 1;
             guard let nextDate = Calendar.current.nextDate(after: now, matching: dateComponents, matchingPolicy: .nextTime) else {
                 fatalError("Could not calculate next date")
             }

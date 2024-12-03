@@ -46,6 +46,8 @@ struct MonthView: View {
                         Section {
                             ChartLegendView(monthBudget: monthBudget, showRemaining: $showRemaining)
                         }
+                        
+                        // MARK: Transactions
                         if transactions.count > 0 {
                             Section("Latest Transactions") {
                                 ForEach(transactionsDisplayedInList) { transaction in
@@ -63,6 +65,7 @@ struct MonthView: View {
                             }
                         }
                         
+                        // MARK: Recurring Transactions
                         if recurringTransactions.count > 0 {
                             Section("Next Recurring Transactions") {
                                 TipKit.TipView(tip)
@@ -112,6 +115,8 @@ struct MonthView: View {
                 }
                 showNewTransaction = true
             }
+            
+            // MARK: New Transaction Button
             ZStack(alignment: .bottom) {
                 if let transactions = monthBudget.transactions {
                     if !transactions.isEmpty {
