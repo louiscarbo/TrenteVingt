@@ -663,23 +663,6 @@
         }
       }
     },
-    "Add your first interaction now and see how your budget evolves!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Agrega tu primera transacción ahora y ¡mira cómo evoluciona tu presupuesto!"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajoutez votre première transactions dès maintenant et voyez comment votre budget évolue !"
-          }
-        }
-      }
-    },
     "Add your first recurring transaction now by tapping 'Add Transaction'!" : {
       "localizations" : {
         "es" : {
@@ -740,29 +723,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Date d'ajout"
-          }
-        }
-      }
-    },
-    "Adjust the handles to set the allocation of your monthly disposable income." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajusta las asas para establecer la distribución de tus ingresos disponibles mensuales."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajustez les poignées pour définir la répartition de votre revenu disponible mensuel."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajuste as alças para definir a alocação de sua renda disponível mensal."
           }
         }
       }
@@ -1447,23 +1407,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erreur"
-          }
-        }
-      }
-    },
-    "Estimate your likely spending for this month. Remember, you can adjust this at any time during or between months." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Estima tus gastos probables para este mes. Recuerda, puedes ajustar esto en cualquier momento durante o entre meses."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Estimez vos dépenses probables pour ce mois-ci. Vous pouvez toujours modifier ce montant à tout instant pendant le mois."
           }
         }
       }
@@ -2844,23 +2787,6 @@
         }
       }
     },
-    "Savings and Debts" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ahorros y Deudas"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Épargne et dettes"
-          }
-        }
-      }
-    },
     "Search" : {
       "localizations" : {
         "es" : {
@@ -2921,23 +2847,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Voyez comment vous dépensez avec un graphique en camembert."
-          }
-        }
-      }
-    },
-    "See sheet" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "See sheet"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "See sheet"
           }
         }
       }
@@ -3258,23 +3167,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Prenez une seconde pour enregistrer vos dépenses du jour. C'est la clé pour maîtriser votre budget !"
-          }
-        }
-      }
-    },
-    "Test" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Test"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Test"
           }
         }
       }
