@@ -16,6 +16,7 @@ struct AllMonthsView: View {
     @State private var isPresentingNewMonthView = false
     @State private var showDeletionAlert = false
     @State private var navigateToLatestMonth = false
+    @State private var navigateToLatestMonthNewTransaction = false
     @State private var showSettings = false
     @State private var monthBudgetToDelete: MonthBudget?
     @State private var currentMonth: MonthBudget?
@@ -69,6 +70,19 @@ struct AllMonthsView: View {
                             }
                         }
                     }
+                    Section {
+                        Button {
+                            isPresentingNewMonthView = true
+                        } label: {
+                            Label("Start a new month", systemImage: "calendar.badge.plus")
+                        }
+                        .sheet(isPresented: $isPresentingNewMonthView) {
+                            NewMonthView(
+                                modelMonthBudget: monthBudgets.last!,
+                                isPresentingNewMonthView: $isPresentingNewMonthView
+                            )
+                        }
+                    }
                     if monthBudgetsInDisplay.count >= 1 {
                         Section("Archived months") {
                             TipKit.TipView(tip, arrowEdge: .bottom)
@@ -118,19 +132,6 @@ struct AllMonthsView: View {
                             }
                         }
                     }
-                    Section {
-                        Button {
-                            isPresentingNewMonthView = true
-                        } label: {
-                            Label("Start a new month", systemImage: "calendar.badge.plus")
-                        }
-                        .sheet(isPresented: $isPresentingNewMonthView) {
-                            NewMonthView(
-                                modelMonthBudget: monthBudgets.last!,
-                                isPresentingNewMonthView: $isPresentingNewMonthView
-                            )
-                        }
-                    }
                 }
                 .toolbar {
                     Button {
@@ -138,16 +139,17 @@ struct AllMonthsView: View {
                     } label: {
                         Label("Settings", systemImage: "gearshape.fill")
                     }
-                }
+                } // List
+                // MARK: Navigation Destinations
                 .navigationTitle("All Months")
-                .navigationDestination(isPresented: $navigateToLatestMonth) {
-                    MonthView(monthBudget: monthBudgets.last!)
-                }
                 .navigationDestination(isPresented: $showSettings) {
                     SettingsView()
                 }
-                .onAppear {
-                    navigateToLatestMonth = true
+                .navigationDestination(isPresented: $navigateToLatestMonth) {
+                    MonthView(monthBudget: monthBudgets.last!, showNewTransaction: false)
+                }
+                .navigationDestination(isPresented: $navigateToLatestMonthNewTransaction) {
+                    MonthView(monthBudget: monthBudgets.last!, showNewTransaction: true)
                 }
             } else {
                 NoDataView(showOnboarding: $showOnboarding)
@@ -162,15 +164,24 @@ struct AllMonthsView: View {
                 showedUpdatePresentation = true
             }
         }
+
+        // MARK: URL Handling
         .onOpenURL { url in
-            guard
-                url.scheme == "trentevingt",
-                url.host == "recurringtransactionsevent"
-            else {
-                return
+            guard url.scheme == "trentevingt" else { return }
+
+            switch url.host {
+            case "lastMonth":
+                navigateToLatestMonth = true
+            case "newtransaction":
+                navigateToLatestMonthNewTransaction = true
+            case "recurringtransactionsevent":
+                showRecurringTransactionsSheet = true
+            default:
+                break
             }
-            showRecurringTransactionsSheet = true
         }
+        
+        // MARK: Sheet Presentation
         .sheet(isPresented: $showRecurringTransactionsSheet) {
             RecurringTransactionsExplanations()
         }
