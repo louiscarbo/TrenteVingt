@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RecurrenceTypePicker: View {
     @Binding var selectedRecurrenceType : RecurrenceType
-    @Environment (\.colorScheme) private var colorScheme
+    @Environment(\.colorScheme) private var colorScheme
     
     var body: some View {
         VStack(alignment: .leading) {

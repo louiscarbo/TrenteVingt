@@ -27,10 +27,16 @@ struct RemainingSpentProvider: TimelineProvider {
     
     @MainActor
     private func getMonthBudget() -> MonthBudget? {
-        let modelContainer = try? ModelContainer(for: MonthBudget.self)
-        let descriptor = FetchDescriptor<MonthBudget>(sortBy: [SortDescriptor(\MonthBudget.creationDate, order: .forward)])
-        let monthBudgets = try? modelContainer?.mainContext.fetch(descriptor)
-        return monthBudgets?.last ?? nil
+        do {
+            let modelContainer = try ModelContainer(for: MonthBudget.self)
+            let descriptor = FetchDescriptor<MonthBudget>(sortBy: [SortDescriptor(\MonthBudget.creationDate, order: .forward)])
+            if let monthBudget = try modelContainer.mainContext.fetch(descriptor).last {
+                return monthBudget.detachedCopy()
+            }
+        } catch {
+            print("Error fetching month budgets: \(error)")
+        }
+        return nil
     }
 }
 

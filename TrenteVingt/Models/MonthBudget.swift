@@ -119,6 +119,7 @@ extension MonthBudget {
         }
     }
     
+    // MARK: Update() function
     func update() {
         var tempPositiveTransactionsTotal: Double = 0
         var tempSpentNeedsBudget: Double = 0
@@ -169,5 +170,47 @@ extension MonthBudget {
         spentSavingsDebtsPercentage = spentSavingsDebtsBudget / totalSpent * 100
         
         WidgetCenter.shared.reloadAllTimelines()
+    }
+}
+
+extension MonthBudget {
+    func detachedCopy() -> MonthBudget {
+        // Create a new MonthBudget instance with the necessary initial properties
+        let copy = MonthBudget(
+            monthlyBudget: self.monthlyBudget,
+            needsBudgetRepartition: self.needsBudgetRepartition,
+            wantsBudgetRepartition: self.wantsBudgetRepartition,
+            savingsDebtsBudgetRepartition: self.savingsDebtsBudgetRepartition,
+            monthNumber: self.monthNumber,
+            currencySymbolSFName: self.currencySymbolSFName
+        )
+
+        // Manually copy the additional properties used in the widget
+        copy.transactions = self.transactions?.map { $0.detachedCopy() }
+        copy.creationDate = self.creationDate
+        copy.needsPercentage = self.needsPercentage
+        copy.wantsPercentage = self.wantsPercentage
+        copy.savingsDebtsPercentage = self.savingsDebtsPercentage
+        copy.needsBudget = self.needsBudget
+        copy.wantsBudget = self.wantsBudget
+        copy.savingsDebtsBudget = self.savingsDebtsBudget
+        copy.spentNeedsBudget = self.spentNeedsBudget
+        copy.spentWantsBudget = self.spentWantsBudget
+        copy.spentSavingsDebtsBudget = self.spentSavingsDebtsBudget
+        copy.spentNeedsCategoryPercentage = self.spentNeedsCategoryPercentage
+        copy.spentWantsCategoryPercentage = self.spentWantsCategoryPercentage
+        copy.spentSavingsDebtsCategoryPercentage = self.spentSavingsDebtsCategoryPercentage
+        copy.remainingNeeds = self.remainingNeeds
+        copy.remainingWants = self.remainingWants
+        copy.remainingSavingsDebts = self.remainingSavingsDebts
+        copy.totalSpent = self.totalSpent
+        copy.remaining = self.remaining
+        copy.spentNeedsPercentage = self.spentNeedsPercentage
+        copy.spentWantsPercentage = self.spentWantsPercentage
+        copy.spentSavingsDebtsPercentage = self.spentSavingsDebtsPercentage
+        copy.positiveTransactionsTotal = self.positiveTransactionsTotal
+        copy.totalAvailableFunds = self.totalAvailableFunds
+
+        return copy
     }
 }

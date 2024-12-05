@@ -2,7 +2,7 @@ import WidgetKit
 import SwiftUI
 import SwiftData
 
-struct Provider: TimelineProvider {
+struct Provider: @preconcurrency TimelineProvider {
     
     @MainActor
     func placeholder(in context: Context) -> BudgetEntry {

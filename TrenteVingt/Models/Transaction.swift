@@ -44,3 +44,13 @@ enum transactionCategory: String, Codable {
     case savingsDebts = "Savings & Debts"
     case positiveTransaction = "Positive Transaction"
 }
+
+extension Transaction {
+    
+    // This function does not create an exact copy of the transaction object, it is used in widgets only
+    func detachedCopy() -> Transaction {
+        let copy = Transaction(title: self.title, amount: self.amount, category: self.category)
+        copy.addedDate = self.addedDate        
+        return copy
+    }
+}
