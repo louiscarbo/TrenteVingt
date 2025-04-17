@@ -41,3 +41,39 @@ enum TransactionType: String, Codable {
     case expense
     case income
 }
+
+extension Transaction {
+    var amount : Double {
+        Double(amountCents) / 100
+    }
+}
+
+// MARK: - Sample Data
+extension Transaction {
+    static let sampleData: [Transaction] = [
+        Transaction(
+            addedDate: Date(),
+            title: "Supermarket",
+            amountCents: -50_00,
+            type: .expense,
+            category: .needs,
+            month: Month.month1
+        ),
+        Transaction(
+            addedDate: Date(),
+            title: "Salary",
+            amountCents: 1500_00,
+            type: .income,
+            category: .needs,
+            month: Month.month1
+        ),
+        Transaction(
+            addedDate: Date(),
+            title: "Rent",
+            amountCents: -800_00,
+            type: .expense,
+            category: .needs,
+            month: Month.month2
+        )
+    ]
+}

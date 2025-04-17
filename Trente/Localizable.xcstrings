@@ -1,0 +1,61 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@" : {
+
+    },
+    "Archived Months" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mois Archivés"
+          }
+        }
+      }
+    },
+    "Current Month" : {
+
+    },
+    "Graph" : {
+
+    },
+    "Let's get started!" : {
+
+    },
+    "Months" : {
+
+    },
+    "Needs" : {
+
+    },
+    "New Month" : {
+
+    },
+    "Over Spent" : {
+
+    },
+    "Remaining" : {
+
+    },
+    "Savings and Debts" : {
+
+    },
+    "Spent" : {
+
+    },
+    "Start tracking your budget by adding your first month." : {
+
+    },
+    "Transactions" : {
+
+    },
+    "Under Budget" : {
+
+    },
+    "Wants" : {
+
+    }
+  },
+  "version" : "1.0"
+}

@@ -6,14 +6,30 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		7BC9E7F42DB1081900CFDF19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B2847452DAFE05300EEF97C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B28474C2DAFE05300EEF97C;
+			remoteInfo = Trente;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		7B28474D2DAFE05300EEF97C /* TrenteVingt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrenteVingt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B28474D2DAFE05300EEF97C /* Trente.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trente.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BC9E7F02DB1081800CFDF19 /* TrenteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrenteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		7B28474F2DAFE05300EEF97C /* TrenteVingt */ = {
+		7B28474F2DAFE05300EEF97C /* Trente */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TrenteVingt;
+			path = Trente;
+			sourceTree = "<group>";
+		};
+		7BC9E7F12DB1081800CFDF19 /* TrenteTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TrenteTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,13 +42,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7BC9E7ED2DB1081800CFDF19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		7B2847442DAFE05300EEF97C = {
 			isa = PBXGroup;
 			children = (
-				7B28474F2DAFE05300EEF97C /* TrenteVingt */,
+				7B28474F2DAFE05300EEF97C /* Trente */,
+				7BC9E7F12DB1081800CFDF19 /* TrenteTests */,
 				7B28474E2DAFE05300EEF97C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,7 +64,8 @@
 		7B28474E2DAFE05300EEF97C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7B28474D2DAFE05300EEF97C /* TrenteVingt.app */,
+				7B28474D2DAFE05300EEF97C /* Trente.app */,
+				7BC9E7F02DB1081800CFDF19 /* TrenteTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7B28474C2DAFE05300EEF97C /* TrenteVingt */ = {
+		7B28474C2DAFE05300EEF97C /* Trente */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7B2847582DAFE05500EEF97C /* Build configuration list for PBXNativeTarget "TrenteVingt" */;
+			buildConfigurationList = 7B2847582DAFE05500EEF97C /* Build configuration list for PBXNativeTarget "Trente" */;
 			buildPhases = (
 				7B2847492DAFE05300EEF97C /* Sources */,
 				7B28474A2DAFE05300EEF97C /* Frameworks */,
@@ -61,14 +86,37 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				7B28474F2DAFE05300EEF97C /* TrenteVingt */,
+				7B28474F2DAFE05300EEF97C /* Trente */,
 			);
-			name = TrenteVingt;
+			name = Trente;
 			packageProductDependencies = (
 			);
 			productName = TrenteVingt;
-			productReference = 7B28474D2DAFE05300EEF97C /* TrenteVingt.app */;
+			productReference = 7B28474D2DAFE05300EEF97C /* Trente.app */;
 			productType = "com.apple.product-type.application";
+		};
+		7BC9E7EF2DB1081800CFDF19 /* TrenteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BC9E7F62DB1081900CFDF19 /* Build configuration list for PBXNativeTarget "TrenteTests" */;
+			buildPhases = (
+				7BC9E7EC2DB1081800CFDF19 /* Sources */,
+				7BC9E7ED2DB1081800CFDF19 /* Frameworks */,
+				7BC9E7EE2DB1081800CFDF19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7BC9E7F52DB1081900CFDF19 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7BC9E7F12DB1081800CFDF19 /* TrenteTests */,
+			);
+			name = TrenteTests;
+			packageProductDependencies = (
+			);
+			productName = TrenteTests;
+			productReference = 7BC9E7F02DB1081800CFDF19 /* TrenteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -83,14 +131,20 @@
 					7B28474C2DAFE05300EEF97C = {
 						CreatedOnToolsVersion = 16.3;
 					};
+					7BC9E7EF2DB1081800CFDF19 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 7B28474C2DAFE05300EEF97C;
+					};
 				};
 			};
-			buildConfigurationList = 7B2847482DAFE05300EEF97C /* Build configuration list for PBXProject "TrenteVingt" */;
+			buildConfigurationList = 7B2847482DAFE05300EEF97C /* Build configuration list for PBXProject "Trente" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				fr,
+				es,
 			);
 			mainGroup = 7B2847442DAFE05300EEF97C;
 			minimizedProjectReferenceProxies = 1;
@@ -99,13 +153,21 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7B28474C2DAFE05300EEF97C /* TrenteVingt */,
+				7B28474C2DAFE05300EEF97C /* Trente */,
+				7BC9E7EF2DB1081800CFDF19 /* TrenteTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7B28474B2DAFE05300EEF97C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BC9E7EE2DB1081800CFDF19 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +184,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7BC9E7EC2DB1081800CFDF19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7BC9E7F52DB1081900CFDF19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B28474C2DAFE05300EEF97C /* Trente */;
+			targetProxy = 7BC9E7F42DB1081900CFDF19 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7B2847562DAFE05500EEF97C /* Debug */ = {
@@ -185,6 +262,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -242,6 +320,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -266,8 +345,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = louiscarboestaque.TrenteVingt;
+				PRODUCT_BUNDLE_IDENTIFIER = louiscarboestaque.Trente;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -294,18 +377,58 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = louiscarboestaque.TrenteVingt;
+				PRODUCT_BUNDLE_IDENTIFIER = louiscarboestaque.Trente;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
+		7BC9E7F72DB1081900CFDF19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7T9Q86X738;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = louiscarboestaque.TrenteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trente.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Trente";
+			};
+			name = Debug;
+		};
+		7BC9E7F82DB1081900CFDF19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7T9Q86X738;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = louiscarboestaque.TrenteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trente.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Trente";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7B2847482DAFE05300EEF97C /* Build configuration list for PBXProject "TrenteVingt" */ = {
+		7B2847482DAFE05300EEF97C /* Build configuration list for PBXProject "Trente" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7B2847562DAFE05500EEF97C /* Debug */,
@@ -314,11 +437,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7B2847582DAFE05500EEF97C /* Build configuration list for PBXNativeTarget "TrenteVingt" */ = {
+		7B2847582DAFE05500EEF97C /* Build configuration list for PBXNativeTarget "Trente" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7B2847592DAFE05500EEF97C /* Debug */,
 				7B28475A2DAFE05500EEF97C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7BC9E7F62DB1081900CFDF19 /* Build configuration list for PBXNativeTarget "TrenteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BC9E7F72DB1081900CFDF19 /* Debug */,
+				7BC9E7F82DB1081900CFDF19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
