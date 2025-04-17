@@ -34,7 +34,7 @@ final class Month : Identifiable, Hashable {
 
 // MARK: - Computed Properties
 extension Month {
-    var displayName: String {
+    var name: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM yyyy"
         return formatter.string(from: startDate).capitalized

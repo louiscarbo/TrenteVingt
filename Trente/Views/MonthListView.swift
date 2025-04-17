@@ -22,10 +22,20 @@ struct MonthListView: View {
     var archivedMonths: [Month] {
         months.filter { $0 != currentMonth }
     }
-        
+            
     var body: some View {
         NavigationSplitView {
             List {
+                Button {
+                    
+                } label: {
+                    Label("New Month", systemImage: "calendar.badge.plus")
+                        .tint(.white)
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+                .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+                
                 if let currentMonth = currentMonth {
                     Section(header: Text("Current Month")) {
                         NavigationLink {
@@ -64,27 +74,19 @@ struct MonthListView: View {
 struct MonthRowView: View {
     var month: Month
     
-    var overSpent : Bool {
-        month.overSpent
-    }
-    
     var body: some View {
         HStack {
-            Image(systemName: overSpent ? "xmark.circle.fill" : "checkmark.circle.fill")
-                .foregroundColor(overSpent ? . red : .green)
+            Image(systemName: month.overSpent ? "xmark.circle.fill" : "checkmark.circle.fill")
+                .foregroundColor(month.overSpent ? . red : .green)
             
             VStack(alignment: .leading) {
-                Text(month.displayName)
+                Text(month.name)
                     .font(.headline)
-                Text(overSpent ? "Over Spent" : "Under Budget")
+                Text(month.overSpent ? "Over Spent" : "Under Budget")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                     
             }
-            
-            Spacer()
-            
-            Text("Graph")
         }
     }
 }
