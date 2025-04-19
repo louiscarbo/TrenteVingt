@@ -10,11 +10,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         MonthListView()
-            .modelContainer(SampleData.shared.modelContainer)
+            .modelContainer(SampleDataProvider.shared.modelContainer)
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(SampleData.shared.modelContainer)
+        .modelContainer(SampleDataProvider.shared.modelContainer)
 }

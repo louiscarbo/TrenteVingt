@@ -67,7 +67,7 @@ struct MonthListView: View {
 
 #Preview {
     MonthListView()
-        .modelContainer(SampleData.shared.modelContainer)
+        .modelContainer(SampleDataProvider.shared.modelContainer)
 }
 
 // MARK: - MonthRowView

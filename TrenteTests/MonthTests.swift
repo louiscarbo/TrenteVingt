@@ -18,27 +18,30 @@ struct MonthTests {
             currency: Currencies.currency(for: "EUR")!,
             categoryRepartition: [.needs: 50, .wants: 30, .savingsAndDebts: 20]
         )
-        
-        // Add expenses
-        month.transactions = [
-            Transaction(
-                addedDate: .now,
-                title: "Groceries",
-                amountCents: -100_00,
-                type: .expense,
-                category: BudgetCategory.needs,
-                month: month
-            ),
-            Transaction(
-                addedDate: .now,
-                title: "Rent",
-                amountCents: -400_00,
-                type: .expense,
-                category: BudgetCategory.needs,
-                month: month
-            )
+
+        // Add expense groups with entries
+        let groceries = TransactionGroup(
+            addedDate: .now,
+            title: "Groceries",
+            type: .expense,
+            month: month
+        )
+        groceries.entries = [
+            TransactionEntry(amountCents: -100_00, category: .needs, group: groceries)
         ]
-        
+
+        let rent = TransactionGroup(
+            addedDate: .now,
+            title: "Rent",
+            type: .expense,
+            month: month
+        )
+        rent.entries = [
+            TransactionEntry(amountCents: -400_00, category: .needs, group: rent)
+        ]
+
+        month.transactionGroups = [groceries, rent]
+
         #expect(month.negativeSpentAmount == -500.0)
     }
 
@@ -50,35 +53,41 @@ struct MonthTests {
             currency: Currencies.currency(for: "EUR")!,
             categoryRepartition: [.needs: 50, .wants: 30, .savingsAndDebts: 20]
         )
-        
-        // One income, two expenses
-        month.transactions = [
-            Transaction(
-                addedDate: .now,
-                title: "Salary",
-                amountCents: 1000_00,
-                type: .income,
-                category: BudgetCategory.needs,
-                month: month
-            ),
-            Transaction(
-                addedDate: .now,
-                title: "Mall",
-                amountCents: -100_00,
-                type: .expense,
-                category: BudgetCategory.needs,
-                month: month
-            ),
-            Transaction(
-                addedDate: .now,
-                title: "Rent",
-                amountCents: -400_00,
-                type: .expense,
-                category: BudgetCategory.needs,
-                month: month
-            )
+
+        // Income group
+        let salary = TransactionGroup(
+            addedDate: .now,
+            title: "Salary",
+            type: .income,
+            month: month
+        )
+        salary.entries = [
+            TransactionEntry(amountCents: 1000_00, category: .needs, group: salary)
         ]
-        
+
+        // Expenses
+        let mall = TransactionGroup(
+            addedDate: .now,
+            title: "Mall",
+            type: .expense,
+            month: month
+        )
+        mall.entries = [
+            TransactionEntry(amountCents: -100_00, category: .needs, group: mall)
+        ]
+
+        let rent = TransactionGroup(
+            addedDate: .now,
+            title: "Rent",
+            type: .expense,
+            month: month
+        )
+        rent.entries = [
+            TransactionEntry(amountCents: -400_00, category: .needs, group: rent)
+        ]
+
+        month.transactionGroups = [salary, mall, rent]
+
         #expect(month.remainingAmount == 500.0)
     }
 
@@ -90,18 +99,19 @@ struct MonthTests {
             currency: Currencies.currency(for: "EUR")!,
             categoryRepartition: [.needs: 50, .wants: 30, .savingsAndDebts: 20]
         )
-        
-        month.transactions = [
-            Transaction(
-                addedDate: .now,
-                title: "Groceries",
-                amountCents: -100_00,
-                type: .expense,
-                category: BudgetCategory.needs,
-                month: month
-            )
+
+        let groceries = TransactionGroup(
+            addedDate: .now,
+            title: "Groceries",
+            type: .expense,
+            month: month
+        )
+        groceries.entries = [
+            TransactionEntry(amountCents: -100_00, category: .needs, group: groceries)
         ]
-        
+
+        month.transactionGroups = [groceries]
+
         #expect(month.overSpent == true)
     }
 
@@ -113,26 +123,29 @@ struct MonthTests {
             currency: Currencies.currency(for: "EUR")!,
             categoryRepartition: [.needs: 50, .wants: 30, .savingsAndDebts: 20]
         )
-        
-        month.transactions = [
-            Transaction(
-                addedDate: .now,
-                title: "Salary",
-                amountCents: 2000_00,
-                type: .income,
-                category: BudgetCategory.needs,
-                month: month
-            ),
-            Transaction(
-                addedDate: .now,
-                title: "Groceries",
-                amountCents: -100_00,
-                type: .expense,
-                category: BudgetCategory.needs,
-                month: month
-            )
+
+        let salary = TransactionGroup(
+            addedDate: .now,
+            title: "Salary",
+            type: .income,
+            month: month
+        )
+        salary.entries = [
+            TransactionEntry(amountCents: 2000_00, category: .needs, group: salary)
         ]
-        
+
+        let groceries = TransactionGroup(
+            addedDate: .now,
+            title: "Groceries",
+            type: .expense,
+            month: month
+        )
+        groceries.entries = [
+            TransactionEntry(amountCents: -100_00, category: .needs, group: groceries)
+        ]
+
+        month.transactionGroups = [salary, groceries]
+
         #expect(month.overSpent == false)
     }
 

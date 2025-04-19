@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "%@" : {
 
     },
@@ -17,7 +20,10 @@
     "Current Month" : {
 
     },
-    "Graph" : {
+    "Graph Card" : {
+
+    },
+    "Latest transactions" : {
 
     },
     "Let's get started!" : {
@@ -32,13 +38,25 @@
     "New Month" : {
 
     },
+    "Other Graph Card" : {
+
+    },
     "Over Spent" : {
+
+    },
+    "Recurring Transactions" : {
 
     },
     "Remaining" : {
 
     },
+    "Savings" : {
+
+    },
     "Savings and Debts" : {
+
+    },
+    "Search by title, amount, date..." : {
 
     },
     "Spent" : {

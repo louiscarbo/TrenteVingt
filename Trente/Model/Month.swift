@@ -14,10 +14,10 @@ final class Month : Identifiable, Hashable {
     var availableIncomeCents: Int
     var currency: Currency
     
-    var categoryRepartition: [BudgetCategory: Int] // Percentages, sum to 100
+    var categoryRepartition: [BudgetCategory: Int] // Amount in cents for each category
 
-    @Relationship(deleteRule: .cascade, inverse: \Transaction.month)
-    var transactions: [Transaction] = []
+    @Relationship(deleteRule: .cascade, inverse: \TransactionGroup.month)
+    var transactionGroups: [TransactionGroup] = []
 
     @Relationship(deleteRule: .cascade, inverse: \RecurringTransactionInstance.month)
     var recurringInstances: [RecurringTransactionInstance] = []
@@ -39,13 +39,17 @@ extension Month {
         formatter.dateFormat = "MMMM yyyy"
         return formatter.string(from: startDate).capitalized
     }
+    
+    private var transactionEntries: [TransactionEntry] {
+        transactionGroups.flatMap { $0.entries }
+    }
         
     private var remainingAmountCents: Int {
-        transactions.reduce(0) { $0 + $1.amountCents }
+        transactionEntries.reduce(0) { $0 + $1.amountCents }
     }
     
     private var spentAmountCents: Int {
-        transactions.filter { $0.type == .expense }.reduce(0) { $0 + $1.amountCents }
+        transactionEntries.filter { $0.amountCents < 0 }.reduce(0) { $0 + $1.amountCents }
     }
     
     var remainingAmount: Double {
@@ -60,6 +64,29 @@ extension Month {
         remainingAmountCents < 0
     }
     
+    /// Calculates the remaining budget for a specific category. Not in cents, positive value.
+    func spentAmount(for category: BudgetCategory) -> Double {
+        let categoryTransactions = transactionEntries.filter { $0.category == category && $0.amountCents < 0 }
+        let categoryRemainingAmount = categoryTransactions.reduce(0) { $0 + $1.amountCents }
+        return -1 * Double(categoryRemainingAmount) / 100
+    }
+    
+    /// Calculates the sum of incomes for a specific category. Not in cents.
+    func incomeAmount(for category: BudgetCategory) -> Double {
+        let categoryTransactions = transactionEntries.filter { $0.category == category && $0.amountCents > 0 }
+        let categoryIncomeAmount = categoryTransactions.reduce(0) { $0 + $1.amountCents }
+        return Double(categoryIncomeAmount) / 100
+    }
+    
+    /// Calculates the budget that is overspent for a specific category. Not in cents, positive value.
+    func overSpentAmount(for category: BudgetCategory) -> Double {
+        return -1 * (incomeAmount(for: category) - spentAmount(for: category))
+    }
+    
+    /// Returns true if the user is overspending in a specific category
+    func overSpending(in category: BudgetCategory) -> Bool {
+        overSpentAmount(for: category) > 0
+    }
 }
 
 // MARK: - Sample Data

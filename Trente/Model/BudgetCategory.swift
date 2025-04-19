@@ -24,6 +24,17 @@ enum BudgetCategory: String, Codable, CaseIterable {
         }
     }
     
+    var shortName: String {
+        switch self {
+        case .needs:
+            return String(localized: "Needs")
+        case .wants:
+            return String(localized: "Wants")
+        case .savingsAndDebts:
+            return String(localized: "Savings")
+        }
+    }
+    
     var color: Color {
         switch self {
         case .needs:

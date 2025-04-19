@@ -12,9 +12,9 @@ import SwiftData
 class IncomeAllocation {
     var amountCents: Int
     var category: BudgetCategory
-    var transaction: Transaction
+    var transaction: TransactionGroup
     
-    init(amountCents: Int, category: BudgetCategory, transaction: Transaction) {
+    init(amountCents: Int, category: BudgetCategory, transaction: TransactionGroup) {
         self.amountCents = amountCents
         self.category = category
         self.transaction = transaction

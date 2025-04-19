@@ -14,11 +14,17 @@ struct Currency: Codable {
     var localizedName: String
 }
 
+extension Currency {
+    var sfSymbolGaugeName: String {
+        return sfSymbolName.map { "\($0).gauge.chart.lefthalf.righthalf" } ?? ""
+    }
+}
+
 struct Currencies {
     static let availableCurrencies: [Currency] = [
-        Currency(isoCode: "USD", symbol: "$", sfSymbolName: "dollarsign.circle", localizedName: "US Dollar"),
-        Currency(isoCode: "EUR", symbol: "€", sfSymbolName: "eurosign.circle", localizedName: "Euro"),
-        Currency(isoCode: "JPY", symbol: "¥", sfSymbolName: "yensign.circle", localizedName: "Japanese Yen")
+        Currency(isoCode: "USD", symbol: "$", sfSymbolName: "dollarsign", localizedName: "US Dollar"),
+        Currency(isoCode: "EUR", symbol: "€", sfSymbolName: "eurosign", localizedName: "Euro"),
+        Currency(isoCode: "JPY", symbol: "¥", sfSymbolName: "yensign", localizedName: "Japanese Yen")
     ]
     
     static func currency(for isoCode: String) -> Currency? {

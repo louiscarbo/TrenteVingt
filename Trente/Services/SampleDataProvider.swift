@@ -9,8 +9,8 @@ import Foundation
 import SwiftData
 
 @MainActor
-class SampleData {
-    static let shared = SampleData()
+class SampleDataProvider {
+    static let shared = SampleDataProvider()
     
     let modelContainer: ModelContainer
     
@@ -40,7 +40,7 @@ class SampleData {
             context.insert(month)
         }
         
-        for transaction in Transaction.sampleData {
+        for transaction in TransactionGroup.sampleData(month1: Month.month1, month2: Month.month2) {
             context.insert(transaction)
         }
     }

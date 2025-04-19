@@ -13,15 +13,15 @@ struct TransactionListView: View {
     
     // Transactions whose month is the current month
     @Query(
-        sort: \Transaction.addedDate,
+        sort: \TransactionGroup.addedDate,
         order: .reverse,
-    ) var transactions: [Transaction]
+    ) var transactions: [TransactionGroup]
     
     @State private var searchText = ""
     
     var body: some View {
         List(transactions) { transaction in
-            TransactionRowView(transaction: transaction)
+            TransactionGroupRowView(transactionGroup: transaction)
         }
         #if os(iOS)
         .searchable(
@@ -43,6 +43,6 @@ struct TransactionListView: View {
 #Preview {
     NavigationStack {
         TransactionListView(month: Month.month1)
-            .modelContainer(SampleData.shared.modelContainer)
+            .modelContainer(SampleDataProvider.shared.modelContainer)
     }
 }
